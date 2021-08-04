@@ -1,0 +1,15 @@
+
+
+
+.footer,
+.push {
+  height: 50px;
+}
+
+
+.footer {
+  text-align: center;
+  color: #fefefe;
+  border-top: solid #206D51 2px;
+  background-color: #222222;
+}
