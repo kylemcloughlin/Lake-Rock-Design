@@ -3,7 +3,7 @@
 
 .footer,
 .push {
-  height: 50px;
+  height: 65px;
 }
 
 
@@ -12,4 +12,5 @@
   color: #fefefe;
   border-top: solid #206D51 2px;
   background-color: #222222;
+ flex-shrink: 0;
 }

@@ -1,10 +1,68 @@
 .App-header {
-  background-color: #282c34;
+  background-color: #222222;
   min-height: 1em;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
-  /* font-size: calc(10px + 2vmin); */
+  height: 4em;
+width: 100%;
+display: flex;
   color: white;
+position: relative;
+}
+
+.company-name {
+  float: left;
+  padding: 1em;
+}
+
+.company-number {
+position: absolute;
+right: 1em;
+/* bottom: .2em; */
+}
+
+.address-img-div {
+  /* background-color: #fefefe;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em; */
+  position: absolute;
+  right: 7.5em;
+  bottom: .6em;
+
+
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #E6E7ED;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  text-align: center;
+
+}
+.img-div { 
+  /* background-color: #fefefe;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em; */
+  position: absolute;
+  right: 6em;
+  bottom: .6em;
+
+
+     display: block;
+     width: 40px;
+     height: 40px;
+     background: #E6E7ED;
+     -moz-border-radius: 20px;
+     -webkit-border-radius: 20px;
+     text-align:center;
+
+}
+.company-number-img {
+   margin-top: 11px;
+}
+
+.company-address {
+  position: absolute;
+  right: 10em;
+  /* bottom: .2em; */
 }

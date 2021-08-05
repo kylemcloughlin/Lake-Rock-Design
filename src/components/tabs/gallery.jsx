@@ -17,7 +17,7 @@ const images = [
   },
 ];
  const Gallery = () => {
-   return <ImageGallery items={images} />;
+   return <ImageGallery items={images} showOriginal={false}/>;
 }
 
 export default Gallery;
