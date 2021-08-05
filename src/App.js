@@ -20,7 +20,7 @@ function App() {
    
 },[content]);
 
-const navOptions = [<Home/>, <Design/>, <Landscaping/>, <Gallery/>, <Plants/>, <Contact/>]
+
 return (
     <Router>
     <div className="App">
