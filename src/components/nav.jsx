@@ -1,19 +1,23 @@
 import '../styles/nav.css';
-let buttonValues = ["Home","Design and Construction", "Gallery", "Gallery", "Plants and Trees", "Contact Us"]
+import {Link} from 'react-router-dom';
 
-const Nav = ({passNav}) => {
- const  handleClick = (e) => {
-  e.preventDefault();
-  console.log('hit');
-  console.log(e.target.value)
-  passNav(e.target.value)
-  } 
+let buttonValues = [{ value: "Home", urlLink: '/' }, { value: "Design and Construction", urlLink: '/design-and-contstruction' }, { value: "Landscaping Supplies", urlLink: '/landscaping-supplies'}, { value: "Gallery", urlLink: '/past-work-gallery'}, { value: "Plants and Trees", urlLink: '/plants-and-trees'}, {value: "Contact Us", urlLink: '/contact'}]
+
+const Nav = () => {
+//  const  handleClick = (e) => {
+//   e.preventDefault();
+//   console.log('hit');
+//   console.log(e.target.value)
+//   passNav(e.target.value)
+//   } 
   return (
     <nav>
 
-      {buttonValues.map((value, index) => {
+      {buttonValues.map((item, index) => {
         return(
-          <button value={index} onClick={handleClick}>{value}</button>
+          <Link to={item.urlLink}>
+            <button value={index}>{item.value}</button>
+          </Link>
         )
       })}
       

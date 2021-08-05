@@ -8,7 +8,7 @@ import Landscaping from './components/tabs/landscaping';
 import Plants from './components/tabs/plants';
 import Contact from './components/tabs/contact';
 import React, { useState, useEffect } from 'react';
-
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function App() {
   const [content, setContent] = useState(0)
   
@@ -22,18 +22,25 @@ function App() {
 
 const navOptions = [<Home/>, <Design/>, <Landscaping/>, <Gallery/>, <Plants/>, <Contact/>]
 return (
+    <Router>
     <div className="App">
       <Header/>
       <Nav passNav={handleNavClick}/>
-      {navOptions[content]}
-      
        <div className="wrapper">
+    <Switch>
+      <Route path='/' exact component={Home}/>
+      <Route path='/design-and-contstruction' component={Design}/>
+      <Route path='/landscaping-supplies' component={Landscaping}/>
+      <Route path='/past-work-gallery' component={Gallery}/>
+      <Route path='/plants-and-trees' component={Plants}/>
+      <Route path='/contact' component={Contact}/>
+    </Switch>
 
-
-    <div className="push"></div>
-  </div>
+       <div className="push"></div>
+    </div>
       <Footer/>
     </div>
+    </Router>
   );
 }
 
