@@ -1,13 +1,22 @@
 import '../styles/nav.css';
-function Nav() {
+let buttonValues = ["Home","Design and Construction", "Gallery", "Gallery", "Plants and Trees", "Contact Us"]
+
+const Nav = ({passNav}) => {
+ const  handleClick = (e) => {
+  e.preventDefault();
+  console.log('hit');
+  console.log(e.target.value)
+  passNav(e.target.value)
+  } 
   return (
     <nav>
-      <button>Home</button>
-      <button>Design and Construction</button>
-      <button>Landscaping Supplies</button>
-      <button>Gallery</button>
-      <button>Plants and Trees</button>
-      <button>Contact Us</button>
+
+      {buttonValues.map((value, index) => {
+        return(
+          <button value={index} onClick={handleClick}>{value}</button>
+        )
+      })}
+      
     </nav>
   );
 }
