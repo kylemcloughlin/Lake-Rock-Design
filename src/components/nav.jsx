@@ -8,7 +8,7 @@ const Nav = () => {
     <nav className='nav-button-bar'>
       {buttonValues.map((item, index) => {
         return(
-          <Link to={item.urlLink}>
+          <Link to={item.urlLink} key={index}>
             <button value={index} className='nav-button'>{item.value}</button>
           </Link>
         )

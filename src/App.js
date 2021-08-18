@@ -7,6 +7,7 @@ import Gallery from './components/tabs/gallery';
 import Landscaping from './components/tabs/landscaping';
 import Plants from './components/tabs/plants';
 import Contact from './components/tabs/contact';
+import item from './components/tabs/item';
 import React, { useState, useEffect } from 'react';
 import banner from './banner.jpg';
 import './styles/App.css';
@@ -34,6 +35,7 @@ return (
     <Switch>
       <Route path='/' exact component={Home}/>
       <Route path='/design-and-contstruction' component={Design}/>
+      <Route path='/landscaping-supplies/:itemId' component={item}/>
       <Route path='/landscaping-supplies' component={Landscaping}/>
       <Route path='/past-work-gallery' component={Gallery}/>
       <Route path='/plants-and-trees' component={Plants}/>
