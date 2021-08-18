@@ -8,6 +8,9 @@ import Landscaping from './components/tabs/landscaping';
 import Plants from './components/tabs/plants';
 import Contact from './components/tabs/contact';
 import React, { useState, useEffect } from 'react';
+import banner from './banner.jpg';
+import './styles/App.css';
+
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function App() {
   const [content, setContent] = useState(0)
@@ -25,6 +28,7 @@ return (
     <Router>
     <div className="App">
       <Header/>
+      <img src={banner} className='banner'/>
       <Nav passNav={handleNavClick}/>
        <div className="wrapper">
     <Switch>

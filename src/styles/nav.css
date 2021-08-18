@@ -1,0 +1,25 @@
+.nav-button-bar {
+  /* border: 1px solid black; */
+ /* align-items: center; */
+ align-content: center;
+}
+
+.nav-button {
+  background-color: transparent;
+  /* border: 1px solid black; */
+  border: none;
+  width: 8em;
+  height: 3em;
+  padding: 1em;
+  transition: 20ms
+}
+
+.nav-button:focus {
+  color: #606c38;
+  transition: 20ms;
+  
+}
+.nav-button:hover {
+  color: #679436;
+  transition: 20ms;
+}
