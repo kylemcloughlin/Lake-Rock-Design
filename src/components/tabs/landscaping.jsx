@@ -15,6 +15,8 @@ function Landscaping() {
   },[]);
   const handleFetch = () => {
     fetch('https://fathomless-lake-40918.herokuapp.com/items') 
+    // fetch('http://localhost:3001/items') 
+
     .then(response  => {
       if(response.ok) {
         return response.json()
@@ -37,19 +39,22 @@ function Landscaping() {
   return (
     <div>
       <h1>Landscaping</h1>
-     <div>{items.map((item, index) => {
+     <div className='item-holder'>
+     {items.map((item, index) => {
        return (
          <Link to = {`landscaping-supplies/${index + 1}`}>
        <div key={item.id} className='holder'>
-               <img src={ItemImg}></img>
-               <h1>{item.name}</h1>
-               <h4>{item.disc}</h4>
-               <h2>{item.price}{item.unit}</h2>
+               <img src={ItemImg} className='img'></img>
+               <h1 className='name'>{item.name}</h1>
+               <p className='disc'>{item.disc}</p>
+               <h3 className='price'>View Options</h3>
                </div>
                </Link>)
      })
     }</div>
-
+        <div className='button-holder'>
+            <button>More</button>
+        </div>
 
     </div>
   );

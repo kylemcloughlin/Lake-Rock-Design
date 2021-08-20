@@ -1,5 +1,128 @@
+.item-holder {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+   
+}
 .holder {
   border: black 1px solid;    
+  width: 15.63em;
+  height: 25em;
   text-align: center;
-  width: 30em;
+  margin: 1em;
+  opacity: .7;
+  transition: 20ms;
+  position: relative;
+
+}
+
+.holder:hover{
+  opacity: 1;
+  transition: 20ms;
+
+}
+
+
+.price {
+     /* color: blue; */
+     position: absolute;
+     bottom: 0;
+     margin-left: 3.5em;
+}
+.button-holder {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+
+.disc {
+  width: 80%;
+  margin:  20px;
+}
+
+
+
+/* item page below */
+
+.product-holder {
+ display: block;
+ position: relative;
+ top: 2em;
+ width: 75%;
+ margin: auto;
+ margin-bottom: 3em; 
+ border: 1px solid black;
+ height: 45em;
+}
+
+.img-holder {
+    position: absolute;
+    left: 1em;
+    border: 1px solid black;
+    top: 2em;
+    width: 50%;
+    height: 21.6em;
+    text-align: center;
+    
+    
+  }
+  .item-page-img {
+    
+    margin-top: 1em;
+}
+
+.item-page-body-holder {
+      position: absolute;
+      right: 1em;
+      top: 2em;
+      height: 21.6em;
+      width: 40%;
+      border: 1px solid black;
+      display: block;
+
+}
+
+.sold-by-holder {
+  position: absolute;
+  bottom: 12em;
+  border: black 1px solid;
+  left: 0;
+  width: 96%;
+  margin: 1em;
+  border: black 1px solid;
+  text-align: center;
+}
+
+.sold-by-ttl {
+ /* float: s; */
+ position: relative;
+ right: 25%;
+
+}
+
+.form-holder {
+  position: absolute;
+  bottom: 0;
+  border: black 1px solid;
+  left: 0;  
+  width: 96%;
+  height: 10em;
+  margin: 1em;
+  border: black 1px solid;
+}
+
+.form-wrapper{
+  width: 100%;
+  background-color: aqua;
+  position: relative;
+}
+
+.add-to-cart {
+  position: absolute;
+  right: 0;
+  border: 1px solid black; 
+  height: 10em;
+  text-align: center;
 }

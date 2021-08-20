@@ -32,7 +32,6 @@ function Item({ match, location, handleCart}) {
       }
     })
     .then( data => {
-      // console.log(data)
       setItem(data)
     })
     .catch(error => {
@@ -50,7 +49,6 @@ function Item({ match, location, handleCart}) {
     let two = output[output.length - 2]
      output.splice(output.length - 2, 2, ".", `${one}${two}`)
     output = output.join("")
-    // console.log(output)
     return output
   }
   const handleSubmit = (e) => {
@@ -73,36 +71,39 @@ function Item({ match, location, handleCart}) {
       handleCart(helper)
 
       console.log('hit')
+      alert("added to cart!");
     } else {
       setCookie('cart', [addToCart], { path: '/' });
       handleCart([addToCart])
+      alert("added to cart!");
+
     }
   }
   return (
-    <div>
-      <h1>{item.name}</h1>
-      <img src={ItemImg}></img>
-      <h1>{item.name}</h1>
-      <h4>{item.disc}</h4>
-      {loading ? (<h2></h2>): (
-        <h2>{priceHelper(item.price)}{item.unit}</h2>
+    <div className='product-holder'>
+        <div className='item-holder'>
+        <div className='img-holder'>
+      <img src={ItemImg} className='item-page-img'></img>
+     </div>
+        <div className='item-page-body-holder'>
+          <h1>{item.name}</h1>
+          <h4>{item.disc}</h4>
+          </div>
+          <div className='sold-by-holder'> 
+            <h3 className='sold-by-ttl'>Sold By</h3>
+          <h2>{item.unit}</h2>
+          </div>     
 
-      ) }
-
-        
-      <form onSubmit={handleSubmit}>
-        <label for="points">Points:</label>
-        <input type="number" id="points" min='0' name="points"/>
-        <input type="submit" value="Submit" />
-      </form>
-      {/* <p>
-        <strong>Match Props: </strong>
-        <code>{JSON.stringify(match, null, 2)}</code>
-      </p>
-      <p>
-        <strong>Location Props: </strong>
-        <code>{JSON.stringify(location, null, 2)}</code>
-      </p> */}
+      </div>
+        <div className='form-holder'>
+          <form onSubmit={handleSubmit} className='form-wrapper'>
+          <div className='add-to-cart'>
+          {loading ? (<h2></h2>) : (<h2 className='product-price'>${priceHelper(item.price)}</h2>)}
+            <input type="number" id="points" min='0' name="points"/>
+            <input type="submit" value="Add To Cart" />
+          </div>
+          </form>
+        </div>
     </div>
   );
 }

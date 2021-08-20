@@ -25,8 +25,12 @@ const [cookies, setCookie, removeCookie] = useCookies(['cart']);
     setContent(value)
   }
  useEffect(() => {
-  //  console.log(cookies)
+  console.log('CONTENT', content)
+
 },[content]);
+
+
+
   const handleCart = (x) => {
     console.log(x);
     setCart(x)
