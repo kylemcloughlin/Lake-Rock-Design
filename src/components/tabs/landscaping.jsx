@@ -14,7 +14,7 @@ function Landscaping() {
 
   },[]);
   const handleFetch = () => {
-    fetch('http://localhost:3001/items') 
+    fetch('https://fathomless-lake-40918.herokuapp.com/items') 
     .then(response  => {
       if(response.ok) {
         return response.json()
