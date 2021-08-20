@@ -20,7 +20,10 @@ function Item({ match, location, handleCart}) {
   }, [loading]);
 
    const handleFetch = () => {
-     fetch(`http://localhost:3001/items/${match.params.itemId}`) 
+
+
+    //  fetch(`http://localhost:3001/items/${match.params.itemId}`)     
+     fetch(`https://fathomless-lake-40918.herokuapp.com/items/${match.params.itemId}`) 
     .then(response  => {
       if(response.ok) {
         return response.json()

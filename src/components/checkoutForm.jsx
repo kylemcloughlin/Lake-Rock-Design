@@ -66,7 +66,7 @@ function CheckoutForm ( {customersItems, clearCart}) {
 
 
     } else {
-      const rawResponse = await fetch('http://localhost:3001/customers', {
+      const rawResponse = await fetch('https://fathomless-lake-40918.herokuapp.com/customers', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
