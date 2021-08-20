@@ -1,0 +1,10 @@
+.left {
+  background: #ccc;
+  border: black 1px solid;
+  display: inline-block;
+  /* padding: 2%; */
+ 
+  width:  100%;
+  min-width: 25em;
+  /* margin: 1em */
+}

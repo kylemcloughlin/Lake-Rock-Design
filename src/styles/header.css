@@ -25,8 +25,8 @@ right: 1em;
   width: 2em;
   height: 2em; */
   position: absolute;
-  right: 7.5em;
-  bottom: .6em;
+ right: 1.5em;
+ bottom: .6em;
 
 
   display: block;
@@ -37,6 +37,16 @@ right: 1em;
   -webkit-border-radius: 20px;
   text-align: center;
 
+
+}
+
+.holler {
+  opacity: .7;
+  transition: 10ms;
+}
+.holler:hover {
+    opacity: 1;
+    transition: 10ms;
 }
 .img-div { 
   /* background-color: #fefefe;
@@ -59,6 +69,11 @@ right: 1em;
 }
 .company-number-img {
    margin-top: 11px;
+}
+.cart {
+  position: relative;
+   /* margin-top: 11px; */
+  top: 0em;
 }
 
 .company-address {

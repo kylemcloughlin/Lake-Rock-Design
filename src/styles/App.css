@@ -14,3 +14,11 @@
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -50px;
 }
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}

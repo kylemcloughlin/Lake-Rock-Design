@@ -1,0 +1,19 @@
+.checkout-holder {
+ background: #e7e7e7;
+ /* padding: 5%; */
+ /* text-align: center; */
+ width: 80%;
+ display: flex;
+  margin: auto;
+  min-height: 20em;
+}
+
+.right {
+  /* background: #ccc;
+  display: inline-block;
+  padding: 2%;
+  */
+  width: 100%;
+  border:  1px solid black;
+  float: right;
+}
