@@ -18,14 +18,15 @@ import './styles/App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function App() {
   const [content, setContent] = useState(0)
+  const [sold, setSold] = useState(false)
   const [cart, setCart] = useState([])
-const [cookies, setCookie, removeCookie] = useCookies(['cart']);
+const [cookies, setCookies, removeCookie] = useCookies(['cart']);
   const handleNavClick = (value) =>{ 
     console.log("value", value)
     setContent(value)
   }
  useEffect(() => {
-  console.log('CONTENT', content)
+
 
 },[content]);
 
@@ -38,26 +39,35 @@ const [cookies, setCookie, removeCookie] = useCookies(['cart']);
 
   const clearCart = () => {
     console.log('hihtithi')
-    setCart([])
     removeCookie('cart',  '/')
+    setCart([])
+    setSold(true)
   }
+
+   
+    
+    // setCookie('cart', [addToCart], { path: '/' });
+      // handleCart([addToCart])
+      // alert("added to cart!");
+   
+
 
 return (
     <Router>
     <div className="App">
-      <Header cart={cart}/>
+      <Header cart={cart} complete={sold}/>
       <img src={banner} className='banner'/>
       <Nav passNav={handleNavClick}/>
        <div className="wrapper">
     <Switch>
-      <Route path='/' exact component={Home}/>
+      <Route path='/' exact component={Home} alt='some value'/>
       <Route path='/design-and-contstruction' component={Design}/>
       <Route path='/landscaping-supplies/:itemId' render={({match}) => { return(<Item match={match} handleCart={handleCart}/>)}}/>
       <Route path='/landscaping-supplies' component={Landscaping}/>
       <Route path='/past-work-gallery' component={Gallery}/>
       <Route path='/plants-and-trees' component={Plants}/>
       <Route path='/contact' component={Contact}/>
-      <Route path='/checkout' render={() => { return(<Checkout cart={cart} clearCart={clearCart}/>)}} ></Route>
+      <Route path='/checkout' render={() => { return(<Checkout cart={cart} clearCart={clearCart} /> )}} ></Route>
       
         {/* add cart here */}
     </Switch>

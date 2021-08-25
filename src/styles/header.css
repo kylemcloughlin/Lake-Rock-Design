@@ -1,11 +1,18 @@
 .App-header {
-  background-color: #222222;
+  background-color: #1A1F16;
   min-height: 1em;
-  height: 4em;
-width: 100%;
-display: flex;
+  height: 7em;
+  width: 100%;
+  display: flex;
   color: white;
-position: relative;
+  position: relative;
+  border-bottom: #1E3F20 5px solid;
+}
+
+.serving {
+  position: absolute;
+  left: -20em;
+  top: 3.5em;
 }
 
 .company-name {
@@ -14,9 +21,9 @@ position: relative;
 }
 
 .company-number {
-position: absolute;
-right: 1em;
-/* bottom: .2em; */
+  position: absolute;
+  right: 5em;
+  /* bottom: .2em; */
 }
 
 .address-img-div {
@@ -25,8 +32,8 @@ right: 1em;
   width: 2em;
   height: 2em; */
   position: absolute;
- right: 1.5em;
-top: 12px;
+  right: 1.5em;
+  top: 12px;
 
 
   display: block;
@@ -44,11 +51,13 @@ top: 12px;
   opacity: .7;
   transition: 10ms;
 }
+
 .holler:hover {
-    opacity: 1;
-    transition: 10ms;
+  opacity: 1;
+  transition: 10ms;
 }
-.img-div { 
+
+.img-div {
   /* background-color: #fefefe;
   border-radius: 1em;
   width: 2em;
@@ -58,32 +67,34 @@ top: 12px;
   bottom: .6em;
 
 
-     display: block;
-     width: 40px;
-     height: 40px;
-     background: #E6E7ED;
-     -moz-border-radius: 20px;
-     -webkit-border-radius: 20px;
-     text-align:center;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #E6E7ED;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  text-align: center;
 
 }
+
 .company-number-img {
-   margin-top: 11px;
+  margin-top: 11px;
 }
+
 .cart {
- position: relative;
- margin-top: 11px;
- top: -3.5em;
- left: 1.5em;
- width: 1.3em;
- background: red;
- border-radius: 1em;
- text-align: center;
- border: 1px solid red;
+  position: relative;
+  margin-top: 11px;
+  top: -3.5em;
+  left: 1.5em;
+  width: 1.3em;
+  background: red;
+  border-radius: 1em;
+  text-align: center;
+  border: 1px solid red;
 }
 
 .company-address {
   position: absolute;
-  right: 10em;
+  right: 0em;
   /* bottom: .2em; */
 }

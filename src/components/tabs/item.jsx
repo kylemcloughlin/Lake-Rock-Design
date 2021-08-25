@@ -56,7 +56,8 @@ function Item({ match, location, handleCart}) {
     let  helper = cookies.cart
     let addToCart = {
       name: item.name,
-      value: e.target.points.value
+      value: e.target.points.value,
+      price: item.price
     }
     console.log(helper)
     if(helper != null) {

@@ -3,9 +3,11 @@
  /* padding: 5%; */
  /* text-align: center; */
  width: 80%;
- display: flex;
+ /* display: flex; */
   margin: auto;
-  min-height: 20em;
+  min-height: 45em;
+  height: 100%;
+  margin-bottom: 3em;
 }
 
 .right {
@@ -14,6 +16,104 @@
   padding: 2%;
   */
   width: 100%;
-  border:  1px solid black;
+  /* border:  1px solid black; */
   float: right;
+  position: relative;
+  height: 19.8em;
+}
+
+.right h2 {
+  margin: 1em;
+}
+
+.submit-button-checkout {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}
+
+.line-one {
+ position: absolute;
+ top: 4em;
+ left: 1em;
+ width: 100%;
+}
+
+.first-name-input,
+.last-name-input,
+.company-input,
+.town-input,
+.postal-input,
+.prov-select {
+  height: 2em;
+  width: 30%;
+  margin: .2em
+  
+}
+
+.prov-select {
+  height: 2.5em;
+
+}
+
+.first-name-input {
+  /* margin-left: .5em; */
+}
+.company-input {
+  /* margin-left: .5em; */
+
+}
+.line-two {
+ position: absolute;
+ top: 7em;
+ left: 1em;
+ width: 100%;
+ }
+
+
+ .street-input, .unit-input {
+    height: 2em;
+    width: 45%;
+    margin: .2em
+ }
+.line-three {
+ position: absolute;
+ top: 10em;
+ left: 1em;
+ width: 100%;
+ }
+
+.line-four {
+  position: absolute;
+  top: 13em;
+  left: 1em;
+  width: 100%;
+}
+.email {
+   height: 2em;
+   width: 92%;
+   margin: .2em
+}
+
+.stripe {
+  border: black solid 1px;
+   height: 2em;
+   width: 92%;
+   margin: .2em;
+   padding-top: .5em;
+   padding-left: .5em;
+
+}
+
+.submit-button-checkout {
+   position: absolute;
+   bottom: -2em;
+   left: 2em;
+}
+
+.line-five {
+  position: absolute;
+  top: 16em;
+  left: 1em;
+  width: 100%;
 }

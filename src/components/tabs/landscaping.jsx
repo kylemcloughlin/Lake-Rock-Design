@@ -38,7 +38,13 @@ function Landscaping() {
 
   return (
     <div>
-      <h1>Landscaping</h1>
+      <h1>Our Landscape Material</h1>
+   
+  <p>At Rock Lake Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes.</p>
+  
+  <p>Whether you are a homeowner, DIYer, Property Manager, General Contractor, Landscape Architect, or Lawn Maintenance company, we stock the materials you need to create inspiring outdoor spaces</p>
+  
+  
      <div className='item-holder'>
      {items.map((item, index) => {
        return (
@@ -53,7 +59,7 @@ function Landscaping() {
      })
     }</div>
         <div className='button-holder'>
-            <button>More</button>
+            <button className='lndscp-button'>More</button>
         </div>
 
     </div>

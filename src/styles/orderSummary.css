@@ -1,10 +1,133 @@
 .left {
   background: #ccc;
-  border: black 1px solid;
-  display: inline-block;
-  /* padding: 2%; */
- 
+  /* display: flex; */
+  border-top: black 1px solid;
   width:  100%;
   min-width: 25em;
+  
   /* margin: 1em */
+}
+
+.order-head h2 {
+     margin-bottom: 1.5em;
+    }
+    
+    
+    .left ul {
+      list-style: none;
+      
+    }
+    
+    
+    .remove-button {
+      background: none;
+      border: none;
+      /* position: relative; */
+      /* bottom: 1em; */
+      text-align: center;
+      height: 1.5em;
+    }
+    
+    .remove-button:hover{
+      background-color: salmon;
+      color: #fefefe;
+      border-radius: 1em;
+    }
+
+.order-head {
+  display: flex;
+  width: 100%;
+  padding: .5em;
+  position: relative;
+}
+
+/* .order-head h5 {
+  position: absolute;
+  
+  left: 25%;
+} */
+
+
+.product {
+ position: absolute;
+ bottom: -.5em;
+ left: 7%;
+}
+.quant{
+  position: absolute;
+  bottom: -.5em;
+  left: 40%;
+}
+
+.ppu {
+  position: absolute;
+  bottom: -.5em;
+  left: 55%;
+  
+}
+
+.ttl {
+  position: absolute;
+  bottom: -.5em;
+  left: 80%;
+}
+
+.os-total-holder {
+  position: relative;
+  width: 100%;
+  border: solid black 1px;
+  height: 15em;
+}
+
+/* .quant */
+.subtotal-os {
+   position: absolute;
+   /* bottom: -.5em; */
+   left: 80%;
+}
+.hst-os {
+  position: absolute;
+  bottom: 25%;
+  left: 80%;
+}
+.total-os {
+  position: absolute;
+  bottom: 15%;
+  left: 80%;
+}
+
+
+.item-checkout {
+  width: 100%;
+  /* border:2px solid black; */
+  display: flex;
+  position: relative;
+}
+
+
+
+.name-and-button {
+  display: flex;
+  /* position: absolute; */
+  bottom: -.5em;
+  left: 15%;
+}
+
+.co-value {
+  position: absolute;
+  bottom: -.5em;
+  left: 40%;
+}
+
+.co-price {
+  position: absolute;
+  bottom: -.5em;
+  left: 55%;
+
+}
+
+.co-total {
+  position: absolute;
+  bottom: -.5em;
+  left: 80%;
 }

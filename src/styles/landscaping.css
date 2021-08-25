@@ -13,6 +13,7 @@
   opacity: .7;
   transition: 20ms;
   position: relative;
+  border-radius: 1em; 
 
 }
 
@@ -24,7 +25,7 @@
 
 
 .price {
-     /* color: blue; */
+     color: #356E39;
      position: absolute;
      bottom: 0;
      margin-left: 3.5em;
@@ -36,13 +37,33 @@
 }
 
 
+.lndscp-button {
+  height: 4em;
+  width: 15em;
+  border: none;
+  background: #356E39;
+  color: #fefefe;
+}
+
+.lndscp-button:hover {
+  border: #356E39 2px solid;
+  color: #356E39;
+  background: transparent;
+}
+
+
 
 .disc {
   width: 80%;
   margin:  20px;
 }
 
+ .img {
 
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+
+ }
 
 /* item page below */
 
@@ -71,6 +92,8 @@
   .item-page-img {
     
     margin-top: 1em;
+  
+
 }
 
 .item-page-body-holder {
@@ -110,7 +133,7 @@
   width: 96%;
   height: 10em;
   margin: 1em;
-  border: black 1px solid;
+  /* border: black 1px solid; */
 }
 
 .form-wrapper{
@@ -122,7 +145,7 @@
 .add-to-cart {
   position: absolute;
   right: 0;
-  border: 1px solid black; 
+  /* border: 1px solid black;  */
   height: 10em;
   text-align: center;
 }

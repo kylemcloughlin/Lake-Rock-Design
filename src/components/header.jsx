@@ -5,12 +5,15 @@ import { useCookies } from 'react-cookie';
 import shoppingCart from './shopping-cart.png'
 import { Link } from 'react-router-dom';
 
-function Header({cart}) {
+function Header({cart, complete}) {
 let [count, setCount] = useState(cart)
 const [cookies, setCookie] = useCookies(['cart']);
 
   useEffect(() => {
-      console.log(cookies['cart'])
+    if (complete) {
+      console.log('hit')
+      setCount([])
+    }
     if (cookies.cart != undefined) { 
       setCount(cookies['cart'])
     }
@@ -20,12 +23,20 @@ const [cookies, setCookie] = useCookies(['cart']);
       setCount(cart)
     }
 
-  }, [ cart]);
+  }, [ cart, complete]);
   
   return (
     <div className="App-header">
-      <div className="company-name">
-        <h6 className="company-name-title">Lake Rock Design</h6>
+      <Link to={``}>
+        <div className="company-name">
+          <h6 className="company-name-title">Lake Rock Design</h6>
+        </div>
+      </Link>
+      <div className='company-number'>
+      <div className='img-div'>
+        <img className='company-number-img' src={phone}/>
+      </div>
+        <h6> (705)-868-3590</h6>
       </div>
       <div className='company-address'>
         {!count.length > 1 ? (
@@ -43,14 +54,11 @@ const [cookies, setCookie] = useCookies(['cart']);
         </div>
         </div>
         </Link>    
-        )}     
+        )}
+          <h5 className='serving'>Serving North Kawartha and Beyond</h5>
+        <div>
+        </div>     
     </div>
-      <div className='company-number'>
-      <div className='img-div'>
-        <img className='company-number-img' src={phone}/>
-      </div>
-        <h6 className='company-number-number'> (705)-868-3590</h6>
-      </div>
     </div>
   );
 }

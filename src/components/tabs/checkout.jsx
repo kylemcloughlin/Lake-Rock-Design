@@ -12,26 +12,91 @@ const stripePromise = loadStripe('pk_test_51JPZAlKUlzH2P3ixGDOz377XqBrkm4UcxsW47
 
 
 function Checkout({ cart, clearCart } ) {
-  console.log('yoyooy', clearCart)
+  // console.log('yoyooy', clearCart)
   const [customersItems, setCustomersItems] = useState()
+  const [complete, setComplete] = useState(false)
+
   const [cookies, setCookie] = useCookies(['cart']);
+  console.log(cookies)
 
   useEffect(() => {
-    if (cart.length === 0) {
-      console.log('hit')
       setCustomersItems(cookies['cart'])
-    }
-    console.log(cart)
+ 
 
   }, [customersItems])
 
+  const handlePartOne = () => {
+    console.log('eheheheh')
+    setComplete(true)
+  }
+
+  const updateCart = (prdct, kase) => {
+    if( kase === 'remove') {
+      let help = customersItems
+      help.forEach((item, index) => {
+        if (item.name === prdct.name) {
+          console.log('hit', index)
+          help.splice(index, 1)
+          setCookie('cart', help, { path: '/' });
+           setCustomersItems(help)
+        alert("removed from cart!");
+        }
+})
+ } else if(kase === 'add') {
+   let help = customersItems
+   help.forEach((item, index) => {
+      console.log(item.name, prdct.name)
+    if (item.name === prdct.name) {
+       item.value = Number(item.value) + 1
+       console.log('!!!')
+       console.log(item.value)
+       console.log('!!!!')
+
+      }
+    })
+    
+    console.log(prdct)
+      setCookie('cart', help, { path: '/' });
+      setCustomersItems(help)
+      alert("added to cart!");
+  
+  } else {
+      let help = customersItems
+      help.forEach((item, index) => {
+        console.log(item.name, prdct.name)
+        if (item.name === prdct.name) {
+          item.value = Number(item.value) - 1
+          console.log('!!!')
+          console.log(item.value)
+          console.log('!!!!')
+
+        }
+      })
+
+      console.log(prdct)
+      setCookie('cart', help, { path: '/' });
+      setCustomersItems(help)
+      alert("subtracted from cart!");
+  }
+
+}
+
+  if (complete) {
+    return (
+      <div>
+        <h1>Checkout Complete</h1>
+      </div>
+    )
+  }
   return (
+    
+   
     <div>
       <h1>Checkout</h1>
-  <div className='checkout-holder'>
+      <div className='checkout-holder'>
         <Elements stripe={stripePromise}>
-        <OrderSummary customersItems={customersItems}/>
-        <CheckoutForm customersItems={customersItems} clearCart={clearCart}/>
+        <OrderSummary customersItems={customersItems} updateCart={updateCart}/>
+        <CheckoutForm customersItems={customersItems} clearCart={clearCart} handleFinish={handlePartOne}/>
         </Elements>
       </div>
     </div>

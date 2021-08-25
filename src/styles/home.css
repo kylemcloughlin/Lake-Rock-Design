@@ -27,11 +27,19 @@
 
 
 .quest {
-  border: 1px solid black;
+  /* border: .5px solid black; */
+  /* color: #606c38; */
+  background: #A0B93C;
   width: 40%;
   height: 10em;
   text-align: center;
   margin-right: 5%;
+  border-radius: 1em;
+  box-shadow: 5px 10px #888888
+
+}
+.quest-one {
+  color: black;
 
 }
 .main-holder-two {
@@ -40,9 +48,29 @@ justify-content: center;
 .card {
   border: 1px solid black;
   height: 15em;
-  width: 20%;
-  margin-left: 2em;
-  margin-right: 2em;
+  width: 25%;
+  margin-left: .5em;
+  margin-right: .5em;
   text-align: center;
+  position: relative;
+  border-radius: .5em;
 
+}
+
+.more-info-button {
+    position: absolute;
+    bottom: 1em;
+    left: 25%;
+    height: 3em;
+    width: 50%;
+    border: none;
+    background: #606c38;
+    color: #fefefe
+    
+  }
+  
+  .more-info-button:hover {
+    border: #606c38 2px solid;
+    color: #606c38;
+    background: transparent;
 }
