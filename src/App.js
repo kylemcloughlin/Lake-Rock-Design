@@ -9,6 +9,7 @@ import Plants from './components/tabs/plants';
 import Contact from './components/tabs/contact';
 import Item from './components/tabs/item';
 import Checkout from './components/tabs/checkout';
+import Request from './components/tabs/request'
 import React, { useState, useEffect } from 'react';
 import banner from './banner.jpg';
 import { useCookies } from 'react-cookie';
@@ -67,6 +68,8 @@ return (
       <Route path='/past-work-gallery' component={Gallery}/>
       <Route path='/plants-and-trees' component={Plants}/>
       <Route path='/contact' component={Contact}/>
+      <Route path='/request-quote' component={Request}/>
+
       <Route path='/checkout' render={() => { return(<Checkout cart={cart} clearCart={clearCart} /> )}} ></Route>
       
         {/* add cart here */}

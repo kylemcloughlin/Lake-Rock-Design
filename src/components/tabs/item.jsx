@@ -1,8 +1,9 @@
 // import '../styles/home.css';
 import React, { useState, useEffect } from 'react';
 import ItemImg from '../../test-item-img.jpeg';
+import photo from '../../bangerLogo.png';
 import { useCookies } from 'react-cookie';
-
+import Modal from '../modal.jsx';
 function Item({ match, location, handleCart}) {
   let [item, setItem] = useState({})
   let [error, setError] = useState(null)
@@ -72,36 +73,48 @@ function Item({ match, location, handleCart}) {
       handleCart(helper)
 
       console.log('hit')
-      alert("added to cart!");
+      // alert("added to cart!");
+      let modal = document.getElementById("myModal");
+      modal.style.display = "block";
+      setTimeout(function () { modal.style.display = "none"; }, 2000);
     } else {
       setCookie('cart', [addToCart], { path: '/' });
       handleCart([addToCart])
-      alert("added to cart!");
+      // alert("added to cart!");
+      let modal = document.getElementById("myModal");
+      modal.style.display = "block";
+      setTimeout(function () { modal.style.display = "none"; }, 2000);
 
     }
   }
   return (
     <div className='product-holder'>
+    <Modal/>
         <div className='item-holder'>
         <div className='img-holder'>
       <img src={ItemImg} className='item-page-img'></img>
+          <h3>click image to enlarge</h3>
      </div>
         <div className='item-page-body-holder'>
           <h1>{item.name}</h1>
           <h4>{item.disc}</h4>
           </div>
           <div className='sold-by-holder'> 
-            <h3 className='sold-by-ttl'>Sold By</h3>
-          <h2>{item.unit}</h2>
+            <h3 className='sold-by-ttl'>Availability</h3>
+          <div className='sold-by'> 
+            <h3>{item.unit}</h3>
+           </div>
           </div>     
 
       </div>
         <div className='form-holder'>
+        <img className='item-img' src={photo}/>
           <form onSubmit={handleSubmit} className='form-wrapper'>
           <div className='add-to-cart'>
           {loading ? (<h2></h2>) : (<h2 className='product-price'>${priceHelper(item.price)}</h2>)}
-            <input type="number" id="points" min='0' name="points"/>
-            <input type="submit" value="Add To Cart" />
+            <input type="number" id="points" min='0' name="points" className='add-to-cart-input '/>
+            <br/>
+            <input className='add-to-cart-button' type="submit" value="Add To Cart" />
           </div>
           </form>
         </div>

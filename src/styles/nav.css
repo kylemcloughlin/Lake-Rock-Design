@@ -18,9 +18,10 @@
   border: none;
   width: 10em;
   height: 4em;
-  padding: 1em;
+  padding: 0em;
   transition: 20ms;
   color: #fefefe;
+  /* margin: .5em;; */
 }
 
 
@@ -31,6 +32,37 @@
 }
 
 .nav-button:hover {
-  background-color: #606c38;  
+  background-color: #606c38;
   transition: 20ms;
+}
+
+.nav-button-bar-reg {
+  visibility: visible;
+}
+
+.nav-button-bar-mobile {
+  visibility: hidden;
+  /* position: absolute; */
+}
+
+
+.nav-button-bar {
+  position: relative;
+  align-items: center;
+  width: 100%;
+
+}
+
+@media only screen and (max-width: 1020px) {
+  .nav-button-bar-reg {
+    visibility: hidden;
+    width: 0%;
+
+  }
+
+  .nav-button-bar-mobile {
+    visibility: visible;
+    position: absolute;
+    left: 1em;
+  }
 }

@@ -2,13 +2,17 @@ import '../styles/header.css';
 import phone from './phone.png';
 import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
-import shoppingCart from './shopping-cart.png'
+import shoppingCart from './shopping-cart.png';
 import { Link } from 'react-router-dom';
+import photo from '../bangerLogo.png';
 
 function Header({cart, complete}) {
 let [count, setCount] = useState(cart)
 const [cookies, setCookie] = useCookies(['cart']);
+  const handleTelly = () => {
 
+    window.location.href = 'tel:4165095458';
+  }
   useEffect(() => {
     if (complete) {
       console.log('hit')
@@ -29,14 +33,14 @@ const [cookies, setCookie] = useCookies(['cart']);
     <div className="App-header">
       <Link to={``}>
         <div className="company-name">
-          <h6 className="company-name-title">Lake Rock Design</h6>
+          <img  src={photo} />
         </div>
       </Link>
-      <div className='company-number'>
+      <div className='company-number' onClick={handleTelly}>
       <div className='img-div'>
         <img className='company-number-img' src={phone}/>
       </div>
-        <h6> (705)-868-3590</h6>
+        <h6 className='number'> (705)-868-3590</h6>
       </div>
       <div className='company-address'>
         {!count.length > 1 ? (

@@ -36,7 +36,7 @@
  position: absolute;
  top: 4em;
  left: 1em;
- width: 100%;
+ width: 99%;
 }
 
 .first-name-input,
@@ -67,7 +67,7 @@
  position: absolute;
  top: 7em;
  left: 1em;
- width: 100%;
+ width: 100.5%;
  }
 
 
@@ -85,8 +85,8 @@
 
 .line-four {
   position: absolute;
-  top: 13em;
-  left: 1em;
+  top: 3em;
+  left: 0em;
   width: 100%;
 }
 .email {
@@ -107,13 +107,35 @@
 
 .submit-button-checkout {
    position: absolute;
-   bottom: -2em;
-   left: 2em;
-}
+   /* bottom: -2em; */
+   left: 1.5em;
+    margin-top: .5em;
+    width: 9em;
+    height: 3em;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    border-radius: .2em;
+    border: none;
+    background-color: #49974E;
+    color: #f3f3f3;
+    transition: 2ms;
+  }
+
+  .submit-button-checkout:hover {
+    transition: 2ms;
+    background-color: #356E39;
+
+
+  }
+
+  .chck-title {
+    text-align: center;
+  }
 
 .line-five {
   position: absolute;
-  top: 16em;
+  top: 13em;
   left: 1em;
   width: 100%;
 }

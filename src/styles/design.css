@@ -10,7 +10,7 @@
 
 }
 
-.photo {
+.design-photo {
       margin-bottom: 2.5em;
       margin-right: 4%
 }
@@ -18,4 +18,17 @@
 
 .title {
   color: #679436;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .body-holder {
+    display: block;
+  }
+
+  .design-photo {
+    margin: auto;
+    width: 100%;
+  }
 }

@@ -1,14 +1,16 @@
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { CardElement, useStripe, useElements} from "@stripe/react-stripe-js";
 // import { useCookies } from 'react-cookie';
 import React, { useState, useEffect } from 'react';
 import '../styles/checkout.css';
 import OrderSummary from "./orderSummary";
-
-function CheckoutForm({ customersItems, clearCart, handleFinish }) {
+import ErrorModal from './errorModal.jsx';
+function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, payment}) {
   let [orders, SetOrders] = useState([]);
   const [complete, setComplete] = useState(false);
   const [secondStep, setSecondStep] = useState(false);
   const [shippingInfo,setShippingInfo] = useState({})
+  const [errorMessage, setErrorMessage] = useState('')
+  // const [custEmail, setCustEmail] = useState('');
   const stripe = useStripe();
   const elements = useElements();
 
@@ -43,9 +45,15 @@ function CheckoutForm({ customersItems, clearCart, handleFinish }) {
   };
   const onFirstSubmit = (event) => {
     event.preventDefault()
-    let { first, last, company, street, unit, town, postal, prov } = event.target;
+    let { first, last, company, street, unit, town, postal, prov, email } = event.target;
     if(prov.value != 'ON') {
       console.log('error')
+      setErrorMessage('We only provide shipping within Ontario.');
+      let error = document.getElementById("myErrorModal");
+      error.style.display = "block";
+      setTimeout(function () { error.style.display = "none"; }, 1500);
+
+
     } else {      
       setShippingInfo({
         first: first.value,
@@ -55,8 +63,10 @@ function CheckoutForm({ customersItems, clearCart, handleFinish }) {
         unit: unit.value,
         town: town.value,
         postal: postal.value,
-        province: prov.value
+        province: prov.value,
+        email: email.value
       })
+      handleSwitch(true)
       setSecondStep(true)
     }
   }
@@ -82,7 +92,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish }) {
 
   const onSubmit = async (event) => {
     event.preventDefault()
-    let { first, last, company, street, unit, town, postal, prov, email } = event.target;
+    let { first, last, company, street, unit, town, postal, prov } = event.target;
     let output =  {
       first: first.value,
       last: last.value,
@@ -91,8 +101,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish }) {
       unit: unit.value,
       town: town.value,
       postal: postal.value,
-      prov: prov.value,
-      email: email.value
+      prov: prov.value
     }
     console.log(output)
     if (!stripe || !elements) {
@@ -104,7 +113,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish }) {
       type: 'card',
       card: elements.getElement(CardElement),
       billing_details: {
-        email: email.value,
+        email: shippingInfo.email,
 
       },
     });
@@ -130,19 +139,52 @@ function CheckoutForm({ customersItems, clearCart, handleFinish }) {
       const content = await rawResponse.json();
       if (content.payment_status === 'succeeded') {
         // setComplete(true)
-        handleFinish()
+        handleFinish(`A receipt will be sent to email: ${shippingInfo.email}`)
         clearCart();
       }
 
     }
 
   }
+
+const handleRequest = async (e) => {
+  e.preventDefault();
+  // const response = await fetch('http://localhost:3001/inquiry_email', {
+    const response = await fetch(`https://fathomless-lake-40918.herokuapp.com/inquiry_email`, { 
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        shipping: shippingInfo,
+        cart: customersItems
+
+      })
+    });
+    const content = await response;
+    if (content.status === 200) {
+      handleFinish(`We successfully recieved your request, A response will be sent to the email: ${shippingInfo.email}`);
+      clearCart();
+    }
+    console.log(content.status)
+
+  
+}
+
   if (secondStep) {
     return (
       <div>
-        <input name='checkbox' type='checkbox' onClick={handleShippingClick}/>
-        <label for='checkbox'>Same As Shipping</label>
-      <form onSubmit={onSubmit} className='right'>
+        <div>
+          {payment ? (
+            
+            <button onClick={handleRequest}> Request Shipping Quote</button>
+            
+            ) : (
+              <div>
+              <input name='checkbox' type='checkbox' onClick={handleShippingClick}/>
+              <label for='checkbox'>Same As Shipping</label>
+              <form onSubmit={onSubmit} className='right'>
         <h2>Billing Information Part 2 of 2</h2>
         <div>
           <div className='line-one'>
@@ -174,21 +216,24 @@ function CheckoutForm({ customersItems, clearCart, handleFinish }) {
               <option value="YT">Yukon</option>
             </select>
           </div>
-        </div>
-          <div className='line-four'>
-          <input type='email' placeholder='email' name='email' className='email'/>
-          </div>  
-          <div className='line-five'>            
-            <CardElement options={cardOptions} className='stripe'/>
+        </div>  
 
-          </div>
-          <button type='submit' disabled={!stripe} className='submit-button-checkout'>Submit</button>
-      </form>
-        </div>
+            <div className='line-five'>            
+              <CardElement options={cardOptions} className='stripe'/>
+            </div >
+            <button type='submit' disabled={!stripe} className='submit-button-checkout'>Submit</button>
+            
+            </form>
+           </div> )}
+            </div>
+              </div>
     )
   }
   return (
     <form onSubmit={onFirstSubmit} className='right'>
+      <ErrorModal message={errorMessage}/>
+
+
       <h2>Shipping Information part 1 of 2</h2>
       <div>
         <div className='line-one'>
@@ -219,6 +264,9 @@ function CheckoutForm({ customersItems, clearCart, handleFinish }) {
             <option value="NU">Nunavut</option>
             <option value="YT">Yukon</option>
           </select>
+          <div className='line-four'>
+            <input type='email' placeholder='email' name='email' className='email' />
+          </div>
         </div>
   
         <button type='submit' className='submit-button-checkout' disabled={orders.length === 0 ? (true) : (false)}>Submit</button>

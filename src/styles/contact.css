@@ -1,0 +1,96 @@
+.contact-holder {
+  display: flex
+}
+
+.contact-body {
+  border: 1px solid black;
+  margin: 1em;
+  height: 60%;
+  min-height: 40em;
+
+}
+
+.contact-body h1 {
+  margin: 1em;
+}
+
+.contact-body p {
+  width: 50%;
+  margin: 1.5em;
+  margin-left: 3em; 
+  line-height: 2em;
+
+}
+
+.contact-photo {
+  margin: 1em;
+  position: relative;
+  height: 100%;
+}
+
+.contact-body-main {
+  display: flex
+}
+
+.contact-body-main-list {
+  /* border: 1px solid black; */
+  width: 100%;
+  text-align: center;
+  margin: 1em;
+}
+
+.contact-list {
+  list-style: none;
+}
+
+.contact-list li {
+margin: 1em;
+}
+.call-button {
+  width: 9em;
+  border: 2px solid black;
+  color: black;
+  font-size: 17px;
+  height: 3em;
+  background: none;
+  margin-left: 1em; 
+}
+
+.call-button:hover {
+border: 2px solid #679436;
+color: #679436;
+}
+
+.call-button:focus {
+  border: 2px solid #679436;
+  color: #679436;
+}
+
+.email-btn {
+  opacity: .8;
+}
+
+.email-btn:hover {
+  opacity: 1;
+}
+
+
+@media only screen and (max-width: 1030px) {
+  .contact-holder {
+    display: grid;
+    text-align: center;
+  }
+
+    .contact-holder {
+      display: grid;
+    }
+
+    .contact-body p{
+      width: 87%;
+    }
+
+    .contact-photo {
+      width: 100%;
+      margin: 0;
+    }
+  }

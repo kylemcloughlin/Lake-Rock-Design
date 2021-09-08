@@ -75,7 +75,7 @@
 .os-total-holder {
   position: relative;
   width: 100%;
-  border: solid black 1px;
+  /* border: solid black 1px; */
   height: 15em;
 }
 
@@ -117,7 +117,36 @@
   position: absolute;
   bottom: -.5em;
   left: 40%;
+  display: flex;
 }
+.co-value h4 {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.co-value-btn {
+  height: 2em;
+  width: 2em;
+ font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 400;
+ border-radius: .2em;
+ border: none;
+ background-color: #49974E;
+ color: #f3f3f3;
+ transition: 2ms;
+ }
+
+ .co-value-btn:hover {
+   transition: 2ms;
+   background-color: #356E39;
+
+
+ }
+
+
+
+
 
 .co-price {
   position: absolute;
@@ -130,4 +159,29 @@
   position: absolute;
   bottom: -.5em;
   left: 80%;
+}
+
+.checkbox-holder {
+border-top: 1px solid black;
+border-bottom: 1px solid black;
+
+position: absolute;
+top: 3em;
+width: 99%;
+height: 5em;
+padding: .2em;
+}
+
+.checkbox-holder input,
+.checkbox-holder label {
+  float: right;
+  margin-right: 1em;
+  /* margin-top: 1em; */
+
+}
+.deliver-holder {
+  margin: 1em;
+}
+.pick-up-holder {
+  margin: 1em;
 }

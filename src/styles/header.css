@@ -1,7 +1,7 @@
 .App-header {
   background-color: #1A1F16;
   min-height: 1em;
-  height: 7em;
+  height: 11em;
   width: 100%;
   display: flex;
   color: white;
@@ -24,6 +24,10 @@
   position: absolute;
   right: 5em;
   /* bottom: .2em; */
+  opacity: .7;
+}
+.company-number:hover {
+  opacity: 1;
 }
 
 .address-img-div {
@@ -79,6 +83,8 @@
 
 .company-number-img {
   margin-top: 11px;
+  /* opacity: .2
+  ; */
 }
 
 .cart {
@@ -97,4 +103,20 @@
   position: absolute;
   right: 0em;
   /* bottom: .2em; */
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+.img-div {
+  position: absolute;
+  right: -.5em;
+  /* bottom: -3.3em; */
+}
+.number{
+  visibility: hidden;
+}
 }

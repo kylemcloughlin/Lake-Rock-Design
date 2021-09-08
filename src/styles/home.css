@@ -74,3 +74,76 @@ justify-content: center;
     color: #606c38;
     background: transparent;
 }
+
+.request-holder {
+      border: #606c38 2px solid;
+      height: 10em;
+      color: #606c38;
+      background: #606c38;
+      text-align: center;
+      width: 90%;
+      margin: auto;
+      margin-top: 1em;
+      position: relative;
+}
+
+
+.request-btn {
+      position: absolute;
+      bottom: 1em;
+      left: 25%;
+      height: 3em;
+      width: 50%;
+      border: none;
+      background: #606c38;
+      color: #fefefe
+}
+
+ .request-btn:hover {
+   border: #606c38 2px solid;
+   color: #606c38;
+   background: transparent;
+ }
+
+
+@media only screen and (max-width: 1024px) {
+    .request-holder {
+      width: 100%;
+      height: 15em;
+
+    }
+    .main-holder {
+      display: block;
+    }
+    .quest {
+      width: 80%;
+      margin: auto;
+
+    }
+    .home-para {
+      width: 90%;
+    }
+
+    .card {
+          width: 34%;
+          margin-left: 0em;
+          margin-right: 0em;
+    }
+}
+
+
+@media only screen and (max-width: 600px  ) {
+ .main-holder-two {
+   display: block;
+ }
+ 
+  .card {
+     width: 100%;
+     margin-bottom: 1em;
+  }
+
+   .quest {
+    width: 100%;
+
+   }
+}

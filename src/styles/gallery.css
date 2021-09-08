@@ -1,1 +1,36 @@
-@import "~react-image-gallery/styles/css/image-gallery.css";
+
+
+.alice-carousel__stage-item {
+  /* width: 60% !important; */
+
+}
+
+
+.carousel-holder {
+  /* border: black solid 1px; */
+ display: block;
+ justify-content: right;
+ width: 52%;
+ margin: auto;
+}
+
+
+.galler-wrapper {
+  /* border: black solid 1px; */
+  position: relative;   
+  display: flow-root;
+}
+
+
+@media only screen and (max-width: 1024px) {
+.carousel-holder {
+  width: 90%;
+}
+}
+
+
+@media only screen and (max-width: 800px) {
+  .carousel-holder {
+    width: 100%;
+  }
+}

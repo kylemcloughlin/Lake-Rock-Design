@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/orderSummary.css';
 
-function OrderSummary({customersItems, updateCart}) {
+function OrderSummary({customersItems, updateCart, swtch, handleChangeInPayment}) {
   console.log(customersItems)
   let [orders, SetOrders] = useState([])
   let [dropOff, SetdropOff] = useState(false)
@@ -140,16 +140,36 @@ let name = e.target.name
   if (name === 'pickup') {
   SetdropOff(false)
   SetPickUp(true)
+  handleChangeInPayment()
+
 } else  {
   SetdropOff(true)
   SetPickUp(false)
+  handleChangeInPayment()
+
 }
 } 
-    if(orders.length === 0) {
+    if(swtch) {
       console.log(orders)
       return (
-        <div>
-        </div>
+                <div className='os-total-holder'>       
+                <h3 className='subtotal-os'>Subtotal: ${totalSum(orders)}</h3>
+                <div className='checkbox-holder'>
+                <div className='deliver-holder'>
+                    <label for='checkbox'>Request Shipping Quote</label>
+                    <input name='checkbox' type='checkbox' checked={dropOff} onClick={handleCheckBox}/>
+                </div>
+                    <br/>
+                    <div className='pick-up-holder'>
+                    <label for='pickup'>Pick Up</label>
+                    <input name='pickup' type='checkbox' checked={pickUp} onClick={handleCheckBox}/>
+                    </div>
+                </div>
+                  <div className='underline'/>
+                <h3 className='hst-os'>HST: ${hst(orders)}</h3>
+                <h3 className='total-os'>Total: ${totalWithTax(orders)}(CAD)</h3>
+               </div> 
+
           )
     }
   
@@ -176,9 +196,9 @@ return (
              </div>
                {/* <input className='co-value' type="number" id="points" min='0' name={} value={item.value} onClick={handleNumberClick.bind(this, item)}/> */}
                <div className='co-value'>
-                <button value='+' onClick={handlePos.bind(this, item)}>+</button>
+                 <button className='co-value-btn' value='+' onClick={handlePos.bind(this, item)}>+</button>
                    <h4>{item.value}</h4>
-                 {item.value > 0 ? (<button value='-' onClick={handleNeg.bind(this, item)}>-</button>) : (<div/>)}
+                 {item.value > 0 ? (<button className='co-value-btn' value='-' onClick={handleNeg.bind(this, item)}>-</button>) : (<div/>)}
              </div>
              <h4 className='co-price'>${priceHelper(item.price)}</h4>
              <h4 className='co-total'> ${totalHelper(item.price, item.value)}</h4>
@@ -186,18 +206,7 @@ return (
            )
           })}
           </ul>
-          <div className='underline'/>
-        <div className='os-total-holder'>       
-        <h3 className='subtotal-os'>Subtotal: ${totalSum(orders)}</h3>
-        <div>
-            <label for='checkbox'>Request Shipping Quote</label>
-            <input name='checkbox' type='checkbox' checked={dropOff} onClick={handleCheckBox}/>
-            <label for='pickup'>Pick Up</label>
-            <input name='pickup' type='checkbox' checked={pickUp} onClick={handleCheckBox}/>
-        </div>
-        <h3 className='hst-os'>HST: ${hst(orders)}</h3>
-        <h3 className='total-os'>Total: ${totalWithTax(orders)}(CAD)</h3>
-       </div>
+
         
         </div>
     </div>

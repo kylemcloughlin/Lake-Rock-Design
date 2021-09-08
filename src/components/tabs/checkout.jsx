@@ -6,7 +6,9 @@ import CheckoutForm from '../checkoutForm';
 import OrderSummary from '../orderSummary';
 import { useCookies } from 'react-cookie';
 import '../../styles/checkout.css';
-
+import Modal from '../modal.jsx'
+import ErrorModal from '../errorModal.jsx';
+import check from '../../checkmark.png';
 const stripePromise = loadStripe('pk_test_51JPZAlKUlzH2P3ixGDOz377XqBrkm4UcxsW47QT4y9wvimGufj6F36f3cvdW6RCWZi5X9NWJ3God5KJko66cIbES009vHJvM1G');
 
 
@@ -14,8 +16,10 @@ const stripePromise = loadStripe('pk_test_51JPZAlKUlzH2P3ixGDOz377XqBrkm4UcxsW47
 function Checkout({ cart, clearCart } ) {
   // console.log('yoyooy', clearCart)
   const [customersItems, setCustomersItems] = useState()
-  const [complete, setComplete] = useState(false)
-
+  const [complete, setComplete] = useState(false);
+  const [swtch,setSwtch] = useState(false);
+  const [payment, setPayment] = useState(false);
+  const [mes, setMes] = useState('')
   const [cookies, setCookie] = useCookies(['cart']);
   console.log(cookies)
 
@@ -25,8 +29,9 @@ function Checkout({ cart, clearCart } ) {
 
   }, [customersItems])
 
-  const handlePartOne = () => {
+  const handlePartOne = (x) => {
     console.log('eheheheh')
+    setMes(`${x}`)
     setComplete(true)
   }
 
@@ -39,7 +44,10 @@ function Checkout({ cart, clearCart } ) {
           help.splice(index, 1)
           setCookie('cart', help, { path: '/' });
            setCustomersItems(help)
-        alert("removed from cart!");
+        // alert("removed from cart!");
+          let modal = document.getElementById("myModal");
+          modal.style.display = "block";
+          setTimeout(function () { modal.style.display = "none"; }, 2000);
         }
 })
  } else if(kase === 'add') {
@@ -58,7 +66,10 @@ function Checkout({ cart, clearCart } ) {
     console.log(prdct)
       setCookie('cart', help, { path: '/' });
       setCustomersItems(help)
-      alert("added to cart!");
+      // alert("added to cart!");
+      let modal = document.getElementById("myModal");
+      modal.style.display = "block";
+      setTimeout(function () { modal.style.display = "none"; }, 2000);
   
   } else {
       let help = customersItems
@@ -76,15 +87,29 @@ function Checkout({ cart, clearCart } ) {
       console.log(prdct)
       setCookie('cart', help, { path: '/' });
       setCustomersItems(help)
-      alert("subtracted from cart!");
+      // alert("subtracted from cart!");
+      let modal = document.getElementById("myModal");
+      modal.style.display = "block";
+      setTimeout(function () { modal.style.display = "none"; }, 2000);
   }
 
 }
 
+  const handleSwitch = () => {
+      setSwtch(true)
+  }
+  const handleChangeInPayment = () => {
+    setPayment(!payment);
+  }
+
   if (complete) {
     return (
-      <div>
+      <div className='request-email-holder'>
+        <div className='request-email-sent'>
         <h1>Checkout Complete</h1>
+        <img src={check}/>
+          <h4><i>{mes}</i></h4>
+        </div>
       </div>
     )
   }
@@ -92,11 +117,12 @@ function Checkout({ cart, clearCart } ) {
     
    
     <div>
-      <h1>Checkout</h1>
+      <Modal/>
+      <h1 className='chck-title'>Checkout</h1>
       <div className='checkout-holder'>
         <Elements stripe={stripePromise}>
-        <OrderSummary customersItems={customersItems} updateCart={updateCart}/>
-        <CheckoutForm customersItems={customersItems} clearCart={clearCart} handleFinish={handlePartOne}/>
+          <OrderSummary customersItems={customersItems} updateCart={updateCart} swtch={swtch} handleChangeInPayment={handleChangeInPayment}/>
+        <CheckoutForm customersItems={customersItems} clearCart={clearCart} handleFinish={handlePartOne} handleSwitch={handleSwitch} payment={payment}/>
         </Elements>
       </div>
     </div>
