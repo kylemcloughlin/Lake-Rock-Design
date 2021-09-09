@@ -10,23 +10,30 @@ function Landscaping() {
   let [items, setItems] = useState([]);
   let [error, setError] = useState(null);
   let [loading, setLoading] = useState(true);
+  let [mess, setMess] = useState('start')
   useEffect(() => {
     handleFetch()
     console.log(items)
 
   }, []);
   const handleFetch = () => {
+    setMess('in fetch')
     fetch('https://fathomless-lake-40918.herokuapp.com/items') 
     // fetch('http://localhost:3001/items')
 
       .then(response => {
+        setMess('hit first then')
+
         if (response.ok) {
           return response.json()
         } else {
+          setMess('hit throw')
           throw response;
+
         }
       })
       .then(data => {
+        setMess('hit second then')
       
        let  outputHolder = []
         let output = []
@@ -47,9 +54,13 @@ function Landscaping() {
         if (outputHolder.length >  0) {
           console.log('hit')
           output.push(outputHolder);
+          setMess('hit last if if then')
+
 
         }
         console.log("yoyoyoyoyo", output)
+        setMess('hit right above loading')
+
         setItems(output)
         setLoading(false)
       })
@@ -70,6 +81,7 @@ function Landscaping() {
     return (
       <div className="loader-holder">
         <div className="loader"></div>
+        <div > {mess}</div>
     </div>)
 
   }
