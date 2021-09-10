@@ -21,7 +21,7 @@ function Landscaping() {
     axios.get('https://fathomless-lake-40918.herokuapp.com/items')
       .then(response => {
         setMess('hit first then')
-        if (response.status === 200) {
+
           let data = response.data;
           let outputHolder = []
           let output = []
@@ -48,17 +48,14 @@ function Landscaping() {
 
           setItems(output)
           setLoading(false)
-        } else {
-          setMess('hit throw')
-          throw response;
-
-        }
+        
       })
       .catch(error => {
         console.error("Error fetching data", error)
         setError(error)
+        setMess(` errror`)
 
-        setMess(`${error.response.status} ${error.response.headers} ${error.response.data}`)
+        setMess(` ${error.response.status}`)
 
       })
   }
