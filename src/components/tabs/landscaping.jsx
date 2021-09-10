@@ -1,10 +1,7 @@
 import '../../styles/landscaping.css';
-import ItemImg from '../../test-item-img.jpeg';
 import Row from '../row.jsx';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import ItemPage from './item.jsx';
-import { dataToEsm } from 'rollup-pluginutils';
+import axios from 'axios';
 
 function Landscaping() {
   let [items, setItems] = useState([]);
@@ -16,65 +13,55 @@ function Landscaping() {
     console.log(items)
 
   }, []);
-  const handleFetch = () => {
+  const handleFetch = async () => {
     setMess('in fetch')
-    fetch('https://fathomless-lake-40918.herokuapp.com/items') 
-    // fetch('http://localhost:3001/items')
-
+    axios.get('https://fathomless-lake-40918.herokuapp.com/items')
       .then(response => {
         setMess('hit first then')
+        console.log(response)
+        if (response.status === 200) {
+          let data = response.data;
+          let outputHolder = []
+          let output = []
+          for (let index = 0; index < data.length; index++) {
+            const element = data[index];
+            element.index = index;
+            if (outputHolder.length > 3) {
+              console.log('hit')
+              output.push(outputHolder);
+              outputHolder = [];
+              outputHolder.push(element);
+            } else {
+              outputHolder.push(element);
+            }
+          }
+          if (outputHolder.length > 0) {
+            console.log('hit')
+            output.push(outputHolder);
+            setMess('hit last if if then')
 
-        if (response.ok) {
-          return response.json()
+
+          }
+          console.log("yoyoyoyoyo", output)
+          setMess('hit right above loading')
+
+          setItems(output)
+          setLoading(false)
+          // return response.json()
         } else {
           setMess('hit throw')
           throw response;
 
         }
       })
-      .then(data => {
-        setMess('hit second then')
-      
-       let  outputHolder = []
-        let output = []
-        for (let index = 0; index < data.length; index++) {
-          const element = data[index];
-          element.index = index;
-          if (outputHolder.length > 3 ) {
-            console.log('hit')
-            output.push(outputHolder);
-            outputHolder = [];
-            outputHolder.push(element);
-          } else  {
-           outputHolder.push(element);
-          }
-
-          
-        }
-        if (outputHolder.length >  0) {
-          console.log('hit')
-          output.push(outputHolder);
-          setMess('hit last if if then')
-
-
-        }
-        console.log("yoyoyoyoyo", output)
-        setMess('hit right above loading')
-
-        setItems(output)
-        setLoading(false)
-      })
       .catch(error => {
         console.error("Error fetching data", error)
         setError(error)
       })
-    // .finally(() => {
-    //   setLoading(false)
-    // })
   }
 
   const handleMore = (e) => {
-    
+
   }
 
   if (loading) {
@@ -82,7 +69,7 @@ function Landscaping() {
       <div className="loader-holder">
         <div className="loader"></div>
         <div > {mess}</div>
-    </div>)
+      </div>)
 
   }
 
@@ -96,16 +83,16 @@ function Landscaping() {
       </div>
 
 
-       
-       
-        {items.map((item, index) => {
-          return (
-            <div className='item-holder'>
-               <Row items={item}/>
-            </div>
-            )
-        })
-       }
+
+
+      {items.map((item, index) => {
+        return (
+          <div className='item-holder'>
+            <Row items={item} />
+          </div>
+        )
+      })
+      }
       {/* <div className='button-holder'>
         <button className='lndscp-button'>More</button>
       </div> */}
