@@ -15,7 +15,8 @@ function Landscaping() {
   }, []);
   const handleFetch = async () => {
     setMess('in fetch')
-    setMess('in fetch deux')
+    setTimeout(function () {setMess('in fetch deux')}, 3000)
+
 
     axios.get('https://fathomless-lake-40918.herokuapp.com/items')
       .then(response => {
