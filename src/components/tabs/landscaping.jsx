@@ -10,7 +10,7 @@ function Landscaping() {
   let [mess, setMess] = useState('start')
   useEffect(() => {
     handleFetch()
-    console.log(items)
+   
 
   }, []);
   const handleFetch = async () => {
@@ -23,6 +23,7 @@ function Landscaping() {
           let data = response.data;
           let outputHolder = []
           let output = []
+          setMess(`${data.length} why god why`)
           for (let index = 0; index < data.length; index++) {
             const element = data[index];
             element.index = index;
@@ -42,12 +43,11 @@ function Landscaping() {
 
 
           }
-          console.log("yoyoyoyoyo", output)
+         
           setMess('hit right above loading')
 
           setItems(output)
           setLoading(false)
-          // return response.json()
         } else {
           setMess('hit throw')
           throw response;
@@ -81,14 +81,11 @@ function Landscaping() {
         <p>At Rock Lake Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes.</p>
         <p>Whether you are a homeowner, DIYer, Property Manager, General Contractor, Landscape Architect, or Lawn Maintenance company, we stock the materials you need to create inspiring outdoor spaces</p>
       </div>
-
-
-
-
       {items.map((item, index) => {
         return (
           <div className='item-holder'>
-            <Row items={item} />
+            {/* <Row items={item} /> */}
+            {mess}
           </div>
         )
       })

@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import ItemImg from '../test-item-img.jpeg';
+import React, { useState, useEffect } from 'react';
+
 function Row({items})  {
-  console.log(items)
+  // useEffect(() => {
+
+  //   console.log(items)
+
+  // }, [items]);
+
   return (
     <div className='item-holder'>
       {items.map((item, index) => {
