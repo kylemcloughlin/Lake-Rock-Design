@@ -19,42 +19,47 @@ function Landscaping() {
     try { 
 
       
-      const response = await axios.get('https://fathomless-lake-40918.herokuapp.com/items')
+      const response = await axios.get('https://fathomless-lake-40918.herokuapp.com/items', {
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'none'
+        }
+      })
       // .then(response => {
         setMess('hit first then')
         
-        // let data = response.data;
-        // let outputHolder = []
-        // let output = []
-        // setMess(`${data.length} why god why`)
-        // for (let index = 0; index < data.length; index++) {
-        //     let element = data[index];
-        //     element.index = index;
-        //     if (outputHolder.length > 3) {
-        //       output.push(outputHolder);
-        //       outputHolder = [];
-        //       outputHolder.push(element);
-        //     } else {
-        //       outputHolder.push(element);
-        //     }
-        //   }
-        //   if (outputHolder.length > 0) {
-        //     output.push(outputHolder);
-        //     // setMess('hit last if if then')
+        let data = response.data;
+        let outputHolder = []
+        let output = []
+        setMess(`${data.length} why god why`)
+        for (let index = 0; index < data.length; index++) {
+            let element = data[index];
+            element.index = index;
+            if (outputHolder.length > 3) {
+              output.push(outputHolder);
+              outputHolder = [];
+              outputHolder.push(element);
+            } else {
+              outputHolder.push(element);
+            }
+          }
+          if (outputHolder.length > 0) {
+            output.push(outputHolder);
+            // setMess('hit last if if then')
             
             
-        //   }
+          }
           
           // setMess('hit right above loading')
           
-          // setItems(output)
-          // setLoading(false)
+          setItems(output)
+          setLoading(false)
           
         // })
         
       } catch (error) {
         console.error("Error fetching data", error)
-        setMess(` errror ${error}`)
+        setMess(` errror ${error.status}`)
   
   
         // setMess(error)
