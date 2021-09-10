@@ -20,7 +20,7 @@ function Landscaping() {
       const response = await axios.get('https://fathomless-lake-40918.herokuapp.com/items', {
         withCredentials: true,
         headers: {
-          'Content-Type': 'none'
+          'Accept': 'application/json'
         }
       })
       // .then(response => {
