@@ -38,7 +38,6 @@ function Landscaping() {
             }
           }
           if (outputHolder.length > 0) {
-            console.log('hit')
             output.push(outputHolder);
             // setMess('hit last if if then')
 
@@ -58,6 +57,8 @@ function Landscaping() {
       .catch(error => {
         console.error("Error fetching data", error)
         setError(error)
+        setMess('error??')
+
       })
   }
 
