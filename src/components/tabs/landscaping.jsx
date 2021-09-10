@@ -18,8 +18,7 @@ function Landscaping() {
     setMess('in fetch')
     // setTimeout(function () {setMess('in fetch deux')}, 3000)
     try { 
-      const response = await axios.get('http://fathomless-lake-40918.herokuapp.com/items', {
-        withCredentials: true,
+      const response = await axios.get('https://fathomless-lake-40918.herokuapp.com/items', {
         headers: {
           'Content-Type': 'application/json'
         }
