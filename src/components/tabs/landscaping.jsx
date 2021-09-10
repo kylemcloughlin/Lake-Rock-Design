@@ -13,7 +13,7 @@ function Landscaping() {
    
 
   }, []);
-  const handleFetch = async () => {
+  const handleFetch = () => {
     setMess('in fetch')
     axios.get('https://fathomless-lake-40918.herokuapp.com/items')
       .then(response => {
