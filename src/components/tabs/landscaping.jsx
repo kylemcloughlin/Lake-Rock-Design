@@ -7,7 +7,8 @@ function Landscaping() {
   let [items, setItems] = useState([]);
   let [error, setError] = useState(null);
   let [loading, setLoading] = useState(true);
-  let [mess, setMess] = useState('start')
+  let [mess, setMess] = useState('start');
+  let [err, setErr] = useState('')
   useEffect(() => {
     handleFetch()
    
@@ -18,7 +19,7 @@ function Landscaping() {
     // setTimeout(function () {setMess('in fetch deux')}, 3000)
     try { 
       const response = await axios.get('https://fathomless-lake-40918.herokuapp.com/items', {
-        // withCredentials: true,
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -56,6 +57,11 @@ function Landscaping() {
         // })
         
       } catch (error) {
+      if (error.response) {
+        // Request made and server responded
+        setErr(error.response.data);
+
+      } 
         console.error("Error fetching data", error)
         setMess(` errror: ${error}`)
   
@@ -87,6 +93,8 @@ function Landscaping() {
         <p>At Rock Lake Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes.</p>
         <p>Whether you are a homeowner, DIYer, Property Manager, General Contractor, Landscape Architect, or Lawn Maintenance company, we stock the materials you need to create inspiring outdoor spaces</p>
         <div key={new Date()}>{mess}</div>
+        <div key={new Date()}>{err}</div>
+
       </div>
       {items.map((item, index) => {
         return (
