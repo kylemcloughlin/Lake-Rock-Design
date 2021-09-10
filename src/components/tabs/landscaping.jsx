@@ -64,14 +64,14 @@ function Landscaping() {
 
   }
 
-  if (loading) {
-    return (
-      <div className="loader-holder">
-        <div className="loader"></div>
-        <div > {mess}</div>
-      </div>)
+  // if (loading) {
+  //   return (
+  //     <div className="loader-holder">
+  //       <div className="loader"></div>
+  //       <div > {mess}</div>
+  //     </div>)
 
-  }
+  // }
 
 
   return (
