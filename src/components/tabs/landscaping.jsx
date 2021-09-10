@@ -15,7 +15,7 @@ function Landscaping() {
   }, []);
   const handleFetch = async () => {
     setMess('in fetch')
-    setTimeout(function () {setMess('in fetch deux')}, 3000)
+    // setTimeout(function () {setMess('in fetch deux')}, 3000)
 
 
     axios.get('https://fathomless-lake-40918.herokuapp.com/items')
@@ -57,7 +57,8 @@ function Landscaping() {
       .catch(error => {
         console.error("Error fetching data", error)
         setError(error)
-        setMess('error??')
+
+        setMess(`${error.response.status} ${error.response.headers} ${error.response.data}`)
 
       })
   }
