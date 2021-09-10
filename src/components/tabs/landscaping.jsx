@@ -54,10 +54,10 @@ function Landscaping() {
         
       } catch (error) {
         console.error("Error fetching data", error)
-        setMess(` errror`)
+        setMess(` errror ${error.response}`)
   
   
-        setMess(error)
+        // setMess(error)
       }
         
         
