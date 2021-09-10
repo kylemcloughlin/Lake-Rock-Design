@@ -16,18 +16,19 @@ function Landscaping() {
   const handleFetch = async () => {
     setMess('in fetch')
     // setTimeout(function () {setMess('in fetch deux')}, 3000)
+    try { 
 
-
-    axios.get('https://fathomless-lake-40918.herokuapp.com/items')
-      .then(response => {
+      
+      const response = await axios.get('https://fathomless-lake-40918.herokuapp.com/items')
+      // .then(response => {
         setMess('hit first then')
-
-          let data = response.data;
-          let outputHolder = []
-          let output = []
-          setMess(`${data.length} why god why`)
-          for (let index = 0; index < data.length; index++) {
-            const element = data[index];
+        
+        let data = response.data;
+        let outputHolder = []
+        let output = []
+        setMess(`${data.length} why god why`)
+        for (let index = 0; index < data.length; index++) {
+            let element = data[index];
             element.index = index;
             if (outputHolder.length > 3) {
               output.push(outputHolder);
@@ -40,28 +41,30 @@ function Landscaping() {
           if (outputHolder.length > 0) {
             output.push(outputHolder);
             // setMess('hit last if if then')
-
-
+            
+            
           }
-         
+          
           // setMess('hit right above loading')
-
+          
           setItems(output)
           setLoading(false)
+          
+        // })
         
-      })
-      .catch(error => {
+      } catch (error) {
         console.error("Error fetching data", error)
-        setError(error)
         setMess(` errror`)
-
+  
+  
         setMess(error)
-
-      })
-  }
-
-  // const handleMore = (e) => {
-
+      }
+        
+        
+      }
+      
+      // const handleMore = (e) => {
+        
   // }
 
   // if (loading) {
