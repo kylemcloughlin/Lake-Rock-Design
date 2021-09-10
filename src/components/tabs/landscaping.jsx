@@ -18,6 +18,7 @@ function Landscaping() {
     setMess('in fetch')
     // setTimeout(function () {setMess('in fetch deux')}, 3000)
     try { 
+      // const response = await axios.get('http://localhost:3001/items', {
       const response = await axios.get('https://fathomless-lake-40918.herokuapp.com/items', {
         headers: {
           'Content-Type': 'application/json'
@@ -91,8 +92,8 @@ function Landscaping() {
         <h1>Our Landscape Material</h1>
         <p>At Rock Lake Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes.</p>
         <p>Whether you are a homeowner, DIYer, Property Manager, General Contractor, Landscape Architect, or Lawn Maintenance company, we stock the materials you need to create inspiring outdoor spaces</p>
-        <div key={new Date()}>1.{mess}</div>
-        <div key={new Date()}>2.{err}</div>
+        <div key={new Date()}>1.{mess} 2.{err}</div>
+        {/* <div key={new Date()}>2.{err}</div> */}
 
       </div>
       {items.map((item, index) => {
