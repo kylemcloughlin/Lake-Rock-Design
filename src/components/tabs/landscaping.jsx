@@ -55,7 +55,7 @@ function Landscaping() {
         setError(error)
         setMess(` errror`)
 
-        setMess(` ${error.response.status}`)
+        setMess(error)
 
       })
   }
