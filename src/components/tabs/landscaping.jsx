@@ -18,7 +18,6 @@ function Landscaping() {
     axios.get('https://fathomless-lake-40918.herokuapp.com/items')
       .then(response => {
         setMess('hit first then')
-        console.log(response)
         if (response.status === 200) {
           let data = response.data;
           let outputHolder = []
@@ -28,7 +27,6 @@ function Landscaping() {
             const element = data[index];
             element.index = index;
             if (outputHolder.length > 3) {
-              console.log('hit')
               output.push(outputHolder);
               outputHolder = [];
               outputHolder.push(element);
@@ -39,12 +37,12 @@ function Landscaping() {
           if (outputHolder.length > 0) {
             console.log('hit')
             output.push(outputHolder);
-            setMess('hit last if if then')
+            // setMess('hit last if if then')
 
 
           }
          
-          setMess('hit right above loading')
+          // setMess('hit right above loading')
 
           setItems(output)
           setLoading(false)
@@ -60,9 +58,9 @@ function Landscaping() {
       })
   }
 
-  const handleMore = (e) => {
+  // const handleMore = (e) => {
 
-  }
+  // }
 
   // if (loading) {
   //   return (
@@ -80,7 +78,7 @@ function Landscaping() {
         <h1>Our Landscape Material</h1>
         <p>At Rock Lake Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes.</p>
         <p>Whether you are a homeowner, DIYer, Property Manager, General Contractor, Landscape Architect, or Lawn Maintenance company, we stock the materials you need to create inspiring outdoor spaces</p>
-        <div>{mess}</div>
+        <div key={new Date()}>{mess}</div>
       </div>
       {items.map((item, index) => {
         return (
