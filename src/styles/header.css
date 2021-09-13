@@ -120,3 +120,15 @@
   visibility: hidden;
 }
 }
+
+@media only screen and (max-width: 414px) {
+.serving {
+  width: 100%;
+  left: -6em;
+}
+}
+@media only screen and (max-width: 280px) {
+  .company-number {
+    visibility: hidden;
+  }
+}

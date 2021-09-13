@@ -64,5 +64,10 @@
     visibility: visible;
     position: absolute;
     left: 1em;
+    top: 1em;
+     position: absolute;
+     border: 2px pink solid;
+     width: 90%;
+     height: 1em;
   }
 }

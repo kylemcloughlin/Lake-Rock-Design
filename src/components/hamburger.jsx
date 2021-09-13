@@ -11,14 +11,15 @@ const Hamburger = () => {
   }
 
 
+
   return (
     <div className='nav-button-bar-mobile'>
-      <button>MENU</button>
+      {/* <button className='menu-btn'>MENU</button> */}
       <Menu width={'100%'}>
         {buttonValues.map((item, index) => {
           return (
             <Link to={item.urlLink} key={index}>
-              <button value={index}  onClick={showSettings}>{item.value}</button>
+              <button value={index} onClick={showSettings} className='moblie-menu-nav-button'>{item.value}</button>
             </Link>
           )
         })}

@@ -79,6 +79,7 @@ color: #679436;
   .contact-holder {
     display: grid;
     text-align: center;
+    margin: 0em;
   }
 
     .contact-holder {
@@ -94,3 +95,24 @@ color: #679436;
       margin: 0;
     }
   }
+
+
+@media only screen and (max-width: 340px) {
+  .contact-holder {
+height: 62em;
+
+  }
+.contact-body {
+  height: 94%;
+  margin: 0em;
+}
+
+  .call-button {
+    margin-bottom: 1em;
+  }
+
+  .contact-body p {
+    margin-left: 1em;
+  }
+
+}

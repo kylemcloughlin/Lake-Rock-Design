@@ -99,7 +99,6 @@ function Landscaping() {
         return (
           <div className='item-holder' key={index}>
             <Row items={item} />
-            loop.{mess}
           </div>
         )
       })

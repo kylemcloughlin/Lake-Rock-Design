@@ -1,3 +1,39 @@
 .burger-wrap {
   visibility: hidden;
 }
+
+.menu-btn {
+
+  border: none;
+  position: absolute;
+  top: -12.5em;
+  background: transparent;
+}
+
+#react-burger-menu-btn {
+  /* top: -167px !important; */
+  background: pink !important;
+}
+
+.moblie-menu-nav-button {
+  border: none;
+  background: none;
+  color: #111;
+  margin-bottom: 1em;
+}
+
+.moblie-menu-nav-button:focus {
+  border-bottom: pink 1px solid;
+}
+.moblie-menu-nav-button:hover {
+  border-bottom: #ffffff 1px solid;
+}
+/* 
+.nav-button-bar-moblie {
+      visibility: visible;
+      position: absolute;
+      left: 1em;
+      border: 2px pink solid;
+      width: 100%;
+      height: 1em;
+} */

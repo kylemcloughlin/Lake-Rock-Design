@@ -67,6 +67,18 @@
 .request-email-button {
   float: right;
   margin-right: 2.8em;
+ 
+      margin-top: .5em;
+      width: 9em;
+      height: 3em;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      border-radius: .2em;
+      border: none;
+      background-color: #49974E;
+      color: #f3f3f3;
+      transition: 2ms;
 }
 
 
