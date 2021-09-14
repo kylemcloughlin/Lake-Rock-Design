@@ -14,7 +14,7 @@ const Hamburger = () => {
 
   return (
     <div className='nav-button-bar-mobile'>
-      {/* <button className='menu-btn'>MENU</button> */}
+      <button className='menu-btn'>MENU</button>
       <Menu width={'100%'}>
         {buttonValues.map((item, index) => {
           return (

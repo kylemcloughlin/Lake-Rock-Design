@@ -19,12 +19,13 @@
 }
 
 .home-para {
-  width: 40%;
-  margin-left: 5%;
+  width: 66%;
+  /* margin-left: 5%; */
+  margin: auto;
 }
 
 .specialize {
-  margin-left: 6%;
+  margin-left: 7%;
   color: #679436;
 
 }
@@ -64,6 +65,7 @@
   position: relative;
   border-radius: .5em;
   background: #F2F2F2;
+  box-shadow: 5px 10px 5px -6px #888888;
 }
 
 .more-info-button {
@@ -99,6 +101,8 @@
   margin: auto;
   margin-top: 1em;
   position: relative;
+  box-shadow: 5px 10px 5px -6px #888888;
+
 }
 
 
@@ -153,6 +157,7 @@
     width: 34%;
     margin-left: 0em;
     margin-right: 0em;
+    height: 18em;
   }
 }
 

@@ -121,14 +121,21 @@
 }
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 468px) {
 .serving {
-  width: 100%;
-  left: -6em;
+  width: 15em;
+  left: -15em;
 }
 }
-@media only screen and (max-width: 280px) {
+@media only screen and (max-width: 400px) {
+  .serving {
+    width: 100%;
+    left: -6em;
+  }
+}
+@media only screen and (max-width: 300px) {
   .company-number {
     visibility: hidden;
   }
+
 }

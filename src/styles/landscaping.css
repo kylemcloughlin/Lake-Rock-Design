@@ -239,17 +239,18 @@ text-align: left;
 }
 
 .add-to-cart-input {
-  height: 2.5em;
-  width: 3em;
-  margin: auto;
-  margin-top: -1em;
+ height: 3.4em;
+ width: 3em;
+ position: relative;
+ top: -1.2em;
+ 
 }
 
 
 .add-to-cart-button {
   margin-top: .5em;
   width: 9em;
-  height: 3em;
+  height: 4em;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -259,7 +260,9 @@ text-align: left;
   color: #f3f3f3;
   transition: 2ms;
   position: relative;
-  top: -.2em;
+
+  left: 3px;
+      top: -1.2em;
 }
 
 .add-to-cart-button:hover {
@@ -290,6 +293,75 @@ text-align: left;
   }
 }
  
+
+@media only screen and (max-width: 540px) {
+  .product-holder {
+    width: 100%;
+    border: none;
+    margin-bottom: 7em;
+  }
+.item-holder {
+}
+.img-holder {
+  width: 100%;
+  left: 0em;
+
+}
+.item-page-img {
+  width: 100%;
+  margin-top: -2em;
+}
+.item-page-body-holder {
+  position: relative;
+  right: 1em;
+  top: 23em;
+  height: 19.6em;
+  width: 100%;
+  border-left: none;
+  /* display: block; */
+  text-align: center;
+}
+
+.sold-by-ttl {
+  left: 0em;
+}
+.sold-by-holder {
+      position: absolute;
+      bottom: 6em;
+      left: 0;
+      width: 96%;
+      margin: 1em;
+      text-align: center;
+      border: none;
+
+}
+.sold-by {
+  width: 93%;
+  margin-left: 0em; 
+}
+.img-holder h3 {
+  margin-top: 1.5em;
+}
+
+.item-img {
+  margin: 0em;
+  visibility: hidden;
+}
+.add-to-cart {
+  border: none;
+  width: 100%;
+  top: -7.5em;
+}
+.form-holder {
+  position: absolute;
+  bottom: -4em;
+  border: black 1px solid;
+ margin: 0em;
+  width: 100%;
+  height: 11em;
+  
+  }
+}
 
 @media only screen and (max-width: 260px) {
 

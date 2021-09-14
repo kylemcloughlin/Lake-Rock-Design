@@ -191,14 +191,16 @@ return (
            return(
              <li key={item.id} className='item-checkout'>
               <div className='name-and-button'>             
-                <h3>{item.name}</h3>
+                <h5>{item.name}</h5>
                  <button className='remove-button' onClick={handleRemove.bind(this, item)}>x</button>
              </div>
                {/* <input className='co-value' type="number" id="points" min='0' name={} value={item.value} onClick={handleNumberClick.bind(this, item)}/> */}
                <div className='co-value'>
-                 <button className='co-value-btn' value='+' onClick={handlePos.bind(this, item)}>+</button>
                    <h4>{item.value}</h4>
-                 {item.value > 0 ? (<button className='co-value-btn' value='-' onClick={handleNeg.bind(this, item)}>-</button>) : (<div/>)}
+                   <div className='co-button-wrap'>
+                     <button className='co-value-btn' value='+' onClick={handlePos.bind(this, item)}>+</button>
+                     {item.value > 0 ? (<button className='co-value-btn' value='-' id='minus' onClick={handleNeg.bind(this, item)}>-</button>) : (<div/>)}
+                   </div>
              </div>
              <h4 className='co-price'>${priceHelper(item.price)}</h4>
              <h4 className='co-total'> ${totalHelper(item.price, item.value)}</h4>

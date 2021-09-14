@@ -6,13 +6,27 @@
 
   border: none;
   position: absolute;
-  top: -12.5em;
+  top: 0em;
   background: transparent;
+    height: 3em;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+        border: none;
+        position: absolute;
+        top: -.7em;
+        background: transparent;
+        ht: 3em;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        color: #fefefe;
 }
 
 #react-burger-menu-btn {
-  /* top: -167px !important; */
-  background: pink !important;
+
+  /* background:#356E39 !important; */
+
 }
 
 .moblie-menu-nav-button {
@@ -23,7 +37,7 @@
 }
 
 .moblie-menu-nav-button:focus {
-  border-bottom: pink 1px solid;
+  border-bottom: #356E39 1px solid;
 }
 .moblie-menu-nav-button:hover {
   border-bottom: #ffffff 1px solid;

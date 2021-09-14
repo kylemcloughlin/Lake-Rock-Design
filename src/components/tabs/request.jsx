@@ -8,7 +8,7 @@ function Request() {
   const [customerEmail, setCustomerEmail] = useState('')
   const onSubmit = async (e) => {
     e.preventDefault();
-    let {email , body } = e.target;
+    let {email , number ,body } = e.target;
     setCustomerEmail(email.value)
     // const response = await fetch('http://localhost:3001/request_quote_email', {
       const response = await fetch('https://fathomless-lake-40918.herokuapp.com//request_quote_email', {      
@@ -19,6 +19,7 @@ function Request() {
       },
       body: JSON.stringify({
        email: email.value,
+       number: number.value,
        body: body.value
 
       })
@@ -51,11 +52,15 @@ function Request() {
       <form className='request-form' onSubmit={onSubmit}>
     <label className='request-label'>Customers Email:</label>
         <br />
-      <input placeholder='Your Email Here' className="request-email-input"  name='email'/>
+        <input placeholder='Your Email Here' className="request-email-input" name='email' type='email' required='true'/>
         <br />
+        <label className='request-label'>Phone Number:</label>
+        <br />
+        <input placeholder='Your Phone Number Here' className="request-email-input" name='number' required='true' />
+        <br />       
         <label>Inquiry:</label>
         <br/>
-        <textarea placeholder='Your Inquiry Here' className="request-email-body-input" name='body'/>
+        <textarea placeholder='Your Inquiry Here' className="request-email-body-input" name='body' required='true'/>
         <br />
         <button type='submit' className='request-email-button'>Send Request</button>
     </form>

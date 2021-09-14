@@ -113,7 +113,7 @@ function Item({ match, location, handleCart}) {
           <div className='add-to-cart'>
           {loading ? (<h2></h2>) : (<h2 className='product-price'>${priceHelper(item.price)}</h2>)}
             <input type="number" id="points" min='0' name="points" className='add-to-cart-input '/>
-            <br/>
+            {/* <br/> */}
             <input className='add-to-cart-button' type="submit" value="Add To Cart" />
           </div>
           </form>

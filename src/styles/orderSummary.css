@@ -51,12 +51,12 @@
 .product {
  position: absolute;
  bottom: -.5em;
- left: 7%;
+ left: 4%;
 }
 .quant{
   position: absolute;
   bottom: -.5em;
-  left: 40%;
+  left: 32%;
 }
 
 .ppu {
@@ -115,8 +115,8 @@
 
 .co-value {
   position: absolute;
-  bottom: -.5em;
-  left: 40%;
+  bottom: -.1em;
+  left: 29%;
   display: flex;
 }
 .co-value h4 {
@@ -137,6 +137,12 @@
  transition: 2ms;
  }
 
+ #minus {
+   background: #EB5252;
+   opacity: .6;
+   margin-left: .1em; 
+ }
+
  .co-value-btn:hover {
    transition: 2ms;
    background-color: #356E39;
@@ -144,6 +150,9 @@
 
  }
 
+ #minus:hover {
+  opacity: 1;
+ }
 
 
 
@@ -185,3 +194,71 @@ padding: .2em;
 .pick-up-holder {
   margin: 1em;
 }
+
+
+@media only screen and (max-width: 1020px) {
+  .ttl, .co-total {
+    left: 89%;
+  }
+
+  .ppu, .co-price {
+    left: 66%;
+  }
+
+  .co-value, .quant {
+    left: 48%;
+  }
+
+  .co-button-wrap {
+    display: inline-grid;
+  }
+  #minus {
+    margin-left: 0em;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .name-and-button{
+        width: 25%;
+        margin-left: -1.5em;
+  }
+ .co-value, .quant  {
+  left: 30%;
+ } 
+
+ .ttl,
+ .co-total {
+   left: 80%;
+ }
+
+ .ppu,
+ .co-price {
+   left: 57%;
+ }
+.ppu {
+  width: 50%;
+}
+}
+
+
+@media only screen and (max-width: 380px) { 
+ .co-value,
+ .quant {
+   left: 20%;
+ }
+.ppu {
+  left: 38%;
+}
+ .co-price {
+  left: 40%;
+}
+
+ .ttl,
+ .co-total {
+   left: 68%;
+ }
+
+
+}
+
+

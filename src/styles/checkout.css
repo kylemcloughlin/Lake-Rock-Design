@@ -139,3 +139,10 @@
   left: 1em;
   width: 100%;
 }
+
+
+@media only screen and (max-width: 1020px) {
+.checkout-holder {
+  width: 100%;
+}
+}
