@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-   
+   /* opacity: .1; */
 }
 .holder {
   border: black 1px solid;    

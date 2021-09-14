@@ -1,14 +1,14 @@
-import { CardElement, useStripe, useElements} from "@stripe/react-stripe-js";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 // import { useCookies } from 'react-cookie';
 import React, { useState, useEffect } from 'react';
 import '../styles/checkout.css';
 import OrderSummary from "./orderSummary";
 import ErrorModal from './errorModal.jsx';
-function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, payment}) {
+function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, payment }) {
   let [orders, SetOrders] = useState([]);
   const [complete, setComplete] = useState(false);
   const [secondStep, setSecondStep] = useState(false);
-  const [shippingInfo,setShippingInfo] = useState({})
+  const [shippingInfo, setShippingInfo] = useState({})
   const [errorMessage, setErrorMessage] = useState('')
   // const [custEmail, setCustEmail] = useState('');
   const stripe = useStripe();
@@ -46,7 +46,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
   const onFirstSubmit = (event) => {
     event.preventDefault()
     let { first, last, company, street, unit, town, postal, prov, email } = event.target;
-    if(prov.value != 'ON') {
+    if (prov.value != 'ON') {
       console.log('error')
       setErrorMessage('We only provide shipping within Ontario.');
       let error = document.getElementById("myErrorModal");
@@ -54,7 +54,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
       setTimeout(function () { error.style.display = "none"; }, 1500);
 
 
-    } else {      
+    } else {
       setShippingInfo({
         first: first.value,
         last: last.value,
@@ -79,13 +79,13 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
     let unit = document.getElementById('unit');
     let town = document.getElementById('town');
     let postal = document.getElementById('postal');
-      first.value =  shippingInfo.first;
-      last.value = shippingInfo.last;
-      company.value = shippingInfo.company;
-      street.value = shippingInfo.street;
-      unit.value = shippingInfo.unit;
-      town.value = shippingInfo.town;
-      postal.value = shippingInfo.postal;
+    first.value = shippingInfo.first;
+    last.value = shippingInfo.last;
+    company.value = shippingInfo.company;
+    street.value = shippingInfo.street;
+    unit.value = shippingInfo.unit;
+    town.value = shippingInfo.town;
+    postal.value = shippingInfo.postal;
   }
 
 
@@ -93,7 +93,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
   const onSubmit = async (event) => {
     event.preventDefault()
     let { first, last, company, street, unit, town, postal, prov } = event.target;
-    let output =  {
+    let output = {
       first: first.value,
       last: last.value,
       company: company.value,
@@ -107,7 +107,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
     if (!stripe || !elements) {
       return;
     }
-      console.log('heheheh', customersItems)
+    console.log('heheheh', customersItems)
 
     const result = await stripe.createPaymentMethod({
       type: 'card',
@@ -123,16 +123,16 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
 
     } else {
       const rawResponse = await fetch('https://fathomless-lake-40918.herokuapp.com/customers', {
-      // const rawResponse = await fetch('http://localhost:3001/customers', {
+        // const rawResponse = await fetch('http://localhost:3001/customers', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            shipping: shippingInfo,
-            billing: output,
-            cart: customersItems
+          shipping: shippingInfo,
+          billing: output,
+          cart: customersItems
 
         })
       });
@@ -147,10 +147,10 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
 
   }
 
-const handleRequest = async (e) => {
-  e.preventDefault();
-  // const response = await fetch('http://localhost:3001/inquiry_email', {
-    const response = await fetch(`https://fathomless-lake-40918.herokuapp.com/inquiry_email`, { 
+  const handleRequest = async (e) => {
+    e.preventDefault();
+    // const response = await fetch('http://localhost:3001/inquiry_email', {
+    const response = await fetch(`https://fathomless-lake-40918.herokuapp.com/inquiry_email`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -169,83 +169,123 @@ const handleRequest = async (e) => {
     }
     console.log(content.status)
 
-  
-}
+
+  }
 
   if (secondStep) {
     return (
       <div>
         <div>
           {payment ? (
-            
-            <button onClick={handleRequest}> Request Shipping Quote</button>
-            
-            ) : (
-              <div>
-              <input name='checkbox' type='checkbox' onClick={handleShippingClick}/>
-              <label for='checkbox'>Same As Shipping</label>
-              <form onSubmit={onSubmit} className='right'>
-        <h2>Billing Information Part 2 of 2</h2>
-        <div>
-          <div className='line-one'>
-            <input type='text' placeholder='First Name*' name='first' className='first-name-input'id='first' required />
-            <input type='text' placeholder='Last Name*' name='last' className='last-name-input' id='last' required />
-            <input type='text' placeholder='Company Name' name='company' className='company-input' id='company'/>
-          </div>
-          <div className='line-two'>
-            <input type='text' placeholder='Street Name' name='street' className='street-input' id='street'/>
-            <input type='text' placeholder='Apartment, Suite, Unit, etc.' name='unit' className='unit-input' id='unit'/>
-          </div>
-          <div className='line-three'>
-            <input type='text' placeholder='Town/City' name='town' className='town-input' id='town'/>
-            <input type='text' placeholder='Postal Code' name='postal' className='postal-input' id='postal'/>
-              <select name="prov" className='prov-select' id='prov'>
-              <option value="">Province</option>
-              <option value="AB">Alberta</option>
-              <option value="BC">British Columbia</option>
-              <option value="MB">Manitoba</option>
-              <option value="NB">New Brunswick</option>
-              <option value="NL">Newfoundland & labrador</option>
-              <option value="NS">Nova Scotia</option>
-              <option value="ON">Ontario</option>
-              <option value="PE">Prince Edward Island</option>
-              <option value="QC">Quebec</option>
-              <option value="SK">Saskatchewan</option>
-              <option value="NT">Northwest Territories</option>
-              <option value="NU">Nunavut</option>
-              <option value="YT">Yukon</option>
-            </select>
-          </div>
-        </div>  
 
-            <div className='line-five'>            
-              <CardElement options={cardOptions} className='stripe'/>
-            </div >
-            <button type='submit' disabled={!stripe} className='submit-button-checkout'>Submit</button>
-            
-            </form>
-           </div> )}
-            </div>
-              </div>
+            <button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>
+
+          ) : (
+              <div>
+                <input name='checkbox' type='checkbox' onClick={handleShippingClick} />
+                <label for='checkbox'>Same As Shipping</label>
+                <form onSubmit={onSubmit} className='right'>
+                  <h2>Billing Information</h2>
+                  <h6 className='of-two'>2 of 2</h6>
+
+                  <div className='line-one'>
+                    <div for='first' className='one-label' >First Name </div>
+                    <div className='one-label'>Last Name</div>
+                    <div className='one-label'>Company Name</div>
+                  </div>
+                  <div className='line-two'>
+                    <input type='text' placeholder='First Name*' name='first' className='first-name-input' id='first' required />
+                    <input type='text' placeholder='Last Name*' name='last' className='last-name-input' id='last' required />
+                    <input type='text' placeholder='Company Name' name='company' className='company-input' id='company'  />
+                  </div>
+
+
+                  <div className='line-three'>
+                    <div className='two-label'>Street Name</div>
+                    <div className='two-label'> Unit</div>
+                  </div>
+                  <div className='line-four'>
+                    <input type='text' placeholder='Street Name' name='street' className='street-input' id='street'/>
+                    <input type='text' placeholder='Apartment, Suite, Unit, etc.' name='unit' className='unit-input' id='unit'/>
+                  </div>
+
+                  <div className='line-five'>
+                    <div className='three-label'>City/Town</div>
+                    <div className='three-label'>Postal</div>
+                    <div className='three-label'>Province</div>
+                  </div>
+                  <div className='line-six'>
+                    <input type='text' placeholder='Town/City' name='town' className='town-input' id='town'/>
+                    <input type='text' placeholder='Postal Code' name='postal' className='postal-input' id='postal'/>
+                    <select name="prov" className='prov-select'>
+                      <option value="">Province</option>
+                      <option value="AB">Alberta</option>
+                      <option value="BC">British Columbia</option>
+                      <option value="MB">Manitoba</option>
+                      <option value="NB">New Brunswick</option>
+                      <option value="NL">Newfoundland & labrador</option>
+                      <option value="NS">Nova Scotia</option>
+                      <option value="ON">Ontario</option>
+                      <option value="PE">Prince Edward Island</option>
+                      <option value="QC">Quebec</option>
+                      <option value="SK">Saskatchewan</option>
+                      <option value="NT">Northwest Territories</option>
+                      <option value="NU">Nunavut</option>
+                      <option value="YT">Yukon</option>
+                    </select>
+                  </div>
+
+                  <div className='line-seven'>
+                    <div className='four-label'>Credit Card</div>
+                  </div>
+
+                  <div className='line-eight'>
+                    <CardElement options={cardOptions} className='stripe' />
+                  </div>
+                
+                  <button type='submit' disabled={!stripe} className='submit-button-checkout'>Submit</button>
+
+                </form>
+              </div>)}
+        </div>
+      </div>
     )
   }
   return (
     <form onSubmit={onFirstSubmit} className='right'>
-      <ErrorModal message={errorMessage}/>
+      <ErrorModal message={errorMessage} />
 
 
-      <h2>Shipping Information part 1 of 2</h2>
+      <h2>Shipping Information</h2>
+      <h6 className='of-two'>1 of 2</h6>
       <div>
         <div className='line-one'>
-          <input type='text' placeholder='First Name*' name='first' className='first-name-input' required />
+          <div for='first' className='one-label' >First Name </div>
+          <div className='one-label'>Last Name</div>
+          <div className='one-label'>Company Name</div>
+        </div>
+        <div className='line-two'>
+          <input type='text' placeholder='First Name*' name='first' className='first-name-input' id='first' required />
           <input type='text' placeholder='Last Name*' name='last' className='last-name-input' required />
           <input type='text' placeholder='Company Name' name='company' className='company-input' />
         </div>
-        <div className='line-two'>
+
+
+        <div className='line-three'>
+          <div className='two-label'>Street Name</div>
+          <div className='two-label'> Unit</div>
+        </div>
+        <div className='line-four'>
           <input type='text' placeholder='Street Name' name='street' className='street-input' />
           <input type='text' placeholder='Apartment, Suite, Unit, etc.' name='unit' className='unit-input' />
         </div>
-        <div className='line-three'>
+
+        <div className='line-five'>
+          <div className='three-label'>City/Town</div>
+          <div className='three-label'>Postal</div>
+          <div className='three-label'>Province</div>
+        </div>
+        <div className='line-six'>
           <input type='text' placeholder='Town/City' name='town' className='town-input' />
           <input type='text' placeholder='Postal Code' name='postal' className='postal-input' />
           <select name="prov" className='prov-select'>
@@ -264,11 +304,16 @@ const handleRequest = async (e) => {
             <option value="NU">Nunavut</option>
             <option value="YT">Yukon</option>
           </select>
-          <div className='line-four'>
-            <input type='email' placeholder='email' name='email' className='email' />
-          </div>
         </div>
-  
+
+        <div className='line-seven'>
+          <div className='four-label'>Email</div>          
+        </div>
+
+        <div className='line-eight'>
+          <input type='email' placeholder='email' name='email' className='email' />
+        </div>
+
         <button type='submit' className='submit-button-checkout' disabled={orders.length === 0 ? (true) : (false)}>Submit</button>
       </div>
     </form>
