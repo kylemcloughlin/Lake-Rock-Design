@@ -16,6 +16,8 @@ const Hamburger = () => {
     <div className='nav-button-bar-mobile'>
       <button className='menu-btn'>MENU</button>
       <Menu width={'100%'}>
+        <button className='bm-cross-button'>X</button>
+       
         {buttonValues.map((item, index) => {
           return (
             <Link to={item.urlLink} key={index}>

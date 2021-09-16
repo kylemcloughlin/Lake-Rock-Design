@@ -122,7 +122,26 @@
 
 
 /* item page below */
+.loader-holder-item {
+ display: flex;
+ justify-content: center;
+ width: 100;
+ margin: -5em;
+ vertical-align: top
+}
 
+.loader-item {
+  margin-top: 5em;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #1A1F16;
+  border-right: 16px solid #46543B;
+  border-bottom: 16px solid #356E39;
+  border-left: 16px solid #49974E;
+  width: 25px;
+  height: 25px;
+  animation: spin 2s linear infinite;
+}
 .product-holder {
  display: block;
  position: relative;

@@ -9,8 +9,14 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
   const [complete, setComplete] = useState(false);
   const [secondStep, setSecondStep] = useState(false);
   const [shippingInfo, setShippingInfo] = useState({})
-  const [errorMessage, setErrorMessage] = useState('')
-  // const [custEmail, setCustEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(true);
+  const buttonStyle = loading ? (<div className="loader-holder-checkout-request" id='ldr' >
+  <div className="loader-request"></div>
+  </div>) : (<button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>)
+  // const loaderStyle = !loading ? ({ visablity: 'hidden' }) : ({ visablity: 'visable' })
+
+  // const [inProcess, setInProcess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
 
@@ -92,6 +98,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
 
   const onSubmit = async (event) => {
     event.preventDefault()
+    setLoading(false)
     let { first, last, company, street, unit, town, postal, prov } = event.target;
     let output = {
       first: first.value,
@@ -105,6 +112,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
     }
     console.log(output)
     if (!stripe || !elements) {
+      setLoading(true)
       return;
     }
     console.log('heheheh', customersItems)
@@ -119,7 +127,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
     });
     if (result.error) {
       console.log(result.error.message); ///ADDD ERRROR HANDLEING HERE???
-
+      setLoading(true)
 
     } else {
       const rawResponse = await fetch('https://fathomless-lake-40918.herokuapp.com/customers', {
@@ -141,6 +149,8 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
         // setComplete(true)
         handleFinish(`A receipt will be sent to email: ${shippingInfo.email}`)
         clearCart();
+      } else  {
+        setLoading(false)
       }
 
     }
@@ -148,6 +158,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
   }
 
   const handleRequest = async (e) => {
+    setLoading(true)
     e.preventDefault();
     // const response = await fetch('http://localhost:3001/inquiry_email', {
     const response = await fetch(`https://fathomless-lake-40918.herokuapp.com/inquiry_email`, {
@@ -166,8 +177,10 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
     if (content.status === 200) {
       handleFinish(`We successfully recieved your request, A response will be sent to the email: ${shippingInfo.email}`);
       clearCart();
+    } else {
+      setLoading(false)
     }
-    console.log(content.status)
+  
 
 
   }
@@ -177,8 +190,10 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
       <div>
         <div>
           {payment ? (
-
-            <button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>
+         
+              // <div className="loader-holder-checkout-request" id='ldr' ><div className="loader-request"></div></div>
+              <button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>
+      
 
           ) : (
               <div>
@@ -243,7 +258,10 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
                     <CardElement options={cardOptions} className='stripe' />
                   </div>
                 
-                  <button type='submit' disabled={!stripe} className='submit-button-checkout'>Submit</button>
+                  {loading ? (
+                    <button type='submit' disabled={!stripe} className='submit-button-checkout'>Submit</button>
+
+                  ) : (<div className="loader-holder-checkout" id='ldr'><div className="loader-request"></div></div>)}
 
                 </form>
               </div>)}

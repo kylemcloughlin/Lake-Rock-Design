@@ -33,6 +33,19 @@ left: 1em;
 
   }
 
+.loader-holder-checkout {
+  position: absolute;
+  bottom: -7em;
+  right: 2em;
+  
+}
+
+.loader-holder-checkout-request{
+  position: relative;
+  /* bottom: -1em; */
+  bottom: -3.5em;
+  left: 5em;
+}
 
 .right {
   /* background: #ccc;
