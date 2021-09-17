@@ -5,15 +5,16 @@
 .body-holder {
   display: flex;
 }
+
 .paragraph-holder {
   margin: 4em;
 
 }
 
 .design-photo {
-      margin-bottom: 2.5em;
-      margin-right: 4%;
-      border-radius: .5em;
+  margin-bottom: 2.5em;
+  margin-right: 4%;
+  border-radius: .5em;
 }
 
 

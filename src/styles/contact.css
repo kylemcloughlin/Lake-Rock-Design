@@ -17,7 +17,7 @@
 .contact-body p {
   width: 50%;
   margin: 1.5em;
-  margin-left: 3em; 
+  margin-left: 3em;
   line-height: 2em;
 
 }
@@ -44,8 +44,9 @@
 }
 
 .contact-list li {
-margin: 1em;
+  margin: 1em;
 }
+
 .call-button {
   width: 9em;
   border: 2px solid black;
@@ -53,12 +54,12 @@ margin: 1em;
   font-size: 17px;
   height: 3em;
   background: none;
-  margin-left: 1em; 
+  margin-left: 1em;
 }
 
 .call-button:hover {
-border: 2px solid #679436;
-color: #679436;
+  border: 2px solid #679436;
+  color: #679436;
 }
 
 .call-button:focus {
@@ -82,30 +83,31 @@ color: #679436;
     margin: 0em;
   }
 
-    .contact-holder {
-      display: grid;
-    }
-
-    .contact-body p{
-      width: 87%;
-    }
-
-    .contact-photo {
-      width: 100%;
-      margin: 0;
-    }
+  .contact-holder {
+    display: grid;
   }
+
+  .contact-body p {
+    width: 87%;
+  }
+
+  .contact-photo {
+    width: 100%;
+    margin: 0;
+  }
+}
 
 
 @media only screen and (max-width: 340px) {
   .contact-holder {
-height: 62em;
+    height: 62em;
 
   }
-.contact-body {
-  height: 94%;
-  margin: 0em;
-}
+
+  .contact-body {
+    height: 94%;
+    margin: 0em;
+  }
 
   .call-button {
     margin-bottom: 1em;
