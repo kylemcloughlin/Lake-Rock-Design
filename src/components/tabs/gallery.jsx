@@ -19,23 +19,23 @@ import PhotoGallery from 'react-grid-gallery';
 
 const IMAGES =
       [{
-            src: 'https://picsum.photos/id/1019/1000/600/',
-            thumbnail: 'https://picsum.photos/id/1019/250/150/',
+            src: 'https://lh3.googleusercontent.com/pw/AM-JKLVjcXFSCm9me71If7wdugzcPqyJKQQnfOMDBpKcUzcxQ-wWpcFClufSPi4g9pNxKkClJVXoV7My6i08pACHP_EfEbsRvDHQJhQb6a4XDg0Ix-FTDp_HtMe76wiTLT9r_YsmzDMT94ZWY5oPrkmcGJq0=w727-h485-no?authuser=0',
+            thumbnail: 'https://lh3.googleusercontent.com/pw/AM-JKLWWOkxQ4ugrRGwwc9RAntXz9_2lzSbMPNpXAljWJmPmglQ6lVyGBgrTeGbfqWd_G0CovzouWnHarBPqpLER9XNIzQqQbvSjAaFC7rS-OQfUXEBJ1AjnrgdfIdLr-ZxD0Pk0y1uj8Hvs4VaXCJ8fASva=w588-h392-no?authuser=0',
             thumbnailWidth: 320,
-            thumbnailHeight: 174,
-            caption: "After Rain (Jeshu John - designerspics.com)"
+            thumbnailHeight: 200,
+            caption: ""
       },
       {
-            src: "https://picsum.photos/id/1015/1000/600/",
-            thumbnail: "https://picsum.photos/id/1015/250/150/",
-            thumbnailWidth: 320,
-            thumbnailHeight: 212,
+            src: "https://lh3.googleusercontent.com/pw/AM-JKLVTJn8mlsQXAGlDUSIom-xskIBP3YkiwnUkP_3Bs6njW6tUw-wTgeRNieeoNLHnHS3r3_SBEF_wKO7O2HjjS99S8T7b5uZ7UfXcAR5ShqwMKbLCITAqMD9SwD9GA3OyROkJ0JqjdVhyuKBjnEeFveq2=w526-h789-no?authuser=0",
+            thumbnail: "https://lh3.googleusercontent.com/pw/AM-JKLVc579BBFJbEJyMibf4TnHmcsj35pYZ812qCUYaCyIYykVuG97sFU956A_PCY8le1YrUFAvsne_7me4wj1lNnCrSENejijDyniIrtVSy3A3PknqTWFzur8V15LN_ompr4eLxSxo15UmS7FUImozXIyd=w336-h504-no?authuser=0",
+            thumbnailWidth: 212,
+            thumbnailHeight: 320,
             caption: "Boats (Jeshu John - designerspics.com)"
       },
 
       {
-            src: 'https://picsum.photos/id/1019/1000/600/',
-            thumbnail: 'https://picsum.photos/id/1019/250/150/',
+            src: 'https://lh3.googleusercontent.com/pw/AM-JKLV0a154kKAoERZM3xmFMxQyq41liVkzhHJgrmIIAL3fI98h7C9l9YzxSiR0OvUQly19bwTXh96vZ6H1h3IAj1EaSsWfe3h7IIcQtAncsiz58o6Jdbb76-KoJlIGollBKtlKv2Utk7sNe0yVk4WT2EaF=w727-h485-no?authuser=0',
+            thumbnail: 'https://lh3.googleusercontent.com/pw/AM-JKLXbXupmm4zpoQ8AvH90otxluHnz0yfyZhpXp78b11CvcX4Tj1s8ypSpvjRiUSvQ5LwiC0J69Sg_kKse6IQ-1-itbmaJE0FEMm_aWMkZbPPCL_CBCco_3cQfGKIOKLqFlaCRhnqMR53HI4fdQVcL-jLi=w400-h267-no?authuser=0',
             thumbnailWidth: 320,
             thumbnailHeight: 212
       }, {
