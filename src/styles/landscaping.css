@@ -2,10 +2,11 @@
   display: flex;
   width: 100%;
   justify-content: center;
-   /* opacity: .1; */
+  /* opacity: .1; */
 }
+
 .holder {
-  border: black 1px solid;    
+  border: black 1px solid;
   width: 15.63em;
   height: 25em;
   text-align: center;
@@ -13,11 +14,12 @@
   opacity: .7;
   transition: 20ms;
   position: relative;
-  border-radius: 1em; 
+  border-radius: 1em;
+  overflow: hidden;
 
 }
 
-.holder:hover{
+.holder:hover {
   opacity: 1;
   transition: 20ms;
 
@@ -25,15 +27,16 @@
 
 
 .price {
-     color: #356E39;
-     position: absolute;
-     bottom: 0;
-     left: 25%;
+  color: #356E39;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
 }
+
 .button-holder {
-    display: flex;
-    width: 100%;
-    justify-content: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 
@@ -55,22 +58,22 @@
 
 .disc {
   width: 80%;
-  margin:  20px;
+  margin: 20px;
 }
 
- .img {
+.img {
 
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
+  width: 100%;
+}
 
- }
 
-
- .loader-holder {
-   display: flex;
-   justify-content: center;
-   margin-bottom: 25em;
- }
+.loader-holder {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25em;
+}
 
 .loader {
   margin-top: 5em;
@@ -99,6 +102,16 @@
   text-align: center;
 }
 
+.card-bottom-holder {
+  background: #fefefe;;
+  position: absolute;
+  height: 14em;
+  top: 11em;
+  width: 100%;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+}
 
 @-webkit-keyframes spin {
   0% {
@@ -123,11 +136,11 @@
 
 /* item page below */
 .loader-holder-item {
- display: flex;
- justify-content: center;
- width: 100;
- margin: -5em;
- vertical-align: top
+  display: flex;
+  justify-content: center;
+  width: 100;
+  margin: -5em;
+  vertical-align: top
 }
 
 .loader-item {
@@ -142,48 +155,53 @@
   height: 25px;
   animation: spin 2s linear infinite;
 }
+
 .product-holder {
- display: block;
- position: relative;
- top: 2em;
- width: 75%;
- margin: auto;
- margin-bottom: 3em; 
- border: 1px solid black;
- height: 45em;
+  display: block;
+  position: relative;
+  top: 2em;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 3em;
+  /* border: black 1px solid; */
+  border-radius: 4px;
+  box-shadow: 0px 5px 10px 0px #cccccc;
+  height: 45em;
 }
 
 .img-holder {
-    position: absolute;
-    left: 1em;
-    /* border: 1px solid black; */
-    top: 2em;
-    width: 50%;
-    height: 19.6em;
-    text-align: center;
-    
-    
-  }
+  position: absolute;
+  left: 1em;
+  /* border: 1px solid black; */
+  top: 2em;
+  width: 50%;
+  height: 19.6em;
+  text-align: center;
 
-  .img-holder h3 {
-    color: #1A1F16;
-    margin-top: 4.5em;
-  }
-  .item-page-img {
-    
-    margin-top: 1em;
-  
+
+}
+
+.img-holder h3 {
+  color: #1A1F16;
+  margin-top: 4.5em;
+}
+
+.item-page-img {
+
+  margin-top: 1em;
+  width: 79%;
+  max-width: 400px;
 
 }
 
 .item-page-body-holder {
-      position: absolute;
-      right: 1em;
-      top: 2em;
-      height: 19.6em;
-      width: 40%;
-      border-left: 1px solid black;
-      display: block;
+  position: absolute;
+  right: 1em;
+  top: 2em;
+  height: 19.6em;
+  width: 40%;
+  border-left: 1px solid #CCCCCC;
+  display: block;
 
 }
 
@@ -195,7 +213,7 @@
 .sold-by-holder {
   position: absolute;
   bottom: 12em;
-  border-top: black 1px solid;
+  border-top: #CCCCCC 1px solid;
   left: 0;
   width: 96%;
   margin: 1em;
@@ -204,40 +222,42 @@
 }
 
 .sold-by-ttl {
-position: relative;
-left: 10px;
-text-align: left;
+  position: relative;
+  left: 10px;
+  text-align: left;
 
 }
 
 .sold-by {
- border: transparent 1px solid;
- width: 15%;
- height: 4em;
- margin-left: 1em;
- margin-bottom: 1em;
- border-radius: .2em;
- font-family: 'Montserrat';
- font-style: normal;
- font-weight: 400;
- border-radius: .2em;
- /* border: none; */
- background-color: #49974E;
- color: #f3f3f3;
+  border: transparent 1px solid;
+  width: 15%;
+  height: 4em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  border-radius: .2em;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  border-radius: .2em;
+  /* border: none; */
+  background-color: #49974E;
+  color: #f3f3f3;
 }
 
 .form-holder {
   position: absolute;
   bottom: 0;
-  border: black 1px solid;
-  left: 0;  
+  /* border: black 1px solid; */
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px 0px #CCCCCC;
+  left: 0;
   width: 96%;
   height: 11em;
   margin: 1em;
   /* border: black 1px solid; */
 }
 
-.form-wrapper{
+.form-wrapper {
   width: 100%;
   background-color: aqua;
   position: relative;
@@ -247,7 +267,7 @@ text-align: left;
   position: absolute;
   right: 0px;
   top: -10.5em;
-  border-left: 1px solid black; 
+  border-left: 1px solid #CCCCCC;
   height: 10em;
   width: 30%;
   text-align: center;
@@ -258,11 +278,11 @@ text-align: left;
 }
 
 .add-to-cart-input {
- height: 3.4em;
- width: 3em;
- position: relative;
- top: -1.2em;
- 
+  height: 3.4em;
+  width: 3em;
+  position: relative;
+  top: -1.2em;
+
 }
 
 
@@ -281,7 +301,7 @@ text-align: left;
   position: relative;
 
   left: 3px;
-      top: -1.2em;
+  top: -1.2em;
 }
 
 .add-to-cart-button:hover {
@@ -291,27 +311,168 @@ text-align: left;
 
 }
 
+.enlarge-btn {
+  margin-top: .5em;
+  width: 9em;
+  height: 2.7em;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  border-radius: .2em;
+  border: none;
+  background-color: #49974E;
+  color: #f3f3f3;
+  transition: 2ms;
+  position: relative;
+
+  left: 3px;
+  top: .8em;
+}
+
+.enlarge-btn:hover {
+  transition: 2ms;
+  background-color: #356E39;
+
+
+}
+
+
+
+
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto !important;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+
 
 @media only screen and (max-width: 1120px) {
-.holder {
-  margin: 0em;
-}
-  
+  .holder {
+    margin: 0em;
+  }
+
 }
 
 @media only screen and (max-width: 1030px) {
   .item-holder {
-   display: grid;
-   width: 100%;
+    display: grid;
+    width: 100%;
   }
+
   .holder {
     width: 100%;
   }
+
   .price {
     left: 32%;
   }
 }
- 
+
 
 @media only screen and (max-width: 540px) {
   .product-holder {
@@ -319,66 +480,74 @@ text-align: left;
     border: none;
     margin-bottom: 7em;
   }
-.item-holder {
-}
-.img-holder {
-  width: 100%;
-  left: 0em;
 
-}
-.item-page-img {
-  width: 100%;
-  margin-top: -2em;
-}
-.item-page-body-holder {
-  position: relative;
-  right: 1em;
-  top: 23em;
-  height: 19.6em;
-  width: 100%;
-  border-left: none;
-  /* display: block; */
-  text-align: center;
-}
+  .item-holder {}
 
-.sold-by-ttl {
-  left: 0em;
-}
-.sold-by-holder {
-      position: absolute;
-      bottom: 6em;
-      left: 0;
-      width: 96%;
-      margin: 1em;
-      text-align: center;
-      border: none;
+  .img-holder {
+    width: 100%;
+    left: 0em;
 
-}
-.sold-by {
-  width: 93%;
-  margin-left: 0em; 
-}
-.img-holder h3 {
-  margin-top: 1.5em;
-}
+  }
 
-.item-img {
-  margin: 0em;
-  visibility: hidden;
-}
-.add-to-cart {
-  border: none;
-  width: 100%;
-  top: -7.5em;
-}
-.form-holder {
-  position: absolute;
-  bottom: -4em;
-  border: black 1px solid;
- margin: 0em;
-  width: 100%;
-  height: 11em;
-  
+  .item-page-img {
+    width: 100%;
+    margin-top: -2em;
+  }
+
+  .item-page-body-holder {
+    position: relative;
+    right: 1em;
+    top: 23em;
+    height: 19.6em;
+    width: 100%;
+    border-left: none;
+    /* display: block; */
+    text-align: center;
+  }
+
+  .sold-by-ttl {
+    left: 0em;
+  }
+
+  .sold-by-holder {
+    position: absolute;
+    bottom: 6em;
+    left: 0;
+    width: 96%;
+    margin: 1em;
+    text-align: center;
+    border: none;
+
+  }
+
+  .sold-by {
+    width: 93%;
+    margin-left: 0em;
+  }
+
+  .img-holder h3 {
+    margin-top: 1.5em;
+  }
+
+  .item-img {
+    margin: 0em;
+    visibility: hidden;
+  }
+
+  .add-to-cart {
+    border: none;
+    width: 100%;
+    top: -7.5em;
+  }
+
+  .form-holder {
+    position: absolute;
+    bottom: -4em;
+    border: black 1px solid;
+    margin: 0em;
+    width: 100%;
+    height: 11em;
+
   }
 }
 

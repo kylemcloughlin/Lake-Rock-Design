@@ -15,10 +15,13 @@ function Row({items})  {
         return (
           <Link to={`landscaping-supplies/${item.index + 1}`}>
             <div key={item.id} className='holder'>
-              <img src={ItemImg} className='img'></img>
+              <img src={item.thumb} className='img' ></img>
+              <div className='card-bottom-holder'>
               <h1 className='name'>{item.name}</h1>
-              
               <h3 className='price'>View Options</h3>
+
+              </div>
+              
             </div>
           </Link>)})}
 

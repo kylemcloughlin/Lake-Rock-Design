@@ -167,6 +167,7 @@ let name = e.target.name
                 </div>
                   <div className='underline'/>
                 <h3 className='hst-os'>HST: ${hst(orders)}</h3>
+                <br/>
                 <h3 className='total-os'>Total: ${totalWithTax(orders)}(CAD)</h3>
                </div> 
 

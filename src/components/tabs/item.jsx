@@ -25,8 +25,8 @@ function Item({ match, location, handleCart }) {
   const handleFetch = () => {
 
 
-    //  fetch(`http://localhost:3001/items/${match.params.itemId}`)     
-    fetch(`https://fathomless-lake-40918.herokuapp.com/items/${match.params.itemId}`)
+     fetch(`http://localhost:3001/items/${match.params.itemId}`)     
+    // fetch(`https://fathomless-lake-40918.herokuapp.com/items/${match.params.itemId}`)
       .then(response => {
         if (response.ok) {
           return response.json()
@@ -62,7 +62,7 @@ function Item({ match, location, handleCart }) {
       value: e.target.points.value,
       price: item.price
     }
-    console.log(helper)
+
     if (helper != null) {
       helper.forEach((item, index) => {
         if (item.name === addToCart.name) {
@@ -74,7 +74,7 @@ function Item({ match, location, handleCart }) {
       setCookie('cart', helper, { path: '/' });
       handleCart(helper)
 
-      console.log('hit')
+      
       // alert("added to cart!");
       let modal = document.getElementById("myModal");
       modal.style.display = "block";
@@ -89,20 +89,43 @@ function Item({ match, location, handleCart }) {
 
     }
   }
+  const handleFullScreen = (item, e) => {
+    // console.log(item, e)
+    let modal = document.getElementById("imgModal");
+    let modalImg = document.getElementById("img01");
+    let captionText = document.getElementById("caption");
+      modal.style.display = "block";
+      // modalImg.src = this.src;
+      // captionText.innerHTML = this.alt;
+    
+
+    // Get the <span> element that closes the modal
+    // var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    
+  }
+  
+const handleCloseFull = () => {
+  let modal = document.getElementById("imgModal");
+  modal.style.display = "none";
+  }
   return (
     <div className='product-holder'>
       <Modal />
       <div className='item-holder'>
         <div className='img-holder'>
-          <img src={ItemImg} className='item-page-img'></img>
-          <h3>click image to enlarge</h3>
+          <img src={item.thumb} className='item-page-img'></img>
+          <br/>
+          <input id="clickbutton" type="button" value='Click To Enlarge' className='enlarge-btn' onClick={handleFullScreen.bind(this, item)} />
         </div>
         <div className='item-page-body-holder'>
           <h1>{item.name}</h1>
+          <h3 className='sold-by-ttl'>Description:</h3>
           <h4>{item.disc}</h4>
         </div>
         <div className='sold-by-holder'>
-          <h3 className='sold-by-ttl'>Availability</h3>
+          <h3 className='sold-by-ttl'>Sold By:</h3>
           <div className='sold-by'>
             <h3>{item.unit}</h3>
           </div>
@@ -125,6 +148,12 @@ function Item({ match, location, handleCart }) {
           </div>
           </form>
     </div>
+      <div id="imgModal" className="modal">
+        <span className="close" onClick={handleCloseFull}>&times;</span>
+        <img className="modal-content" id="img01" src={item.photo}/>
+          <div id="caption">ooooososososo</div>
+      </div>
+
     </div >
   );
 }

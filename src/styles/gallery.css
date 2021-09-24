@@ -9,8 +9,8 @@
 .carousel-holder {
   /* border: black solid 1px; */
  display: block;
- justify-content: right;
- width: 52%;
+ /* justify-content: right; */
+ width: 100%;
  margin: auto;
 }
 
@@ -21,10 +21,20 @@
   display: flow-root;
 }
 
+.img-caro {
+  /* visibility: hidden; */
+  /* border-radius: 1em; */
+  /* display: inline; */
+  margin: 0em;
 
+}
+.alice-carousel__stage-item {
+  /* width: 700px !important; */
+}
 @media only screen and (max-width: 1024px) {
 .carousel-holder {
-  width: 90%;
+  width: 100%; 
+  /* changed from 90% */
 }
 }
 

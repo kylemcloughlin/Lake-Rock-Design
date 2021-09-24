@@ -83,17 +83,17 @@
 .subtotal-os {
    position: absolute;
    /* bottom: -.5em; */
-   left: 80%;
+   left: 2%;
 }
 .hst-os {
   position: absolute;
   bottom: 25%;
-  left: 80%;
+  left: 2%;
 }
 .total-os {
   position: absolute;
   bottom: 15%;
-  left: 80%;
+  left: 2%;
 }
 
 

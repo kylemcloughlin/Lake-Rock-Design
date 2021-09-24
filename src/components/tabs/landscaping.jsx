@@ -19,35 +19,39 @@ function Landscaping() {
     // console.log(Document.getElementById(elemntID))
    let element = document.getElementById(elemntID);
     var op = 1;  // initial opacity
-
-    // console.log(element)
+    
     var timer = setInterval(function () {
-      if (op <= 0.1) {
-        clearInterval(timer);
+      try {
+        if (op <= 0.1) {
+          clearInterval(timer);
         // element.style.display = 'none';
         setLoading(false)
         // unfade('item-holder-id')
-
+        
       }
       element.style.opacity = op;
       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
       op -= op * 0.1;
+    } catch (e) {
+      console.error(e);
+      clearInterval(timer);
+    }
     }, 50);
   }
-  function unfade(elemntID) {
-    let element = document.getElementById(elemntID);
-    var op = 0.1;  // initial opacity
-    element.style.display = 'block';
-    var timer = setInterval(function () {
-      if (op >= 1) {
-        clearInterval(timer);
-      }
-      element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-      op += op * 0.1;
-      // console.log(op)
-    }, 10);
-  }
+  // function unfade(elemntID) {
+  //   let element = document.getElementById(elemntID);
+  //   var op = 0.1;  // initial opacity
+  //   element.style.display = 'block';
+  //   var timer = setInterval(function () {
+  //     if (op >= 1) {
+  //       clearInterval(timer);
+  //     }
+  //     element.style.opacity = op;
+  //     element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+  //     op += op * 0.1;
+  //     // console.log(op)
+  //   }, 10);
+  // }
 
 
   const handleFetch = async () => {
@@ -85,12 +89,12 @@ function Landscaping() {
 
       }
 
-      // setMess('hit right above loading')
+      
 
       setItems(output)
-      // setLoading(false)
+
       fade('ldr')
-      // })
+      
 
     } catch (error) {
       if (error.response) {
@@ -107,11 +111,6 @@ function Landscaping() {
 
 
   }
-
-  // const handleMore = (e) => {
-
-  // }
-
   if (loading) {
     return (<div className='lndscp-ttl'>
       <h1>Our Landscape Material</h1>

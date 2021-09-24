@@ -7,7 +7,7 @@ const Contact = () => {
   }
 
   const handleEmail = () => {
-    var link = "mailto:me@example.com"
+    var link = "alex@lakerockdesign.com"
       + "?cc="
       + "&subject=" + encodeURIComponent("Contact Inquiry")
       ;
@@ -35,10 +35,10 @@ const Contact = () => {
       </div>
     <div>
           <button onClick={handleTelly} className='call-button'>CALL TODAY</button>
-      <span> or contact us by email at <i className='email-btn' onClick={handleEmail}>email@email.com</i></span>
+      <span> or contact us by email at <i className='email-btn' onClick={handleEmail}>alex@lakerockdesign.com</i></span>
     </div>
     </div>
-      <img src={photo} className='contact-photo' />
+      <img src='https://lh3.googleusercontent.com/pw/AM-JKLVD3JdECL2IxYZyf5sIhcZRzkjqUFIrfp7aV4KhuUTjGgaLmNGn4HgxOmiCXky4vkoMCY3aGccbj8bAwGaPtUG0A-weWjrml5JyJJ84v7laRKifFr6XYX7WGPeWx2NzSrwR04ulfwwUAa-6dJWQtq4w=w764-h789-no?authuser=0' className='contact-photo' />
     </div>
 
   );
