@@ -6,15 +6,13 @@ import CheckoutForm from '../checkoutForm';
 import OrderSummary from '../orderSummary';
 import { useCookies } from 'react-cookie';
 import '../../styles/checkout.css';
-import Modal from '../modal.jsx'
-import ErrorModal from '../errorModal.jsx';
+import Modal from '../modal.jsx';
 import check from '../../checkmark.png';
 const stripePromise = loadStripe('pk_test_51JPZAlKUlzH2P3ixGDOz377XqBrkm4UcxsW47QT4y9wvimGufj6F36f3cvdW6RCWZi5X9NWJ3God5KJko66cIbES009vHJvM1G');
 
 
 
 function Checkout({ cart, clearCart } ) {
-  // console.log('yoyooy', clearCart)
   const [customersItems, setCustomersItems] = useState()
   const [complete, setComplete] = useState(false);
   const [swtch,setSwtch] = useState(false);
@@ -27,7 +25,7 @@ function Checkout({ cart, clearCart } ) {
       setCustomersItems(cookies['cart'])
  
 
-  }, [customersItems])
+  }, [customersItems, cookies])
 
   const handlePartOne = (x) => {
     console.log('eheheheh')
@@ -107,7 +105,7 @@ function Checkout({ cart, clearCart } ) {
       <div className='request-email-holder'>
         <div className='request-email-sent'>
         <h1>Checkout Complete</h1>
-        <img src={check}/>
+        <img src={check} alt=''/>
           <h4><i>{mes}</i></h4>
         </div>
       </div>

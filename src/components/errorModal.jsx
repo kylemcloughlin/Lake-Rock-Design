@@ -6,7 +6,7 @@ function ErrorModal({message}) {
 
 
       <div className="modal-content">
-        <img src={x} />
+        <img src={x} alt=''/>
         <h4>Error!</h4>
         <p>{message}</p>
 

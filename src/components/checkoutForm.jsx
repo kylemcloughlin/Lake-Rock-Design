@@ -2,26 +2,17 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 // import { useCookies } from 'react-cookie';
 import React, { useState, useEffect } from 'react';
 import '../styles/checkout.css';
-import OrderSummary from "./orderSummary";
 import ErrorModal from './errorModal.jsx';
 function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, payment }) {
   let [orders, SetOrders] = useState([]);
-  const [complete, setComplete] = useState(false);
   const [secondStep, setSecondStep] = useState(false);
   const [shippingInfo, setShippingInfo] = useState({})
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(true);
-  const buttonStyle = loading ? (<div className="loader-holder-checkout-request" id='ldr' >
-  <div className="loader-request"></div>
-  </div>) : (<button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>)
-  // const loaderStyle = !loading ? ({ visablity: 'hidden' }) : ({ visablity: 'visable' })
-
-  // const [inProcess, setInProcess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
 
   useEffect(() => {
-    console.log(customersItems)
     if (customersItems) {
 
       SetOrders(customersItems)
@@ -52,7 +43,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
   const onFirstSubmit = (event) => {
     event.preventDefault()
     let { first, last, company, street, unit, town, postal, prov, email } = event.target;
-    if (prov.value != 'ON') {
+    if (prov.value !== 'ON') {
       console.log('error')
       setErrorMessage('We only provide shipping within Ontario.');
       let error = document.getElementById("myErrorModal");
@@ -149,7 +140,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
         // setComplete(true)
         handleFinish(`A receipt will be sent to email: ${shippingInfo.email}`)
         clearCart();
-      } else  {
+      } else {
         setLoading(false)
       }
 
@@ -180,7 +171,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
     } else {
       setLoading(false)
     }
-  
+
 
 
   }
@@ -190,10 +181,10 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
       <div>
         <div>
           {payment ? (
-         
-              // <div className="loader-holder-checkout-request" id='ldr' ><div className="loader-request"></div></div>
-              <button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>
-      
+
+            // <div className="loader-holder-checkout-request" id='ldr' ><div className="loader-request"></div></div>
+            <button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>
+
 
           ) : (
               <div>
@@ -211,7 +202,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
                   <div className='line-two'>
                     <input type='text' placeholder='First Name*' name='first' className='first-name-input' id='first' required />
                     <input type='text' placeholder='Last Name*' name='last' className='last-name-input' id='last' required />
-                    <input type='text' placeholder='Company Name' name='company' className='company-input' id='company'  />
+                    <input type='text' placeholder='Company Name' name='company' className='company-input' id='company' />
                   </div>
 
 
@@ -220,8 +211,8 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
                     <div className='two-label'> Unit</div>
                   </div>
                   <div className='line-four'>
-                    <input type='text' placeholder='Street Name' name='street' className='street-input' id='street'/>
-                    <input type='text' placeholder='Apartment, Suite, Unit, etc.' name='unit' className='unit-input' id='unit'/>
+                    <input type='text' placeholder='Street Name' name='street' className='street-input' id='street' />
+                    <input type='text' placeholder='Apartment, Suite, Unit, etc.' name='unit' className='unit-input' id='unit' />
                   </div>
 
                   <div className='line-five'>
@@ -230,8 +221,8 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
                     <div className='three-label'>Province</div>
                   </div>
                   <div className='line-six'>
-                    <input type='text' placeholder='Town/City' name='town' className='town-input' id='town'/>
-                    <input type='text' placeholder='Postal Code' name='postal' className='postal-input' id='postal'/>
+                    <input type='text' placeholder='Town/City' name='town' className='town-input' id='town' />
+                    <input type='text' placeholder='Postal Code' name='postal' className='postal-input' id='postal' />
                     <select name="prov" className='prov-select'>
                       <option value="">Province</option>
                       <option value="AB">Alberta</option>
@@ -257,7 +248,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
                   <div className='line-eight'>
                     <CardElement options={cardOptions} className='stripe' />
                   </div>
-                
+
                   {loading ? (
                     <button type='submit' disabled={!stripe} className='submit-button-checkout'>Submit</button>
 
@@ -325,7 +316,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
         </div>
 
         <div className='line-seven'>
-          <div className='four-label'>Email</div>          
+          <div className='four-label'>Email</div>
         </div>
 
         <div className='line-eight'>

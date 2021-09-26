@@ -10,6 +10,16 @@
   z-index: 1;
 }
 
+.company-logo-name {
+  position: absolute;
+bottom: 1.3em;
+left: 2.3em;
+}
+.company-logo-sub {
+ position: absolute;
+bottom: 0em;
+ left: 3.5em;
+}
 .serving {
   position: absolute;
   left: -20em;

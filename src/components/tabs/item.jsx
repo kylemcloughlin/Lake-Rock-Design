@@ -1,6 +1,5 @@
 // import '../styles/home.css';
 import React, { useState, useEffect } from 'react';
-import ItemImg from '../../test-item-img.jpeg';
 import photo from '../../bangerLogo.png';
 import { useCookies } from 'react-cookie';
 import Modal from '../modal.jsx';
@@ -8,15 +7,13 @@ import { Link } from 'react-router-dom';
 let cats = ['Soil', 'Landscape Rock', 'Gravel', 'Related Products']
 function Item({ match, location, handleCart }) {
   let [item, setItem] = useState({})
-  let [error, setError] = useState(null)
+  let [setError] = useState(null)
   let [loading, setLoading] = useState(true)
-  const [inProcess, setInProcess] = useState(false);
+
 
   const [cookies, setCookie] = useCookies(['cart']);
   useEffect(() => {
     handleFetch()
-    // console.log(item)
-    // let cookie = Cookies.get('cart')
     console.log(cookies)
     if (loading === false) {
       priceHelper(item.price)
@@ -138,12 +135,10 @@ function Item({ match, location, handleCart }) {
           <form onSubmit={handleSubmit} className='form-wrapper'>
             <div className='add-to-cart'>
               {loading ? (<h2></h2>) : (<h2 className='product-price'>${priceHelper(item.price)}</h2>)}
-              {!inProcess ? (
                 <div>
                   <input type="number" id="points" min='0' name="points" className='add-to-cart-input ' />
                   <input className='add-to-cart-button' type="submit" value="Add To Cart" />
                 </div>
-              ) : (<div className="loader-holder-item" id='ldr'><div className="loader-item"></div></div>)}
             </div>
           </form>
         </div>

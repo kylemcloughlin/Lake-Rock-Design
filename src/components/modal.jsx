@@ -6,7 +6,7 @@ function Modal() {
 
       
   <div className="modal-content">
-      <img src={chck}/>
+        <img src={chck} alt=''/>
       <h4>Success</h4>
       <p>Added To Cart</p>
 

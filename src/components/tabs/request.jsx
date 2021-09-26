@@ -1,6 +1,6 @@
 import '../../styles/request.css';
 import check from '../../checkmark.png';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -36,41 +36,6 @@ function Request() {
 
 
 }
-  function fade(elemntID) {
-    // console.log(Document.getElementById(elemntID))
-    let element = document.getElementById(elemntID);
-    var op = 1;  // initial opacity
-
-    // console.log(element)
-    var timer = setInterval(function () {
-      if (op <= 0.1) {
-        clearInterval(timer);
-        // element.style.display = 'none';
-        // setLoading(false)
-        setSent(true)
-        // unfade('item-holder-id')
-
-      }
-      element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-      op -= op * 0.1;
-    }, 50);
-  }
-  function unfade(elemntID) {
-    let element = document.getElementById(elemntID);
-    var op = 0.1;  // initial opacity
-    element.style.display = 'block';
-    var timer = setInterval(function () {
-      if (op >= 1) {
-        clearInterval(timer);
-      }
-      element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-      op += op * 0.1;
-      // console.log(op)
-    }, 10);
-  }
-
 
 
 
@@ -79,7 +44,7 @@ function Request() {
       <div className='request-email-holder' >
         <div className='request-email-sent'>
         <h3>Email was Succcessfully sent</h3>
-          <img src={check}/>
+          <img src={check} alt=''/>
         <h4><i>A response will be sent to email: {customerEmail}</i></h4>
         </div>
       </div>

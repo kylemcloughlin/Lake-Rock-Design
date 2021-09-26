@@ -8,7 +8,7 @@ import photo from '../bangerLogo.png';
 
 function Header({cart, complete}) {
 let [count, setCount] = useState(cart)
-const [cookies, setCookie] = useCookies(['cart']);
+const [cookies] = useCookies(['cart']);
   const handleTelly = () => {
 
     window.location.href = 'tel:4165095458';
@@ -18,7 +18,7 @@ const [cookies, setCookie] = useCookies(['cart']);
       console.log('hit')
       setCount([])
     }
-    if (cookies.cart != undefined) { 
+    if (cookies.cart !== undefined) { 
       setCount(cookies['cart'])
     }
 
@@ -27,18 +27,20 @@ const [cookies, setCookie] = useCookies(['cart']);
       setCount(cart)
     }
 
-  }, [ cart, complete]);
+  }, [ cart, complete, cookies]);
   
   return (
     <div className="App-header">
       <Link to={``}>
         <div className="company-name">
-          <img  src={photo} />
+          <img src={photo} alt=''/>
+          <h4 className='company-logo-name'>Rock Lake Design</h4>
+          <h5 className='company-logo-sub'><i>Naturally Inspired</i></h5>
         </div>
       </Link>
       <div className='company-number' onClick={handleTelly}>
       <div className='img-div'>
-        <img className='company-number-img' src={phone}/>
+          <img className='company-number-img' src={phone} alt=''/>
       </div>
         <h6 className='number'> (705)-868-3590</h6>
       </div>
@@ -46,14 +48,14 @@ const [cookies, setCookie] = useCookies(['cart']);
         {!count.length > 1 ? (
           <div className='holler'>
         <div className='address-img-div'>
-          <img className='company-number-img' src={shoppingCart} />
+              <img className='company-number-img' src={shoppingCart} alt=''/>
         </div>
           <h3 className='cart'>{count.length}</h3>
         </div>) : (
         <Link to={`/checkout`}>
         <div className='holler'>
         <div className='address-img-div'>
-        <img className='company-number-img' src={shoppingCart} />
+                  <img className='company-number-img' src={shoppingCart} alt=''/>
         <h4 className='cart'>{count.length}</h4>
         </div>
         </div>

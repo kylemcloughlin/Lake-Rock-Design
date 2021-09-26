@@ -21,7 +21,7 @@ function App() {
   const [content, setContent] = useState(0)
   const [sold, setSold] = useState(false)
   const [cart, setCart] = useState([])
-const [cookies, setCookies, removeCookie] = useCookies(['cart']);
+const [ removeCookie] = useCookies(['cart']);
   const handleNavClick = (value) =>{ 
     console.log("value", value)
     setContent(value)
@@ -57,7 +57,7 @@ return (
     <Router>
     <div className="App">
       <Header cart={cart} complete={sold}/>
-      <img src={banner} className='banner'/>
+      <img src={banner} className='banner' alt=''/>
       <Nav passNav={handleNavClick}/>
        <div className="wrapper">
     <Switch>
