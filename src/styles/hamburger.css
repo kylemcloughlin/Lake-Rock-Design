@@ -16,7 +16,7 @@
   position: absolute;
   top: -.7em;
   background: transparent;
-  right: 3em;
+  right: 0em;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -24,6 +24,7 @@
   z-index: 10;
 }
 .bm-burger-bars {
+  visibility: hidden !important;
   background-color: #fefefe !important;
   width: 2.5em !important;
   height: 1.5px !important;
@@ -40,6 +41,7 @@
   color: #ffffff ;
   border-bottom: 1px solid transparent;
   margin: 1em;
+  
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;

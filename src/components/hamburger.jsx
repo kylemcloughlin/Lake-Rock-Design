@@ -17,7 +17,7 @@ const Hamburger = () => {
   }
   return (
     <div className='nav-button-bar-mobile'>
-      {/* <button id='react-burger-menu-btn' className='menu-btn' onClick={showMenu}>MENU</button> */}
+      <button id='react-burger-menu-btn' className='menu-btn' onClick={showMenu}>MENU</button>
       <Menu width={'100%'} isOpen={menuOpen}>
         <button className='bm-cross-button'>X</button>
         {buttonValues.map((item, index) => {
