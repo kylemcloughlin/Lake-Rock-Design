@@ -149,7 +149,7 @@ let name = e.target.name
 
 }
 } 
-    if(swtch) {
+    if(!swtch) {
       console.log(orders)
       return (
                 <div className='os-total-holder'>       
@@ -157,12 +157,12 @@ let name = e.target.name
                 <div className='checkbox-holder'>
                 <div className='deliver-holder'>
                     <label for='checkbox'>Request Shipping Quote</label>
-                    <input name='checkbox' type='checkbox' checked={dropOff} onClick={handleCheckBox}/>
+                    <input name='checkbox' type='checkbox' checked={dropOff} onClick={handleCheckBox} className='radio'/>
                 </div>
                     <br/>
                     <div className='pick-up-holder'>
                     <label for='pickup'>Pick Up</label>
-                    <input name='pickup' type='checkbox' checked={pickUp} onClick={handleCheckBox}/>
+              <input name='pickup' type='checkbox' checked={pickUp} onClick={handleCheckBox} className='radio'/>
                     </div>
                 </div>
                   <div className='underline'/>

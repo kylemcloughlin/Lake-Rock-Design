@@ -5,7 +5,8 @@ import axios from 'axios';
 
 function Landscaping() {
   let [items, setItems] = useState([]);
-  let [error, setError] = useState(null);
+  let [totalItems, setTotalItems] = useState([]);
+  let [vis, setVis] = useState({ visibility: 'visible' });
   let [loading, setLoading] = useState(true);
   let [mess, setMess] = useState('start');
   let [err, setErr] = useState('')
@@ -17,41 +18,45 @@ function Landscaping() {
 
   function fade(elemntID) {
     // console.log(Document.getElementById(elemntID))
-   let element = document.getElementById(elemntID);
+    let element = document.getElementById(elemntID);
     var op = 1;  // initial opacity
-    
-    var timer = setInterval(function () {
+
+    let timer = setInterval(function () {
       try {
         if (op <= 0.1) {
           clearInterval(timer);
-        // element.style.display = 'none';
-        setLoading(false)
-        // unfade('item-holder-id')
-        
+          setLoading(false)
+
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+      } catch (e) {
+        console.error(e);
+        clearInterval(timer);
       }
-      element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-      op -= op * 0.1;
-    } catch (e) {
-      console.error(e);
-      clearInterval(timer);
-    }
     }, 50);
   }
-  // function unfade(elemntID) {
-  //   let element = document.getElementById(elemntID);
-  //   var op = 0.1;  // initial opacity
-  //   element.style.display = 'block';
-  //   var timer = setInterval(function () {
-  //     if (op >= 1) {
-  //       clearInterval(timer);
-  //     }
-  //     element.style.opacity = op;
-  //     element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-  //     op += op * 0.1;
-  //     // console.log(op)
-  //   }, 10);
-  // }
+
+const handleAddMoreItems = (e) => {
+  e.preventDefault()
+  console.log(totalItems)
+
+  if( totalItems.length > 0) {
+    console.log('hit pop') 
+    let helper = totalItems[0]
+    totalItems.shift()
+    console.log(helper)
+    setItems([...items, helper])
+  } 
+
+
+  if(totalItems.length === 0)  {
+    setVis(({ visibility: 'hidden' }))
+  }
+
+}
+
 
 
   const handleFetch = async () => {
@@ -64,13 +69,10 @@ function Landscaping() {
           'Content-Type': 'application/json'
         }
       })
-      // .then(response => {
-      setMess('hit first then')
-
       let data = response.data;
       let outputHolder = []
       let output = []
-      setMess(`${data.length} why god why`)
+      setMess(`${data.length}`)
       for (let index = 0; index < data.length; index++) {
         let element = data[index];
         element.index = index;
@@ -84,17 +86,20 @@ function Landscaping() {
       }
       if (outputHolder.length > 0) {
         output.push(outputHolder);
-        // setMess('hit last if if then')
 
 
       }
 
-      
 
-      setItems(output)
+      console.log(output)
 
+      let one = output.shift();
+      let two = output.shift();
+      console.log(output)
+      setItems([one, two]);
+      setTotalItems(output)
       fade('ldr')
-      
+
 
     } catch (error) {
       if (error.response) {
@@ -141,9 +146,9 @@ function Landscaping() {
         )
       })
       }
-      {/* <div className='button-holder'>
-        <button className='lndscp-button'>More</button>
-      </div> */}
+      <div className='button-holder'>
+        <button className='lndscp-button' style={vis} onClick={handleAddMoreItems}>More</button>
+      </div>
 
     </div>
   );

@@ -43,9 +43,9 @@ const responsive = {
 const Carousel = () => {
   return (
     <div className='carousel-holder'>
-      {/* <AliceCarousel mouseTracking items={conditItems} infinite='false' disableButtonsControls='true' autoPlay='false' autoPlayInterval='40000' paddingLeft='0' paddingRight='0' /> */}
+
      
-      <AliceCarousel mouseTracking items={conditItems} responsive={responsive} infinite='true' disableButtonsControls='true' autoPlay='true' autoPlayInterval='4000' paddingLeft='0' paddingRight='0' />
+      <AliceCarousel mouseTracking items={conditItems} disableDotsControls={true} responsive={responsive} infinite='true' disableButtonsControls='true' autoPlay='true' autoPlayInterval='4000' paddingLeft='0' paddingRight='0' />
     </div>
   );
 }

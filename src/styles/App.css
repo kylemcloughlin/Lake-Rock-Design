@@ -16,6 +16,27 @@
     url('./fonts/montserrat-v15-latin-regular.svg#Montserrat') format('svg');
   /* Legacy iOS */
 }
+
+/* raleway-regular - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/raleway-v22-latin-regular.eot');
+  /* IE9 Compat Modes */
+  src: local(''),
+    url('./fonts/raleway-v22-latin-regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('./fonts/raleway-v22-latin-regular.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('./fonts/raleway-v22-latin-regular.woff') format('woff'),
+    /* Modern Browsers */
+    url('./fonts/raleway-v22-latin-regular.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('./fonts/raleway-v22-latin-regular.svg#Raleway') format('svg');
+  /* Legacy iOS */
+}
+
 .App {
   /* text-align: center; */
  min-height: 100%;
@@ -25,12 +46,14 @@
    font-family: 'Montserrat';
    font-style: normal;
    font-weight: 400;
-  background-color: #fefefe;
+  background-color: #f5f5f5f5;
   overflow: hidden;
+  
 }
 .banner {
   width: 100%;
   opacity: .5;
+  margin-top: -5em;
 }
 .wrapper {
   min-height: 100%;
@@ -52,6 +75,8 @@ button{
   transition: background 250ms
   ease-in-out,
   transform 150ms ease;
+   outline: none;
+    box-shadow: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -64,4 +89,6 @@ button:focus {
 
 button:active {
   transform: scale(0.99);
+    outline: none;
+    box-shadow: none;
 }

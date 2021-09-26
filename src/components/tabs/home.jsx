@@ -5,11 +5,12 @@ import Carousel from '../carousel.jsx';
 const Home = () => {
   return (
     <div className='home-container'>
-    <div className='request-holder'>
-      <Link to={'request-quote'}>
-        <button className='request-btn'>Request a Quote</button>
-      </Link>
-    </div>
+      <div className='request-holder'>
+        <p className='call-to'>Our qualified team will take your project from the design stage to completion in an organized, professional and timely manner.</p>
+        <Link to={'request-quote'}>
+          <button className='request-btn'>Request a Quote</button>
+        </Link>
+      </div>
       <h4 className='home-title'>We are committed to top quality products, plants, service and unique landscaping designs.</h4>
       <div className='main-holder'>
 
@@ -31,7 +32,7 @@ const Home = () => {
           <h2>Design & Construction</h2>
           <p>Our qualified team will take your project from the design stage to completion in an organized, professional and timely manner.</p>
           <Link to={'design-and-contstruction'}>
-          <button className='more-info-button'>MORE INFO</button>
+            <button className='more-info-button'>MORE INFO</button>
           </Link>
         </div>
         <div className='card'>
@@ -49,10 +50,10 @@ const Home = () => {
           </Link>
         </div>
 
-   </div>
+      </div>
 
-      
-        <Carousel />
+
+      <Carousel />
 
 
 

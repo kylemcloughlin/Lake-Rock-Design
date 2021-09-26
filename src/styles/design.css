@@ -10,25 +10,36 @@
   margin: 4em;
 
 }
-
+.paragraph-holder p {
+  line-height: 1.5em;
+}
 .design-photo {
   margin-bottom: 2.5em;
   margin-right: 4%;
-  border-radius: .5em;
+  /* border-radius: .5em; */
 }
-
 
 .title {
   color: #679436;
 }
 
 
+@media only screen and (max-width: 1200px) {
+  .design-photo {
+    width: 50%;
+    margin-right: 0%;
+   
+  }
+}
 
 @media only screen and (max-width: 1000px) {
   .body-holder {
     display: block;
   }
-
+  
+  #bottom-photo {
+    margin-bottom: -1.2em; 
+  }
   .design-photo {
     margin: auto;
     width: 100%;

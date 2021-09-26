@@ -1,12 +1,13 @@
 .App-header {
-  background-color: #1A1F16;
+  background-color: #234041;
   min-height: 1em;
-  height: 11em;
+  height: 13em;
   width: 100%;
   display: flex;
   color: white;
   position: relative;
-  border-bottom: #1E3F20 5px solid;
+  border-bottom: #78F7A5 5px solid;
+  z-index: 1;
 }
 
 .serving {

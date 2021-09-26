@@ -6,6 +6,7 @@
 }
 
 
+
 .carousel-holder {
   /* border: black solid 1px; */
  display: block;
@@ -31,16 +32,20 @@
 .alice-carousel__stage-item {
   /* width: 700px !important; */
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
 .carousel-holder {
   width: 100%; 
   /* changed from 90% */
+}
+.alice-carousel {
+  width: 80%;
 }
 }
 
 
 @media only screen and (max-width: 800px) {
-  .carousel-holder {
+  .alice-carousel {
     width: 100%;
   }
+
 }

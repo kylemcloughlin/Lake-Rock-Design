@@ -33,22 +33,27 @@
 
 .quest {
   /* border: .5px solid black; */
-  /* color: #606c38; */
-  background: #A0B93C;
+  color: #ffffff;
+  background: #234041;
+
   width: 40%;
   height: 10em;
   text-align: center;
   margin-right: 5%;
   border-radius: 1em;
-  box-shadow: 5px 10px 5px -6px #888888;
- -webkit-box-shadow: 5px 10px 5px -6px #888888;
+  box-shadow: 0px 0px 9px -1px #888888;
+ -webkit-box-shadow: 0px 0px 9px -1px #888888;
 
 
 
 }
 
+.call-to {
+  padding-top: 3em;
+}
+
 .quest-one {
-  color: black;
+  /* color: black; */
 
 }
 
@@ -65,8 +70,8 @@
   text-align: center;
   position: relative;
   border-radius: .5em;
-  background: #F2F2F2;
-  box-shadow: 5px 10px 5px -6px #888888;
+  background: #Ffffff;
+  box-shadow: 0px 0px 5px -1px #888888;
 }
 
 .more-info-button {
@@ -94,8 +99,8 @@
 }
 
 .request-holder {
-  height: 10em;
-  background: #f2f2f2;
+  height: 11em;
+  background: #ffffff;
   border-radius: .5em;
   text-align: center;
   width: 90%;
@@ -108,11 +113,10 @@
 
 
 .request-btn {
-  position: absolute;
-  bottom: 1em;
-  left: 25%;
+
   height: 3em;
-  width: 50%;
+  margin-top: 2em;
+  width: 15em;
   color: #fefefe;
   font-family: 'Montserrat';
   font-style: normal;
@@ -132,7 +136,11 @@
 
 }
 
-
+@media only screen and (max-width: 1163px) {
+.request-btn {
+  margin-top: 1em;
+}
+}
 @media only screen and (max-width: 1024px) {
   .request-holder {
     width: 100%;
@@ -171,12 +179,13 @@
   }
 
   .card {
-    width: 100%;
+    width: 93%;
+    margin: auto;
     margin-bottom: 1em;
   }
 
   .quest {
-    width: 100%;
+    width: 90%;
     padding-top: 1em;
   }
 }

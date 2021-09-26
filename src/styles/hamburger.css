@@ -16,24 +16,34 @@
   position: absolute;
   top: -.7em;
   background: transparent;
-  ht: 3em;
+  right: 3em;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   color: #fefefe;
+  z-index: 10;
 }
+.bm-burger-bars {
+  background-color: #fefefe !important;
+  width: 2.5em !important;
+  height: 1.5px !important;
 
-#react-burger-menu-btn {
-
-  /* background:#356E39 !important; */
-
+}
+.bm-overlay {
+  background: #234041  !important;
+  opacity: .9 !important;
 }
 
 .moblie-menu-nav-button {
   border: none;
   background: none;
-  color: #111;
-  margin-bottom: 1em;
+  color: #ffffff ;
+  border-bottom: 1px solid transparent;
+  margin: 1em;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+  
 }
 
 .moblie-menu-nav-button:focus {
