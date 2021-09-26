@@ -35,7 +35,7 @@ const [cookies] = useCookies(['cart']);
         <div className="company-name">
           <img src={photo} alt=''/>
           <h4 className='company-logo-name'>Rock Lake Design</h4>
-          <h5 className='company-logo-sub'><i>Naturally Inspired</i></h5>
+          <h3 className='company-logo-sub'>Naturally Inspired</h3>
         </div>
       </Link>
       <div className='company-number' onClick={handleTelly}>

@@ -17,8 +17,11 @@ left: 2.3em;
 }
 .company-logo-sub {
  position: absolute;
+   font-family: 'Birthstone';
+   font-style: normal;
+   font-weight: 400;
 bottom: 0em;
- left: 3.5em;
+ left: 2.9em;
 }
 .serving {
   position: absolute;

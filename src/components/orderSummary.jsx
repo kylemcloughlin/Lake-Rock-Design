@@ -149,7 +149,7 @@ let name = e.target.name
 
 }
 } 
-    if(!swtch) {
+    if(swtch) {
       console.log(orders)
       return (
                 <div className='os-total-holder'>       

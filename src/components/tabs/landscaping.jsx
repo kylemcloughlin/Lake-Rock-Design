@@ -114,7 +114,7 @@ function Landscaping() {
       handleFetch()
     
     
-    });
+    }, []);
     if (loading) {
       return (<div className='lndscp-ttl'>
       <h1>Our Landscape Material</h1>
