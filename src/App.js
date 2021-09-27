@@ -57,7 +57,7 @@ return (
     <Router>
     <div className="App">
       <Header cart={cart} complete={sold}/>
-      <img src={banner} className='banner' alt=''/>
+      {/* <img src={banner} className='banner' alt=''/> */}
       <Nav passNav={handleNavClick}/>
        <div className="wrapper">
     <Switch>

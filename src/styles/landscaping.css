@@ -6,6 +6,8 @@
 }
 
 .holder {
+  -moz-box-shadow: 0px 0px 5px 2px #cccccc;
+  -webkit-box-shadow: 0px 0px 5px 2px #cccccc;
   box-shadow: 0px 0px 5px 2px #cccccc;
   width: 15.63em;
   height: 25em;

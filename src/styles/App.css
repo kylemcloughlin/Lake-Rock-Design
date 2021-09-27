@@ -104,10 +104,14 @@ button:focus {
   outline-offset: -4px;
    outline: none;
    box-shadow: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
 }
 
 button:active {
   transform: scale(0.99);
     outline: none;
     box-shadow: none;
+     -webkit-appearance: none;
+     -moz-appearance: none;
 }

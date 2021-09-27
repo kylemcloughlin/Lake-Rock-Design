@@ -5,7 +5,7 @@ const Design = () => {
     <div>
       <div className='title-holder'>
         <h3 className='title'>DESIGN AND CONSTRUCTION</h3>
-        <h1>X YEARS EXPERIENCE</h1>
+        <h1>Creating Beautiful, Naturally Inspired Enviroments</h1>
       </div>
       <div className='body-holder'> 
         <div className='paragraph-holder'>
