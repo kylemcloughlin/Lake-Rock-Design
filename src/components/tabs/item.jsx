@@ -7,10 +7,8 @@ import { Link } from 'react-router-dom';
 let cats = ['Soil', 'Landscape Rock', 'Gravel', 'Related Products']
 function Item({ match, location, handleCart }) {
   let [item, setItem] = useState({})
-  let [setError] = useState(null)
-  let [loading, setLoading] = useState(true)
-
-
+  let [setError] = useState(null);
+  let [loading, setLoading] = useState(true);
   const [cookies, setCookie] = useCookies(['cart']);
   useEffect(() => {
     handleFetch()

@@ -6,7 +6,7 @@ const Home = () => {
   // let style = {}
   return (
     <div className='home-container'>
-      <div className='request-holder' style={{backgroundImage: 'https://lh3.googleusercontent.com/pw/AM-JKLV1i__JCfer1OzUUslzQoPFHaMY47eoBX3Zq6f5GLJ6ibibgOTNMdzAs7Jwob65lG-gYUXz2cXPEMXnYqmqfjkljNB9gFZ1vjdWPLLWHuK2L-MGVlzyKpjUftyDHVFCdQCoV8B7wB6xP8sIvgnx14a8=w623-h416-no?authuser=0'}}>
+      <div className='request-holder'>
         <h2 className='call-to'>TRANSFORMING OUTDOOR SPACES</h2>
         <Link to={'request-quote'}>
           <button className='request-btn'>Request a Quote</button>

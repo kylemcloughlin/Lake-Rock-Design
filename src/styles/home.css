@@ -31,7 +31,7 @@
 }
 
 .card p {
-  line-height: 1em;
+  line-height: 1.5em;
 }
 .quest {
   /* border: .5px solid black; */
@@ -172,6 +172,7 @@
 
   .home-para {
     width: 90%;
+    line-height: 1.5em;
   }
 
   .card {
