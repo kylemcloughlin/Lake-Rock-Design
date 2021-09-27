@@ -180,7 +180,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
     return (
       <div>
         <div>
-          {payment ? (
+          {!payment ? (
 
             // <div className="loader-holder-checkout-request" id='ldr' ><div className="loader-request"></div></div>
             <button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>

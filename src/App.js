@@ -21,7 +21,7 @@ function App() {
   const [content, setContent] = useState(0)
   const [sold, setSold] = useState(false)
   const [cart, setCart] = useState([])
-const [ removeCookie] = useCookies(['cart']);
+const [ cookie, setCookie, removeCookie] = useCookies(['cart']);
   const handleNavClick = (value) =>{ 
     console.log("value", value)
     setContent(value)

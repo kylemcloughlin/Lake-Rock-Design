@@ -16,7 +16,7 @@ const Home = () => {
       <div className='main-holder'>
 
         <div>
-          <p className='home-para'>Located in Apsley, Ontario, Rock Lake Design offers professional landscape design and construction along with a complete line of landscaping products, plants, and a fast delivery service.</p>
+          <p className='home-para'>Located in Apsley, Ontario, Lake Rock Design offers professional landscape design and construction along with a complete line of landscaping products, plants, and a fast delivery service.</p>
           <h5 className='specialize'><i><b>We specialize in water front and country properties.</b></i></h5>
         </div>
         <div className='quest'>
@@ -46,7 +46,7 @@ const Home = () => {
         <div className='card'>
           <h2>Featured Work</h2>
           <p>Photo Gallery of past and current projects.</p>
-          <Link to={'plants-and-trees'}>
+          <Link to={'past-work-gallery'}>
             <button className='more-info-button'>MORE INFO</button>
           </Link>
         </div>

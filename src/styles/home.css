@@ -20,7 +20,7 @@
 
 .home-para {
   width: 66%;
-  /* margin-left: 5%; */
+line-height: 1.5em; 
   margin: auto;
 }
 
@@ -168,11 +168,6 @@
     margin: auto;
     padding: 1em;
 
-  }
-
-  .home-para {
-    width: 90%;
-    line-height: 1.5em;
   }
 
   .card {

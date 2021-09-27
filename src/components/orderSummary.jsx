@@ -4,8 +4,8 @@ import '../styles/orderSummary.css';
 function OrderSummary({customersItems, updateCart, swtch, handleChangeInPayment}) {
   console.log(customersItems)
   let [orders, SetOrders] = useState([])
-  let [dropOff, SetdropOff] = useState(false)
-  let [pickUp, SetPickUp] = useState(true)
+  let [dropOff, SetdropOff] = useState(true)
+  let [pickUp, SetPickUp] = useState(false)
 
   console.log('order summary', customersItems)
   useEffect(() => {
@@ -157,12 +157,12 @@ let name = e.target.name
                 <div className='checkbox-holder'>
                 <div className='deliver-holder'>
                     <label for='checkbox'>Request Shipping Quote</label>
-                    <input name='checkbox' type='checkbox' checked={dropOff} onClick={handleCheckBox} className='radio'/>
+                    <input name='checkbox' type='checkbox' checked={dropOff}  checked='true' className='radio'/>
                 </div>
                     <br/>
                     <div className='pick-up-holder'>
-                    <label for='pickup'>Pick Up</label>
-              <input name='pickup' type='checkbox' checked={pickUp} onClick={handleCheckBox} className='radio'/>
+                    <label for='pickup'>Pick Up (Currently unavailable for pick up)</label>
+              <input name='pickup' type='checkbox' checked='' className='radio' disabled='true'/>
                     </div>
                 </div>
                   <div className='underline'/>

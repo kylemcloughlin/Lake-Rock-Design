@@ -34,7 +34,7 @@ const [cookies] = useCookies(['cart']);
       <Link to={``}>
         <div className="company-name">
           <img src={photo} alt=''/>
-          <h4 className='company-logo-name'>Rock Lake Design</h4>
+          <h4 className='company-logo-name'>Lake Rock Design</h4>
           <h3 className='company-logo-sub'>Naturally Inspired</h3>
         </div>
       </Link>
