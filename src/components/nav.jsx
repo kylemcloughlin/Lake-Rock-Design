@@ -6,7 +6,7 @@ let buttonValues = [{ value: "Home", urlLink: '/' }, { value: "Design", urlLink:
 const Nav = () => {
   return (
     <nav className='nav-button-bar'>
-        <div class="container deepOrange pullRightLeft">
+        <div class="nav-container deepOrange pullRightLeft">
       {buttonValues.map((item, index) => {
         return(
           <Link to={item.urlLink} key={index}>

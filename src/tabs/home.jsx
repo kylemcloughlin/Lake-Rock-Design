@@ -1,9 +1,8 @@
-import '../../styles/home.css';
+import '../styles/home.css';
 import { Link } from 'react-router-dom';
-import Carousel from '../carousel.jsx';
-import banner from '../../banner.jpg';
+import Carousel from '../components/carousel.jsx';
+import banner from '../banner.jpg';
 const Home = () => {
-  // let style = {}
   return (
     <div className='home-container'>
       <div className='request-holder'>

@@ -1,5 +1,5 @@
-import '../../styles/request.css';
-import check from '../../checkmark.png';
+import '../styles/request.css';
+import check from '../checkmark.png';
 import React, { useState } from 'react';
 
 

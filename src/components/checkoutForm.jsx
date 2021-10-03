@@ -48,7 +48,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
       setErrorMessage('We only provide shipping within Ontario.');
       let error = document.getElementById("myErrorModal");
       error.style.display = "block";
-      setTimeout(function () { error.style.display = "none"; }, 1500);
+      // setTimeout(function () { error.style.display = "none"; }, 1500);
 
 
     } else {

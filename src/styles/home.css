@@ -59,6 +59,7 @@ line-height: 1.5em;
 
 .quest-one {
   /* color: black; */
+  font-size: 1rem;
 
 }
 
@@ -73,12 +74,18 @@ line-height: 1.5em;
   margin-left: .5em;
   margin-right: .5em;
   text-align: center;
+  /* font-size: 1.5rem; */
   position: relative;
   border-radius: .5em;
   background: #Ffffff;
   -moz-box-shadow: 0px 0px 5px -1px #888888;
   -webkit-box-shadow: 0px 0px 5px -1px #888888;
   box-shadow: 0px 0px 5px -1px #888888;
+}
+
+.card h2  {
+font-weight: 600;
+font-size: 1.5rem;
 }
 
 .more-info-button {

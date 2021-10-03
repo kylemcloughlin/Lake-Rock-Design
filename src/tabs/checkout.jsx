@@ -2,12 +2,12 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
 
-import CheckoutForm from '../checkoutForm';
-import OrderSummary from '../orderSummary';
+import CheckoutForm from '../components/checkoutForm.jsx';
+import OrderSummary from '../components/orderSummary.jsx';
 import { useCookies } from 'react-cookie';
-import '../../styles/checkout.css';
-import Modal from '../modal.jsx';
-import check from '../../checkmark.png';
+import '../styles/checkout.css';
+import Modal from '../components/modal.jsx';
+import check from '../checkmark.png';
 const stripePromise = loadStripe('pk_test_51JPZAlKUlzH2P3ixGDOz377XqBrkm4UcxsW47QT4y9wvimGufj6F36f3cvdW6RCWZi5X9NWJ3God5KJko66cIbES009vHJvM1G');
 
 
@@ -54,14 +54,11 @@ function Checkout({ cart, clearCart } ) {
       console.log(item.name, prdct.name)
     if (item.name === prdct.name) {
        item.value = Number(item.value) + 1
-       console.log('!!!')
-       console.log(item.value)
-       console.log('!!!!')
+
 
       }
     })
     
-    console.log(prdct)
       setCookie('cart', help, { path: '/' });
       setCustomersItems(help)
       // alert("added to cart!");
@@ -72,17 +69,14 @@ function Checkout({ cart, clearCart } ) {
   } else {
       let help = customersItems
       help.forEach((item, index) => {
-        console.log(item.name, prdct.name)
         if (item.name === prdct.name) {
           item.value = Number(item.value) - 1
-          console.log('!!!')
-          console.log(item.value)
-          console.log('!!!!')
+      
 
         }
       })
 
-      console.log(prdct)
+
       setCookie('cart', help, { path: '/' });
       setCustomersItems(help)
       // alert("subtracted from cart!");

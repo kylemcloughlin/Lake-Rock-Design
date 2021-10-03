@@ -73,3 +73,21 @@
   text-decoration: none;
   cursor: pointer;
 }
+.error-img{
+
+  vertical-align: middle;
+  border-style: none;
+  width: 13em;
+  /* text-align: center; */
+  margin: auto;
+}
+
+.success-img {
+
+  vertical-align: middle;
+  border-style: none;
+  width: 13em;
+  /* text-align: center; */
+  margin: auto;
+}
+    

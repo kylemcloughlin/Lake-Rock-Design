@@ -1,6 +1,6 @@
 
 import React from 'react';
-import '../../styles/gallery.css';
+import '../styles/gallery.css';
 import PhotoGallery from 'react-grid-gallery';
 
 const IMAGES =
@@ -143,7 +143,7 @@ const IMAGES =
       },
       {
             src: "https://lh3.googleusercontent.com/pw/AM-JKLU-L6ZDo2hEKDPMJtwd1b7FYXF8GwBAldBRsQKouhErUUHzrJnvyn7xg87nKq3_BsLPQU6YGkn4L2HYJH5Hxe9TtKu0z4mNqeBny02ikBO__46Rn3_qcoQiZKc7pyo7uGTfPalBZGc9oWGZyCLLa5Y3=w704-h470-no?authuser=0",
-            thumbnail: "https://lh3.googleusercontent.com/fxh85Gkp4EZUrPVzh5cNPnVVbgiCMFJOSdMGT6nuS3XexYnY0WUTYwhsii_gRR4E_rYL5BbkdlvhIspY-Wh3gF_huF24Z98DUnCrhJ2bgfUiIxnPcB4O3jGQunbzb8gyCh8CZOdpI8xJwft8Kav6SwZfO7jpdPqgXtGWVW8lagRNUA77i-rXKHpLTr28kCi_0TUBH0B6frykqidaOsMVeYZdAGYWzmIA2FW-XnJG-2HWLLKNnHRwi7066duZbxUVh-bl3om5zSuNHUzcYzh7hsl3HpomKWG9-VTIbfsq_UJbm5NOL3DIG4wTh2gnaeG2UoUfHylT4J8rgyXUQkmz-W0eH06EvqPHQOmbriWN_qwMsGgPFNYlYZsCDHEXCckMwzZjHHlQ20he-Zdu7S5FMtoysTLoKzswR3Ur8Ib4PwD0VRo9qp_hkcCIbdUMPyvYjRNYUu_eDT1JXIi4PTMXdQVGzuTDLwD6jO94iAYrazAs2muw0azRFMPUW0uKTII0g1LdLigoaAkNApFzM7Hj3JgoiLOABTBvsmJv0Dwreb6NVhl4wMzD-yarcBe26psfMF8tmdk8lL54yOQweFa6yNI4gpREgeI9ut760EhUxNHNhUNYMN1ZLJOarbqCzdIY99-gtZFw4wo5j9sfMNBCO4yRrVco3iqwkeFqEBP0o0_svzYN09awzbRfLy54LsfmN_nvOoKlSj7aWAYu-cS-kxHi=w388-h259-no?authuser=0",
+            thumbnail: "https://lh3.googleusercontent.com/pw/AM-JKLWQkOV5afkl3IzkPOrN-HGwxZpAIwK9eIVxL-b8HZXKiFWhNo-ykV1ZijBNVpOnbTiuxB8h4lbbXP3RyGav1iD5l1eqmDcvi1SRPCsw_CNk12UNdeK0tnGtn_151WvrUQ6OJg_fspRIwBCa30HKvYr9=w388-h259-no?authuser=0",
             thumbnailWidth: 320,
             thumbnailHeight: 213,
             caption: "",

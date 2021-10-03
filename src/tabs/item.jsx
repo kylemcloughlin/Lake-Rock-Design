@@ -1,9 +1,9 @@
 // import '../styles/home.css';
 import React, { useState, useEffect } from 'react';
-import photo from '../../bangerLogo.png';
 import { useCookies } from 'react-cookie';
-import Modal from '../modal.jsx';
+import Modal from '../components/modal.jsx';
 import { Link } from 'react-router-dom';
+import photo from '../bangerLogo.png';
 let cats = ['Soil', 'Landscape Rock', 'Gravel', 'Related Products']
 function Item({ match, location, handleCart }) {
   let [item, setItem] = useState({})

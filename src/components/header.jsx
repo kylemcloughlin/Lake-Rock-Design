@@ -33,7 +33,7 @@ const [cookies] = useCookies(['cart']);
     <div className="App-header">
       <Link to={``}>
         <div className="company-name">
-          <img src={photo} alt=''/>
+          <img src={photo} className="company-img" alt=''/>
           <h4 className='company-logo-name'>Lake Rock Design</h4>
           <h3 className='company-logo-sub'>Naturally Inspired</h3>
         </div>

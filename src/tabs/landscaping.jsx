@@ -1,5 +1,5 @@
-import '../../styles/landscaping.css';
-import Row from '../row.jsx';
+import '../styles/landscaping.css';
+import Row from '../components/row.jsx';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -90,7 +90,6 @@ function Landscaping() {
         
         let one = output.shift();
         let two = output.shift();
-        console.log(output)
         setItems([one, two]);
         setTotalItems(output)
         fade('ldr')

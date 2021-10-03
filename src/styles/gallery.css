@@ -1,7 +1,36 @@
 
 
-.alice-carousel__stage-item {
-  /* width: 60% !important; */
+.carousel-control-next-icon {
+  position: absolute;
+  right: 0px;
+  background: #FFFFFF;
+  height: 70px;
+  width: 35px;
+}
+
+.carousel-control-prev-icon {
+  position: absolute;
+  left: 0px;
+  background: #FFFFFF;
+  height: 70px;
+  width: 35px;
+
+}
+
+.arrow {
+  margin-top: 24px;
+}
+
+.circle {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 36px;
+  border: rgba(255, 255, 255, .5) solid 1px !important;
+  background: transparent !important;
+}
+
+.active {
+  background: rgba(255, 255, 255, .5) !important;
 
 }
 
@@ -11,7 +40,7 @@
   /* border: black solid 1px; */
  display: block;
  /* justify-content: right; */
- width: 100%;
+ width: 90%;
  margin: auto;
 }
 
@@ -37,15 +66,19 @@
   width: 100%; 
   /* changed from 90% */
 }
-.alice-carousel {
-  width: 80%;
-}
+
 }
 
 
 @media only screen and (max-width: 800px) {
-  .alice-carousel {
-    width: 100%;
-  }
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  visibility: hidden;
+}
+
+.circle {
+  width: 8px !important;
+  height: 8px !important;
+}
 
 }

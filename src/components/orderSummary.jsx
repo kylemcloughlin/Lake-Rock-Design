@@ -150,7 +150,6 @@ let name = e.target.name
 }
 } 
     if(swtch) {
-      console.log(orders)
       return (
                 <div className='os-total-holder'>       
                 <h3 className='subtotal-os'>Subtotal: ${totalSum(orders)}</h3>
@@ -175,7 +174,6 @@ let name = e.target.name
     }
   
 
-  console.log(orders.length > 0)
 
 return (
       <div>

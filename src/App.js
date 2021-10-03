@@ -1,63 +1,36 @@
-import Footer from './components/footer.jsx';
+import Footer from './components/footer'
 import Header from './components/header.jsx';
 import Nav  from './components/nav.jsx';
-import Home from './components/tabs/home';
-import Design from './components/tabs/design';
-import Gallery from './components/tabs/gallery';
-import Landscaping from './components/tabs/landscaping';
-import Plants from './components/tabs/plants';
-import Contact from './components/tabs/contact';
-import Item from './components/tabs/item';
-import Checkout from './components/tabs/checkout';
-import Request from './components/tabs/request'
+import Home from './tabs/home';
+import Design from './tabs/design';
+import Gallery from './tabs/gallery';
+import Landscaping from './tabs/landscaping';
+import Plants from './tabs/plants';
+import Contact from './tabs/contact';
+import Item from './tabs/item';
+import Checkout from './tabs/checkout';
+import Request from './tabs/request';
+import AppLogic from './AppLogic.js';
+
 import React, { useState, useEffect } from 'react';
-import banner from './banner.jpg';
 import { useCookies } from 'react-cookie';
 
 import './styles/App.css';
-
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function App() {
-  const [content, setContent] = useState(0)
-  const [sold, setSold] = useState(false)
-  const [cart, setCart] = useState([])
-const [ cookie, setCookie, removeCookie] = useCookies(['cart']);
-  const handleNavClick = (value) =>{ 
-    console.log("value", value)
-    setContent(value)
-  }
+const {  handleCart, clearCart, handleNavClick, content, sold, cart} = AppLogic();
+
+
  useEffect(() => {
 
 
 },[content]);
 
-
-
-  const handleCart = (x) => {
-    console.log(x);
-    setCart(x)
-  }
-
-  const clearCart = () => {
-    console.log('hihtithi')
-    removeCookie('cart',  '/')
-    setCart([])
-    setSold(true)
-  }
-
-   
     
-    // setCookie('cart', [addToCart], { path: '/' });
-      // handleCart([addToCart])
-      // alert("added to cart!");
-   
-
-
 return (
     <Router>
     <div className="App">
       <Header cart={cart} complete={sold}/>
-      {/* <img src={banner} className='banner' alt=''/> */}
       <Nav passNav={handleNavClick}/>
        <div className="wrapper">
     <Switch>
@@ -69,7 +42,6 @@ return (
       <Route path='/plants-and-trees' component={Plants}/>
       <Route path='/contact' component={Contact}/>
       <Route path='/request-quote' component={Request}/>
-
       <Route path='/checkout' render={() => { return(<Checkout cart={cart} clearCart={clearCart} /> )}} ></Route>
       
         {/* add cart here */}

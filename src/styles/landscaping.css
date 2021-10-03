@@ -34,6 +34,7 @@
   position: absolute;
   bottom: 0;
   left: 25%;
+  font-size: 1.18rem;
 }
 
 .button-holder {
@@ -42,7 +43,13 @@
   justify-content: center;
 }
 
+.lndscp-ttl h1 {
+  margin-bottom: .5em;
+}
 
+.lndscp-ttl {
+  margin-bottom: 2em;
+}
 
 .lndscp-button {
   height: 4em;
@@ -234,8 +241,9 @@ margin-left: 1em;
 .cat {
 position: absolute;
 right: 1em;
-top: -1.5em;
+top: -.5em;
 color: #49974E;
+    font-size: .7rem;
 }
 .cat-item {
   position: absolute;
@@ -274,9 +282,15 @@ color: #49974E;
   position: relative;
   left: 10px;
   text-align: left;
+  /* font-size: 1.2rem; */
+
+  
+  
+}
+.sold-by-holder h3 {
+  font-size: 1.2rem;
 
 }
-
 .sold-by {
   border: transparent 1px solid;
   width: 15%;
@@ -294,6 +308,11 @@ color: #49974E;
   color: #f3f3f3;
 }
 
+
+.product-price {
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+}
 .form-holder {
   position: absolute;
   bottom: 0;
@@ -445,6 +464,7 @@ color: #49974E;
 }
 .name {
   margin-top: 2em;
+  font-size: 1.5rem;
 }
 /* Add Animation */
 .img-modal-content,
@@ -571,6 +591,7 @@ color: #49974E;
 
   .sold-by-ttl {
     left: 0em;
+
   }
 
   .sold-by-holder {
