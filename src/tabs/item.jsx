@@ -4,6 +4,7 @@ import { useCookies } from 'react-cookie';
 import Modal from '../components/modal.jsx';
 import { Link } from 'react-router-dom';
 import photo from '../bangerLogo.png';
+import { helmet } from 'react-helmet';
 let cats = ['Soil', 'Landscape Rock', 'Gravel', 'Related Products']
 function Item({ match, location, handleCart }) {
   let [item, setItem] = useState({})
@@ -101,6 +102,9 @@ function Item({ match, location, handleCart }) {
   }
   return (
     <div>
+      <title>{item.name}- Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
+      <meta name="description" content={item.disc} />
+      <meta name="keywords" content="Landscaping, Landscaping Material,Garden Centre, Rock Gardens, Apsley Ontario" />
       <Link to={'/landscaping-supplies'}>
         <button className='back-btn-item'>BACK</button>
       </Link>

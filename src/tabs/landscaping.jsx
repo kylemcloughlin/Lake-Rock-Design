@@ -2,7 +2,7 @@ import '../styles/landscaping.css';
 import Row from '../components/row.jsx';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import {Helmet} from 'react-helmet';
 function Landscaping() {
   let [items, setItems] = useState([]);
   let [totalItems, setTotalItems] = useState([]);
@@ -129,6 +129,11 @@ function Landscaping() {
 
   return (
     <div>
+      <Helmet>
+        <title>Landscaping Supplies - Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
+        <meta name="description" content='At Lake Rock Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes. Whether you are a homeowner, DIYer, Property Manager, General Contractor, Landscape Architect, or Lawn Maintenance company, we stock the materials you need to create inspiring outdoor spaces' />
+        <meta name="keywords" content="Landscaping, Landscaping Material,Garden Centre, Rock Gardens, Apsley Ontario" />
+      </Helmet>
       <div className='lndscp-ttl'>
         <h1>Our Landscape Material</h1>
         <p>At Lake Rock Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes.</p>

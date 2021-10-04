@@ -1,7 +1,7 @@
 import '../styles/request.css';
 import check from '../checkmark.png';
 import React, { useState } from 'react';
-
+import { Helmet } from 'react-helmet';
 
 
 function Request() {
@@ -53,6 +53,11 @@ function Request() {
 
   return (
     <div className='request-email-holder' id='bod'>
+    <Helmet>
+        <title>Landscaping Supplies - Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
+        <meta name="description" content='At Lake Rock Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes. Whether you are a homeowner, DIYer, Property Manager, General Contractor, Landscape Architect, or Lawn Maintenance company, we stock the materials you need to create inspiring outdoor spaces' />
+        <meta name="keywords" content="Landscaping, Landscaping Material,Garden Centre, Rock Gardens, Apsley Ontario" />
+    </Helmet>
    <h1>Request Quote</h1>   
       <form className='request-form' onSubmit={onSubmit}>
     <label className='request-label'>Customers Email:</label>
