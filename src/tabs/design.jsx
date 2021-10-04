@@ -1,8 +1,14 @@
 import '../styles/design.css';
+import { Helmet } from 'react-helmet';
 
 const Design = () => {
   return (
     <div>
+      <Helmet>
+        <title>Design And Construction - Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
+        <meta name="description" content="Located in Apsley, Ontario, Lake Rock Design offers professional landscape design and construction along with a complete line of landscaping products, plants, and a fast delivery service." />
+        <meta name="keywords" content="Landscaping, Landscaping Material,Garden Centre, Rock Gardens, Apsley Ontario" />
+      </Helmet>
       <div className='title-holder'>
         <h3 className='title'>DESIGN AND CONSTRUCTION</h3>
         <h1>Creating Beautiful, Naturally Inspired Enviroments</h1>

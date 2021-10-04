@@ -1,7 +1,7 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
-
+import {Helmet} from 'react-helmet';
 import CheckoutForm from '../components/checkoutForm.jsx';
 import OrderSummary from '../components/orderSummary.jsx';
 import { useCookies } from 'react-cookie';
@@ -9,6 +9,8 @@ import '../styles/checkout.css';
 import Modal from '../components/modal.jsx';
 import check from '../checkmark.png';
 const stripePromise = loadStripe('pk_test_51JPZAlKUlzH2P3ixGDOz377XqBrkm4UcxsW47QT4y9wvimGufj6F36f3cvdW6RCWZi5X9NWJ3God5KJko66cIbES009vHJvM1G');
+
+
 
 
 
@@ -109,6 +111,11 @@ function Checkout({ cart, clearCart } ) {
     
    
     <div>
+      <Helmet>
+        <title>Check Out - Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
+        <meta name="description" content="Located in Apsley, Ontario, Lake Rock Design offers professional landscape design and construction along with a complete line of landscaping products, plants, and a fast delivery service." />
+        <meta name="keywords" content="Landscaping, Landscaping Material,Garden Centre, Rock Gardens, Apsley Ontario" />
+      </Helmet>
       <Modal/>
       <h1 className='chck-title'>Checkout</h1>
       <div className='checkout-holder'>

@@ -18,12 +18,9 @@ import { useCookies } from 'react-cookie';
 import './styles/App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function App() {
-const {  handleCart, clearCart, handleNavClick, content, sold, cart} = AppLogic();
-
+  const {  handleCart, clearCart, handleNavClick, content, sold, cart} = AppLogic();
 
  useEffect(() => {
-
-
 },[content]);
 
     
@@ -31,6 +28,11 @@ return (
     <Router>
     <div className="App">
       <Header cart={cart} complete={sold}/>
+        <Helmet>
+          <title>Lake Rock Design - Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
+          <meta name="description" content="Located in Apsley, Ontario, Lake Rock Design offers professional landscape design and construction along with a complete line of landscaping products, plants, and a fast delivery service." />
+          <meta name="keywords" content="Landscaping, Landscaping Material,Garden Centre, Rock Gardens, Apsley Ontario"/>
+      </Helmet>
       <Nav passNav={handleNavClick}/>
        <div className="wrapper">
     <Switch>
