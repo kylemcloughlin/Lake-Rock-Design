@@ -11,7 +11,7 @@ import Item from './tabs/item';
 import Checkout from './tabs/checkout';
 import Request from './tabs/request';
 import AppLogic from './AppLogic.js';
-
+import {Helmet} from 'react-helmet';
 import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 

@@ -2,9 +2,16 @@ import '../styles/home.css';
 import { Link } from 'react-router-dom';
 import Carousel from '../components/carousel.jsx';
 import banner from '../banner.jpg';
+import { Helmet } from 'react-helmet';
+
 const Home = () => {
   return (
     <div className='home-container'>
+      <Helmet>
+        <title>Lake Rock Design - Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
+        <meta name="description" content="Located in Apsley, Ontario, Lake Rock Design offers professional landscape design and construction along with a complete line of landscaping products, plants, and a fast delivery service." />
+        <meta name="keywords" content="Landscaping, Landscaping Material,Garden Centre, Rock Gardens, Apsley Ontario"/>
+      </Helmet>
       <div className='request-holder'>
         <h2 className='call-to'>TRANSFORMING OUTDOOR SPACES</h2>
         <Link to={'request-quote'}>
@@ -15,7 +22,7 @@ const Home = () => {
       <div className='main-holder'>
 
         <div>
-          <p className='home-para'>Located in Apsley, Ontario, Lake Rock Design offers professional landscape design and construction along with a complete line of landscaping products, plants, and a fast delivery service.</p>
+          <p className='home-para'>Located in Apsley, Ontario, Lake Rock Design offers professional landscape design and construction along with a complete line of landscaping products, and a fast delivery service.</p>
           <h5 className='specialize'><i><b>We specialize in water front and country properties.</b></i></h5>
         </div>
         <div className='quest'>
