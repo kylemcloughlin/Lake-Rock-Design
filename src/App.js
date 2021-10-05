@@ -14,7 +14,7 @@ import AppLogic from './AppLogic.js';
 import {Helmet} from 'react-helmet';
 import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
-
+import CookieConsent from "react-cookie-consent";
 import './styles/App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function App() {
@@ -48,7 +48,14 @@ return (
       
         {/* add cart here */}
     </Switch>
-
+  <CookieConsent
+    location="bottom"
+  buttonText="ACCEPT"
+  cookieName="myAwesomeCookieName2"
+  style={{ background: "#2B373B" }}
+  buttonStyle={{ background: "#49974E", color: '#fefefefe', fontSize: "13px" }}
+  expires={90}
+    >This website uses cookies to enhance the user experience.</CookieConsent>
        <div className="push"></div>
     </div>
       <Footer/>

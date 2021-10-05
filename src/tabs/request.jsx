@@ -54,7 +54,7 @@ function Request() {
   return (
     <div className='request-email-holder' id='bod'>
     <Helmet>
-        <title>Landscaping Supplies - Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
+        <title>Request a Quote - Landscaping, Garden Centre, Rock Gardens, Apsley Ontario</title>
         <meta name="description" content='At Lake Rock Design, we carry only the highest-quality, professional-grade products. From big jobs to small projects, we have what you need for landscape designs of all sizes. Whether you are a homeowner, DIYer, Property Manager, General Contractor, Landscape Architect, or Lawn Maintenance company, we stock the materials you need to create inspiring outdoor spaces' />
         <meta name="keywords" content="Landscaping, Landscaping Material,Garden Centre, Rock Gardens, Apsley Ontario" />
     </Helmet>
