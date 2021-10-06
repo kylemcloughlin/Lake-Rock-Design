@@ -121,7 +121,7 @@ function Checkout({ cart, clearCart } ) {
       <div className='checkout-holder'>
         <Elements stripe={stripePromise}>
           <OrderSummary customersItems={customersItems} updateCart={updateCart} swtch={swtch} handleChangeInPayment={handleChangeInPayment}/>
-        <CheckoutForm customersItems={customersItems} clearCart={clearCart} handleFinish={handlePartOne} handleSwitch={handleSwitch} payment={payment}/>
+          <CheckoutForm customersItems={customersItems} clearCart={clearCart} handleFinish={handlePartOne} handleSwitch={handleSwitch} payment={payment}/>
         </Elements>
       </div>
     </div>

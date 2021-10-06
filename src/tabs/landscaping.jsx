@@ -149,7 +149,7 @@ function Landscaping() {
         )
       })
       }
-      <div className='button-holder'>
+      <div className='lndscp-btn-holder'>
         <button className='lndscp-button' style={vis} onClick={handleAddMoreItems}>More</button>
       </div>
 

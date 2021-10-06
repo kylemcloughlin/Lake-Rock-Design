@@ -37,7 +37,8 @@
   font-size: 1.18rem;
 }
 
-.button-holder {
+.lndscp-btn-holder {
+  opacity: 1 !important;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -62,15 +63,16 @@
  border: none;
  background-color: #49974E;
  color: #f3f3f3;
- transition: 2ms;
- opacity: .7;
+ transition: 1ms;
+ /* opacity: .7; */
 }
 
 
 
 .lndscp-button:hover {
-  opacity: 1;
-  transition: 2ms;
+  width: 16.5em;
+  /* height: /4.2em; */
+  transition: 3ms;
 
 }
 

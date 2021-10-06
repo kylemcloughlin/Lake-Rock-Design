@@ -3,6 +3,8 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import React, { useState, useEffect } from 'react';
 import '../styles/checkout.css';
 import ErrorModal from './errorModal.jsx';
+
+
 function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, payment }) {
   let [orders, SetOrders] = useState([]);
   const [secondStep, setSecondStep] = useState(false);
@@ -151,7 +153,9 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
   const handleRequest = async (e) => {
     setLoading(true)
     e.preventDefault();
-    // const response = await fetch('http://localhost:3001/inquiry_email', {
+    let element = document.getElementById('request-btn');
+    element.style.background = '#E9868C';
+    element.innerHTML= "sending...";
     const response = await fetch(`https://fathomless-lake-40918.herokuapp.com/inquiry_email`, {
       method: 'POST',
       headers: {
@@ -183,7 +187,7 @@ function CheckoutForm({ customersItems, clearCart, handleFinish, handleSwitch, p
           {!payment ? (
 
             // <div className="loader-holder-checkout-request" id='ldr' ><div className="loader-request"></div></div>
-            <button onClick={handleRequest} className='request-shipping-button'> Request Shipping Quote</button>
+            <button onClick={handleRequest} className='request-shipping-button' id='request-btn'> Request Shipping Quote</button>
 
 
           ) : (
