@@ -1,13 +1,17 @@
 # Lake Rock Design 
 A E-Commerce and Professional website for a Landscaping and Landscaping supply Company based in Central Ontario.
+## Live 
 
+  [www.lakerockdesign.ca/](https://www.lakerockdesign.ca/)
 ## Screenshots
 #### Screenshot of Homepage
-!["Screenshot of Homepage"]()
+!["Screenshot of Homepage"](docs/homepage.png)
 #### Screenshot of Requesting a Quote
-!["Screenshot of Requesting a Quote"]()
+!["Screenshot of Requesting a Quote"](docs/request.png)
+#### Screenshot of Store Page
+!["Screenshot of Item Page"](docs/landscapingstore.png)
 #### Screenshot of Item Page
-!["Screenshot of Item Page"]()
+!["Screenshot of Item Page"](docs/checkout.png)
 #### Screenshot of Checkout
 !["Screenshot of Checkout page"](docs/checkout.png)
 
@@ -49,7 +53,3 @@ A E-Commerce and Professional website for a Landscaping and Landscaping supply C
   * @testing-library/react - ^8.0.7
   * @testing-library/react-hooks - ^5.1.1
   * babel-loader - ^8.0.5
-
-  ## Live 
-
-  [www.lakerockdesign.ca/](https://www.lakerockdesign.ca/)
