@@ -9,7 +9,7 @@ A E-Commerce and Professional website for a Landscaping and Landscaping supply C
 #### Screenshot of Item Page
 !["Screenshot of Item Page"]()
 #### Screenshot of Checkout
-!["Screenshot of Checkout page"](https://github.com/kylemcloughlin/dulder/blob/master/docs/checkout.png?raw=true)
+!["Screenshot of Checkout page"](docs/checkout.png)
 
 ## Tech Stack
 * Front-End: HTML, CSS, React, Bootstrap.
