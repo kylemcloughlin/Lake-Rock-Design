@@ -1,7 +1,8 @@
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 // import { useCookies } from 'react-cookie';
 import React, { useState, useEffect } from 'react';
-import '../styles/checkout.css';
+// import '../styles/checkout.css';
+import '../routes/checkout/checkout.css';
 import ErrorModal from './errorModal.jsx';
 
 

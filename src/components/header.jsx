@@ -1,10 +1,10 @@
 import '../styles/header.css';
-import phone from './phone.png';
+import phone from '../photos/phone.png';
 import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
-import shoppingCart from './shopping-cart.png';
+import shoppingCart from '../photos/shopping-cart.png';
 import { Link } from 'react-router-dom';
-import photo from '../bangerLogo.png';
+import photo from '../photos/bangerLogo.png';
 
 function Header({cart, complete}) {
 let [count, setCount] = useState(cart)

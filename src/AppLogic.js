@@ -1,5 +1,5 @@
 import { useCookies } from 'react-cookie';
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const AppLogic = () => {
     const [content, setContent] = useState(0)
@@ -9,6 +9,7 @@ const AppLogic = () => {
     const handleNavClick = (value) => {
       setContent(value)
     }
+
 
 
 

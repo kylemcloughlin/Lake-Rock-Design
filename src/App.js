@@ -1,15 +1,15 @@
 import Footer from './components/footer'
 import Header from './components/header.jsx';
 import Nav  from './components/nav.jsx';
-import Home from './tabs/home';
-import Design from './tabs/design';
-import Gallery from './tabs/gallery';
-import Landscaping from './tabs/landscaping';
-import Plants from './tabs/plants';
-import Contact from './tabs/contact';
-import Item from './tabs/item';
-import Checkout from './tabs/checkout';
-import Request from './tabs/request';
+import Home from './routes/home/home';
+import Design from './routes/design/design';
+import Gallery from './routes/gallery/gallery';
+import Landscaping from './routes/landscaping/landscaping';
+// import Plants from './routes/plants';
+import Contact from './routes/contact/contact';
+import Item from './routes/item/item';
+import Checkout from './routes/checkout/checkout';
+import Request from './routes/request/request';
 import AppLogic from './AppLogic.js';
 import {Helmet} from 'react-helmet';
 import React, { useState, useEffect } from 'react';
@@ -41,7 +41,7 @@ return (
       <Route path='/landscaping-supplies/:itemId' render={({match}) => { return(<Item match={match} handleCart={handleCart}/>)}}/>
       <Route path='/landscaping-supplies' component={Landscaping}/>
       <Route path='/past-work-gallery' component={Gallery}/>
-      <Route path='/plants-and-trees' component={Plants}/>
+      {/* <Route path='/plants-and-trees' component={Plants}/> */}
       <Route path='/contact' component={Contact}/>
       <Route path='/request-quote' component={Request}/>
       <Route path='/checkout' render={() => { return(<Checkout cart={cart} clearCart={clearCart} /> )}} ></Route>

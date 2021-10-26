@@ -1,7 +1,9 @@
-import '../styles/gallery.css';
+
+
+import '../routes/gallery/gallery.css';
 import React from 'react';
-import left from '../left.png';
-import right from '../right.png';
+import left from '../photos/left.png';
+import right from '../photos/right.png';
 
 // const handleDragStart = (e) => e.preventDefault();
 

@@ -1,5 +1,5 @@
 import '../styles/modal.css';
-import x from '../delete.png'
+import x from '../photos/delete.png'
 function ErrorModal({message}) {
   return (
     <div id="myErrorModal" className="error-modal">

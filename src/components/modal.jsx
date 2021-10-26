@@ -1,5 +1,5 @@
 import '../styles/modal.css';
-import chck from '../checkmark.png'
+import chck from '../photos/checkmark.png'
 function Modal() {
   return (
     <div id="myModal" className="modal">
