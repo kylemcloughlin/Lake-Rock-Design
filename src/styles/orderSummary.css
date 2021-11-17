@@ -216,7 +216,7 @@ padding: .2em;
 }
 
 
-@media only screen and (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
   .ttl, .co-total {
     left: 89%;
   }
@@ -237,7 +237,7 @@ padding: .2em;
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media screen and (max-width: 540px) {
   .name-and-button{
         width: 25%;
         margin-left: -1.5em;
@@ -261,7 +261,7 @@ padding: .2em;
 }
 
 
-@media only screen and (max-width: 380px) { 
+@media screen and (max-width: 380px) { 
  .co-value,
  .quant {
    left: 20%;

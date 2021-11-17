@@ -25,7 +25,7 @@
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .design-photo {
     width: 50%;
     margin-right: 0%;
@@ -33,7 +33,7 @@
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .body-holder {
     display: block;
   }

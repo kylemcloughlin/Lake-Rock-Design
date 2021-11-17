@@ -107,7 +107,7 @@ border-radius: .19em;
   animation: spin 2s linear infinite;
 }
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
 .request-form {
   width: 100%;
   height: 50em;

@@ -520,7 +520,7 @@ color: #49974E;
 
 
 
-@media only screen and (max-width: 1120px) {
+@media screen and (max-width: 1120px) {
   .holder {
     transition: 40ms;
     
@@ -529,7 +529,7 @@ color: #49974E;
   
 }
 
-@media only screen and (max-width: 1030px) {
+@media screen and (max-width: 1030px) {
   .product-holder {
     width: 100%;
   }
@@ -550,13 +550,13 @@ color: #49974E;
 }
 
 
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
   .img-modal-content {
     width: 100%;
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media screen and (max-width: 540px) {
   .product-holder {
     width: 100%;
     border: none;
@@ -643,7 +643,7 @@ color: #49974E;
 }
 }
 
-@media only screen and (max-width: 260px) {
+@media screen and (max-width: 260px) {
 .holder {
   width: 100%;
 }

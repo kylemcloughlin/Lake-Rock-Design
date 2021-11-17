@@ -99,7 +99,7 @@ div.pullRightLeft a:hover:after {
 
 
 
-@media only screen and (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
   .nav-container {
     visibility: hidden;
     width: 0%;

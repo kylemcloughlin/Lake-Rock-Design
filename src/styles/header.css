@@ -132,7 +132,7 @@ font-size: 1.18rem;
 
 
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .img-div {
     position: absolute;
     right: -.5em;
@@ -144,21 +144,21 @@ font-size: 1.18rem;
   }
 }
 
-@media only screen and (max-width: 468px) {
+@media screen and (max-width: 468px) {
   .serving {
     width: 15em;
     left: -15em;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
   .serving {
     width: 100%;
     left: -6em;
   }
 }
 
-@media only screen and (max-width: 300px) {
+@media screen and (max-width: 300px) {
   .company-number {
     visibility: hidden;
   }

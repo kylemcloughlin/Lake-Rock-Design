@@ -15,23 +15,23 @@ const Design = () => {
       </div>
       <div className='body-holder'> 
         <div className='paragraph-holder'>
-          <p>Our qualified team will take your project from the design stage to completion in an organized, professional and timely manner. We specialize in water front and country properties.</p>
-          <p>Every property is different and every design is innovative and unique, reflecting your families needs and desires. We provide scale drawings and detailed written estimates so you know exactly what you are paying for and what to expect.</p>
+          <p>Our experienced team of landscape experts will take your project from planning to completion in a timely and professional fashion. We specialize in waterfront and country properties.</p>
+          <p>Every property is different, and so is what you want. We provide detailed planning from beginning to end along with our material supply store so you can better keep track of what you are paying for and what to expect.</p>
         </div>
         <img src="https://lh3.googleusercontent.com/pw/AM-JKLU4j8WR-RQWehneoH1WpMqE-6iRDh4C9l1Nzjmn1dVPP6WMR2cQuGMceR4TAJZC1d7aKdUQeQOuUZyfbwYGKXPRJsTkAjlQhDpXYV9TrTsA61HWV0ADPM3xvn9yNhm2KLwB4kunULMxsM5YW11KfA0b=w704-h470-no?authuser=0" className='design-photo' alt=''/>
       </div>
       <div className='body-holder'>
         <div className='paragraph-holder'>
           <h2 className='title'>PLANTINGS</h2>
-          <p>We strive to achieve a natural feel rather than a formal look. We use only plants that are suitable for our harsh, Zone 4, climate. <b> We are plant experts and know what to plant where for beautiful, long term results.</b></p>
+          <p>Creating a natural flow rather than a formal feel is always our goal. We specialize in finding the plants which thrive in the northern Kawartha's Zone 4 Hardiness and work best within other site-specific considerations.<b>We are tree and shrub experts and know what to plant where for lasting results.</b></p>
         </div>
         <img src="https://lh3.googleusercontent.com/pw/AM-JKLXSjFyWzHV6kMg7dpKPm9fbzo_PDyGOxPZQ9R8ZklpvkKzam3mx4KI-vS-F3U75FeqvU5tjL_x8VWXtxWCfHCja4jDSflO2eInMjGMIkhhF64QqDq6MnZiZJHL5Tp8Jj4HRVTzPFQuWpec4ZoAE2Y0R=w704-h470-no?authuser=0" className='design-photo' alt=''/>
       </div>
       <div className='body-holder'>
         <div className='paragraph-holder'>
           <h2 className='title'>FEATURES</h2>
-          <p>We can give you the soothing sound of a waterfall or the romantic look of night lighting. Drip irrigation can be installed to help your new trees and gardens flourish.</p>
-          <p>From Japanese gardens, Mexican stonework, putting greens, sport field or a hot tub pad, we can do whatever you desire to make your outdoor living space complete.</p>
+          <p>No job is too big or small, we specialize in large and small scale features ranging from Drip irrigation, Stonework, Tree Planting and Retainment Walls.</p>
+          <p>we can work with you to establish a solid plan and create whatever for in for making whatever your outdoor space dream come true.</p>
         </div>
         <img src= "https://lh3.googleusercontent.com/pw/AM-JKLU9wbbmgSiymk-oV2kMhJQogmXUvvnxCiwTArO1AWIlW6w2S1-tz9D9oQQ3AHLNHKDgYPRyPhEm8o-CgrBbAVJEMeu1f-cVUESC_fubWroA65FSkTTV-2R9X9FKviAgBgeJEH3MqoW-XNhbr1MPa4m4=w526-h789-no?authuser=0" className='design-photo' id="bottom-photo" alt=''/>
       </div>

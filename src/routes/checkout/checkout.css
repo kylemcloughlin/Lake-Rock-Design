@@ -235,13 +235,13 @@
   width: 46%;
 }
 
-@media only screen and (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
   .checkout-holder {
     width: 100%;
   }
 }
 
-@media only screen and (max-width: 560px) {
+@media screen and (max-width: 560px) {
 
   .line-one,
   .line-two,
@@ -255,7 +255,7 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .checkout-holder {
     min-height: 60em;
   }

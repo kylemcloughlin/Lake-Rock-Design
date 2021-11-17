@@ -61,7 +61,7 @@
 .alice-carousel__stage-item {
   /* width: 700px !important; */
 }
-@media only screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
 .carousel-holder {
   width: 100%; 
   /* changed from 90% */
@@ -70,7 +70,7 @@
 }
 
 
-@media only screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   visibility: hidden;

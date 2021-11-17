@@ -84,7 +84,7 @@
 }
 
 
-@media only screen and (max-width: 1030px) {
+@media screen and (max-width: 1030px) {
   .contact-holder {
     display: grid;
     text-align: center;
@@ -106,7 +106,7 @@
 }
 
 
-@media only screen and (max-width: 340px) {
+@media screen and (max-width: 340px) {
   .contact-holder {
     height: 62em;
 
