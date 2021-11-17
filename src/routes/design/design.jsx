@@ -20,6 +20,7 @@ const Design = () => {
         </div>
         <img src="https://lh3.googleusercontent.com/pw/AM-JKLU4j8WR-RQWehneoH1WpMqE-6iRDh4C9l1Nzjmn1dVPP6WMR2cQuGMceR4TAJZC1d7aKdUQeQOuUZyfbwYGKXPRJsTkAjlQhDpXYV9TrTsA61HWV0ADPM3xvn9yNhm2KLwB4kunULMxsM5YW11KfA0b=w704-h470-no?authuser=0" className='design-photo' alt=''/>
       </div>
+      
       <div className='body-holder'>
         <div className='paragraph-holder'>
           <h2 className='title'>PLANTINGS</h2>
