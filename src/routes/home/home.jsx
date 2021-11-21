@@ -27,7 +27,7 @@ const Home = () => {
         <div className='quest'>
 
           <h4 className='quest-one'><b>LANDSCAPING QUESTIONS?</b></h4>
-          <h3><b>(705) 868-3560</b></h3>
+          <h3><b>(705) 868-3590</b></h3>
           <p>Talk to a professional.</p>
         </div>
         <div>
